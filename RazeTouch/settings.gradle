@@ -1,0 +1,12 @@
+include ':app'
+rootProject.name = "Raze Touch"
+
+
+include ':androidcore'
+project(':androidcore').projectDir = new File(settingsDir, "/../AndroidCore_OpenTouch/androidcore")
+
+include ':changeloglib'
+project(':changeloglib').projectDir = new File(settingsDir, "/../AndroidCore_OpenTouch/ChangeLogLibrary")
+
+include ':saffal'
+project(':saffal').projectDir = new File(settingsDir, "/../SAFFAL/saffal")

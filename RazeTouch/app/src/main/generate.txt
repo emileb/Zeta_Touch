@@ -1,0 +1,3 @@
+ .\re2c.exe --no-generation-date -s -i -o .\jni\Raze\mobile\src\extrafiles\sc_man_scanner.h .\jni\Raze\source\common\engine\sc_man_scanner.re
+
+.\lemon.exe .\jni\Raze\source\common\scripting\frontend\zcc-parse.lemon

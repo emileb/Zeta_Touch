@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/modern_options"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/modern_gles3_radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="GLES 3.2" />
+
+            <RadioButton
+                android:id="@+id/modern_gles2_radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="GLES 3.0" />
+
+            <RadioButton
+                android:id="@+id/modern_sw_radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Software" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/modern_sw_options_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/modern_r_multithreaded"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enable software multi-threading (can be slower)" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:text="Software Resolution :   W:" />
+
+                <EditText
+                    android:id="@+id/modern_width_editText"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="H:" />
+
+                <EditText
+                    android:id="@+id/modern_height_editText"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/modern_gl2_options_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="-- Experimental --"
+                android:textSize="20dp"
+                android:textColor="@color/red" />
+
+            <CheckBox
+                android:id="@+id/modern_use_mapped_buffers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Use mapped GL buffers" />
+
+            <CheckBox
+                android:id="@+id/modern_force_glsl_v100"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Force GLES2 shader compliance" />
+
+            <CheckBox
+                android:id="@+id/modern_glslPrecision_med"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Medium GLSL precision (may be faster)" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/modern_gl3_options_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:background="@android:color/darker_gray" />
+
+        <Button
+            android:id="@+id/delete_cfg_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="Delete cfg file" />
+
+    </LinearLayout>
+</ScrollView>

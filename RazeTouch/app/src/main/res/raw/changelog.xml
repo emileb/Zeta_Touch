@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<changelog bulletedList="true">
+
+
+    <changelogversion versionName="3.3" changeDate="April 16, 2021">
+        <changelogtext>Added 'Quick Command' utility (See tutorial for usage)</changelogtext>
+        <changelogtext>Can now select resolution for Quake Spasm Spiked</changelogtext>
+        <changelogtext>Added 'Digital Move (WASD)' option to touch screen move stick</changelogtext>
+        <changelogtext>Added option to rotate (roll) to turn when using the gyroscope</changelogtext>
+        <changelogtext>Added 4 more custom buttons to gamepad</changelogtext>
+        <changelogtext>Updated FTEQW dev to 5811</changelogtext>
+        <changelogtext>Now separate touch settings for each engine</changelogtext>
+        <changelogtext>Fixed touch graphic scaling so they don't overlap each other</changelogtext>
+        <changelogtext>Fixed Quake 2 keys</changelogtext>
+        <changelogtext>Fixed weapons 0 and 9 selection on Quake mission pack 'Scourge of Armagon'</changelogtext>
+        <changelogtext>Fixed mouse when using Samsung DeX</changelogtext>
+        <changelogtext>Fixed hardware 'Camera button' to be used in the app again</changelogtext>
+    </changelogversion>
+
+    <changelogversion versionName="3.2.1" changeDate="November 29,2020">
+        <changelogtext>Added the two 'Quad Sliders' to the custom buttons</changelogtext>
+        <changelogtext>Fix console button in main menu</changelogtext>
+        <changelogtext>Fix mouse broken on some devices last release</changelogtext>
+    </changelogversion>
+
+
+    <changelogversion versionName="3.2" changeDate="November 09,2020">
+        <changelogtext>Quakespasm spiked now uses GLSL which fixes transparent textures</changelogtext>
+        <changelogtext>Updated Quakespasm Spiked to latest</changelogtext>
+        <changelogtext>Updated Q2 Yamagi to 7.45</changelogtext>
+        <changelogtext>Updated FTEQW dev to 5786</changelogtext>
+        <changelogtext>Updated to SDL 2.0.12 (please email if there are new bugs)</changelogtext>
+        <changelogtext>Added option to show custom buttons while in main menu</changelogtext>
+        <changelogtext>Allow gamepad axis sensitivity to go 50% higher</changelogtext>
+        <changelogtext>Fixed some audio issues (Enable old SDL backend for old behavior)</changelogtext>
+        <changelogtext>Fixed Zaero not showing up in Quake 2</changelogtext>
+        <changelogtext>Fixed Quakespasm not loading pk3 files</changelogtext>
+        <changelogtext>Fixed 'Delete CFG' buttons so they work again</changelogtext>
+    </changelogversion>
+
+    <changelogversion versionName="3.1" changeDate="July 08,2020">
+        <changelogtext>Added Save/Load of touch screen setups</changelogtext>
+        <changelogtext>Added volume up/down button mapping in touch screen options</changelogtext>
+        <changelogtext>Moved user files (Engine settings, save games etc) to "/Quad/user_files/"</changelogtext>
+        <changelogtext>Added option to change gl_picmip for QuakeSpasm (Reduces texture size and memory)</changelogtext>
+        <changelogtext>Added missing screen brightness adjust to Quake 3</changelogtext>
+        <chanelgogtext>Added option to override Q3 audio settings</chanelgogtext>
+        <changelogtext>Fixed cinematics for Yamagi broken on some device</changelogtext>
+        <changelogtext>Fixed broken text input on Quake 2</changelogtext>
+        <changelogtext>Added alt-attack to gamepad options</changelogtext>
+        <changelogtext>Updated to Android API 29</changelogtext>
+    </changelogversion>
+
+    <changelogversion versionName="3.0.1" changeDate="April 08,2020">
+        <changelogtext>Added Quakespasm-Spiked</changelogtext>
+        <changelogtext>Multiselect games on Darkplaces</changelogtext>
+        <changelogtext>Set custom args for each game/mod (long press)</changelogtext>
+        <changelogtext>Added 'mini ui' option</changelogtext>
+        <changelogtext>Performance optimisations for Quakespasm</changelogtext>
+        <changelogtext>Separate move / strafe sensitivity option for touchscreen</changelogtext>
+        <changelogtext>Set dead-zone for gamepad axis</changelogtext>
+        <changelogtext>Added option to always show custom buttons</changelogtext>
+        <changelogtext>Updated Yamagi to 7.43 (and latest mission packs)</changelogtext>
+        <changelogtext>Updated FTEQW 'dev' to 5630</changelogtext>
+        <changelogtext>Fixed custom touch controls for Malice on Quake</changelogtext>
+        <changelogtext>Option to hide games which are not installed</changelogtext>
+        <changelogtext>Put a file called 'icon.png' in the mod folder to be automatically loaded</changelogtext>
+    </changelogversion>
+
+    <changelogversion versionName="2.2.3" changeDate="January 18,2020">
+        <changelogtext>Updated max model frames in Quakespasm to fix Slayers Testament</changelogtext>
+        <changelogtext>Use new compiler</changelogtext>
+    </changelogversion>
+
+    <changelogversion versionName="2.2.2" changeDate="January 11,2020">
+        <changelogtext>Updated Quakespasm to 0.93.2</changelogtext>
+        <changelogtext>Updated FTEQW to 5595</changelogtext>
+        <changelogtext>Fixed Slayers Testament save game crash</changelogtext>
+        <changelogtext>Added quakespasm.pak file</changelogtext>
+    </changelogversion>
+
+    <changelogversion versionName="2.2.1" changeDate="January 02,2020">
+        <changelogtext>Updated Yamagi to 7.42</changelogtext>
+        <changelogtext>Change color of touch controls</changelogtext>
+        <changelogtext>Override audio setting for each engine if you have sound issues</changelogtext>
+        <changelogtext>Select 4, 8, or 10 items for the weapon wheel</changelogtext>
+        <changelogtext>Added 4 more custom touch buttons</changelogtext>
+        <changelogtext>Load/save/reset gamepad configurations</changelogtext>
+        <changelogtext>Added circle graphic for 'fixed move' touch mode</changelogtext>
+        <changelogtext>Added option to expand display in to 'notch' on Android P</changelogtext>
+        <changelogtext>Fixed save/load Gamepad utilities button only working once</changelogtext>
+        <changelogtext>Reduced Hexen 2 move speed by 2. Use 'Always Run' option in menu to make it faster</changelogtext>
+    </changelogversion>
+
+    <changelogversion versionName="2.1.1" changeDate="September 14,2019">
+        <changelogtext>Added gamepad control of weapon wheel</changelogtext>
+        <changelogtext>Added FTEQW latest as 'dev' (5509), kept 5441 as stable</changelogtext>
+        <changelogtext>Fixed so gamepad look speed is not linked to framerate</changelogtext>
+        <changelogtext>Updated Yamagi Q2 to 7.41</changelogtext>
+        <changelogtext>Fixed Q2 so 32bit and 64bit devices can connect over multiplayer</changelogtext>
+        <changelogtext>Added vibrate to keyboard and weapon wheel</changelogtext>
+        <changelogtext>Increased maximum model triangles for Quake Spasm to fix Slayers Testament mod</changelogtext>
+        <changelogtext>Added 'symbol shift' key to keyboard (Can still use long press)</changelogtext>
+        <changelogtext>Added Numbers row, F1-F10, Home, End, PgUp and PgDn to keyboard</changelogtext>
+        <changelogtext>Can now move keyboard up and down</changelogtext>
+        <changelogtext>Fixed scaling of touch controls when using GLES2</changelogtext>
+        <changelogtext>Fixed 'Reset defaults' on Darkplaces</changelogtext>
+    </changelogversion>
+
+    <changelogversion versionName="2.0.2" changeDate="April 11,2019">
+        <changelogtext>'Hammer of Thyrion: Hexen II' engine added</changelogtext>
+        <changelogtext>Option to group similar engines on the left panel</changelogtext>
+        <changelogtext>Updated FTEQW to 5441</changelogtext>
+        <changelogtext>Fixed corrupt textures on FTEQW</changelogtext>
+        <changelogtext>Fixed Darkplaces crash on QCORE</changelogtext>
+        <changelogtext>Fix Quake 3.24 intermission continue</changelogtext>
+        <changelogtext>Fix Yamagi intermission continue</changelogtext>
+        <changelogtext>Fix Yamagi videos automatically skipping</changelogtext>
+    </changelogversion>
+
+    <changelogversion versionName="1.2" changeDate="March 3,2019">
+        <changelogtext>Can load image (png or jpg) to use as mod image in launcher</changelogtext>
+        <changelogtext>Added precision shoot for touch controls</changelogtext>
+        <changelogtext>Added 'Slight Mechanical Destruction' support for Yamagi Q2</changelogtext>
+        <changelogtext>Added 'Zaero' support for Yamagi Q2</changelogtext>
+        <changelogtext>Added separate gamepad inventory keys</changelogtext>
+        <changelogtext>Mod Folder names can now have spaces in them</changelogtext>
+        <changelogtext>Updated FTEQW to 5399</changelogtext>
+        <changelogtext>Updated Yamagi Q2 to 7.40</changelogtext>
+        <changelogtext>Fixed mouse for Darkplaces</changelogtext>
+        <changelogtext>Fixed Yamagi player setup rendering bug</changelogtext>
+    </changelogversion>
+
+    <changelogversion versionName="1.1.4" changeDate="February 10,2019">
+        <changelogtext>Added 'Left mouse click' button to Q3 menu</changelogtext>
+        <changelogtext>Fixed regression which cause GPD XD and others to crash with Darkplaces</changelogtext>
+        <changelogtext>Fixed WakeLock issue to improve battery drain</changelogtext>
+        <changelogtext>Fixed 'Show scores' button for Q1 engines</changelogtext>
+        <changelogtext>Fixed touch control settings graphics when using Yamagi in software mode</changelogtext>
+    </changelogversion>
+
+    <changelogversion versionName="1.1.3" changeDate="February 7,2019">
+        <changelogtext>New adaptive icon for app (Design by 'Sholopov')</changelogtext>
+        <changelogtext>Added setting gl_vbo option to Darkplaces - can increase FPS x2</changelogtext>
+        <changelogtext>Removed test 'dev' version of Darkplaces</changelogtext>
+    </changelogversion>
+
+    <changelogversion versionName="1.1.1" changeDate="January 30,2019">
+        <changelogtext>Long press to edit game/mod title</changelogtext>
+        <changelogtext>Added weapon wheel to all engines</changelogtext>
+        <changelogtext>Fixed PNG loading for Darkplaces</changelogtext>
+        <changelogtext>Fixed some launcher UI graphics/bugs</changelogtext>
+        <changelogtext>Fixed wrong color lightmaps for Darkplaces</changelogtext>
+        <changelogtext>'Quake 1.5' mod should be working on Darkplaces now</changelogtext>
+    </changelogversion>
+
+    <changelogversion versionName="1.0.1" changeDate="January 8,2019">
+        <changelogtext>Added new tutorial screens</changelogtext>
+        <changelogtext>Added GLES3 mode for YQuake2</changelogtext>
+        <changelogtext>Added Android TV banner</changelogtext>
+        <changelogtext>Fixed misaligned texture in FTEQW</changelogtext>
+        <changelogtext>Fixed downloads for Android 9</changelogtext>
+        <changelogtext>Fixed downloads for slow connections</changelogtext>
+        <changelogtext>Fix Darkplaces crash on some devices</changelogtext>
+    </changelogversion>
+
+    <changelogversion versionName="0.9" changeDate="December 13,2018">
+        <changelogtext>Updated FTEQW to 5361</changelogtext>
+        <changelogtext>Updated Q3Lite to 1.1</changelogtext>
+        <changelogtext>Added mouse support for Android 8</changelogtext>
+        <changelogtext>Fixed Quake 2 for Android 9</changelogtext>
+        <changelogtext>Fixed downloads for Android 9</changelogtext>
+        <changelogtext>Fix bug in FTEQW which made the view wonky after a teleport</changelogtext>
+        <changelogtext>Fixed small text on Hexen 2</changelogtext>
+    </changelogversion>
+
+    <changelogversion versionName="0.8" changeDate="December 6,2018">
+        <changelogtext>Fixed random Quake 3 crash</changelogtext>
+        <changelogtext>Fixed for Adreno 305 on Huawei Y6</changelogtext>
+        <changelogtext>Added launcher support for Portal of Praevus</changelogtext>
+    </changelogversion>
+
+    <changelogversion versionName="0.7" changeDate="November 6,2018">
+        <changelogtext>Added support for Hexen 2</changelogtext>
+    </changelogversion>
+
+    <changelogversion versionName="0.6" changeDate="November 5,2018">
+        <changelogtext>Added email debug log</changelogtext>
+        <changelogtext>Can now launch gamepad configuration from in the game.</changelogtext>
+        <changelogtext>Fixed to console output is saved properly for each game</changelogtext>
+        <changelogtext>Updated Android SDK</changelogtext>
+    </changelogversion>
+
+    <changelogversion versionName="0.5" changeDate="October 25,2018">
+        <changelogtext>Show Scores is now a toggle</changelogtext>
+        <changelogtext>Fix Y/N dialogs for QuakeSpasm</changelogtext>
+        <changelogtext>Added 6 custom buttons for gamepad and touch bound to letter H to M</changelogtext>
+        <changelogtext>Fix darkplaces next level bug</changelogtext>
+        <changelogtext>Fix weapon numbers for all engines</changelogtext>
+        <changelogtext>FTEQW always run</changelogtext>
+        <changelogtext>Removed need "-basedir" from arguments</changelogtext>
+        <changelogtext>Can use the right stick to move the mouse cursor in Q3</changelogtext>
+        <changelogtext>Added gampad button to switch to gauntlet for Q3</changelogtext>
+        <changelogtext>Added custom argument option</changelogtext>
+        <changelogtext>Added duplicate shoot button</changelogtext>
+    </changelogversion>
+
+
+    <changelogversion versionName="0.4" changeDate="October 18,2018">
+        <changelogtext>Added software mode for YQ2</changelogtext>
+        <changelogtext>Fixed menu buttons in Quake 3</changelogtext>
+        <changelogtext>Music works in Q1. Put files in : Q1/id1/music/track002.ogg to track11.ogg</changelogtext>
+        <changelogtext>Added 'Show scores' button to all engines</changelogtext>
+        <changelogtext>Added console button to menu on all engines</changelogtext>
+        <changelogtext>Added missing buttons to Quake 3</changelogtext>
+        <changelogtext>Fixed gamepad buttons</changelogtext>
+        <changelogtext>Disable compiler optimisation of ldrd instructions - should fix some crashes</changelogtext>
+    </changelogversion>
+
+    <changelogversion versionName="0.3" changeDate="October 13,2018">
+        <changelogtext>Fix for Q3 resolution</changelogtext>
+        <changelogtext>Fix crashes on GPD XD</changelogtext>
+        <changelogtext>Improved z-fighting on Darkplaces and FTEQW</changelogtext>
+        <changelogtext>Fixed console on Q3 and QuakeSpasm and FTEQW</changelogtext>
+        <changelogtext>Fix mirrors/portals on Q3</changelogtext>
+        <changelogtext>Removed PAK0 check for Q3</changelogtext>
+    </changelogversion>
+
+    <changelogversion versionName="0.2" changeDate="October 09,2018">
+        <changelogtext>First public Alpha release</changelogtext>
+    </changelogversion>
+
+    <changelogversion versionName="0.1" changeDate="September 27,2018">
+        <changelogtext>Alpha test release</changelogtext>
+    </changelogversion>
+
+
+
+</changelog>
