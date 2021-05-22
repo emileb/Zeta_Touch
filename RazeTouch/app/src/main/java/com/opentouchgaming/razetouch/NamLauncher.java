@@ -12,6 +12,7 @@ public class NamLauncher extends RazeBaseLauncher
     NamLauncher()
     {
         SUB_DIR = "NAM";
+        new File(getRunDirectory()).mkdirs();
     }
 
     @Override
@@ -21,9 +22,7 @@ public class NamLauncher extends RazeBaseLauncher
 
         availableSubGames.clear();
 
-        new File(getRunDirectory()).mkdirs();
-
-        SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR, "", 0, WEAPON_WHEEL_NBR, new String[]{"NAM.grp","GAME.CON"}, R.drawable.quake1,
+        SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR, "", 0, WEAPON_WHEEL_NBR, new String[]{"NAM.grp","GAME.CON"}, R.drawable.raze,
                         "NAM", "Copy NAM.GRP and GAME.CON to:", "Put your NAM files here.txt");
     }
 }

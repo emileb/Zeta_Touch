@@ -12,6 +12,7 @@ public class BloodLauncher extends RazeBaseLauncher
     BloodLauncher()
     {
         SUB_DIR = "BLOOD";
+        new File(getRunDirectory()).mkdirs();
     }
 
     @Override
@@ -21,9 +22,7 @@ public class BloodLauncher extends RazeBaseLauncher
 
         availableSubGames.clear();
 
-        new File(getRunDirectory()).mkdirs();
-
-        SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR, "", 0, WEAPON_WHEEL_NBR, new String[]{"blood.ini"}, R.drawable.quake1,
+        SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR, "", 0, WEAPON_WHEEL_NBR, new String[]{"blood.ini"}, R.drawable.raze,
                         "Blood", "Copy Blood files to:", "Put your BLOOD.GRP files here.txt");
     }
 }

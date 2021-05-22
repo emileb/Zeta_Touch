@@ -12,6 +12,7 @@ public class RedneckLauncher extends RazeBaseLauncher
     RedneckLauncher()
     {
         SUB_DIR = "REDNECK";
+        new File(getRunDirectory()).mkdirs();
     }
 
     @Override
@@ -21,9 +22,7 @@ public class RedneckLauncher extends RazeBaseLauncher
 
         availableSubGames.clear();
 
-        new File(getRunDirectory()).mkdirs();
-
-        SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR, "", 0, WEAPON_WHEEL_NBR, new String[]{"redneck.grp"}, R.drawable.quake1,
+        SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR, "", 0, WEAPON_WHEEL_NBR, new String[]{"redneck.grp"}, R.drawable.raze,
                         "Redneck Rampage", "Copy REDNECK.GRP to:", "Put your REDNECK.GRP files here.txt");
     }
 }

@@ -12,6 +12,7 @@ public class SwLauncher extends RazeBaseLauncher
     SwLauncher()
     {
         SUB_DIR = "SW";
+        new File(getRunDirectory()).mkdirs();
     }
 
     @Override
@@ -21,9 +22,7 @@ public class SwLauncher extends RazeBaseLauncher
 
         availableSubGames.clear();
 
-        new File(getRunDirectory()).mkdirs();
-
-        SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR, "", 0, WEAPON_WHEEL_NBR, new String[]{"sw.grp"}, R.drawable.quake1,
+        SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR, "", 0, WEAPON_WHEEL_NBR, new String[]{"sw.grp"}, R.drawable.raze,
                         "Shadow Warrior", "Copy SW.GRP to:", "Put your SW.GRP files here.txt");
     }
 }

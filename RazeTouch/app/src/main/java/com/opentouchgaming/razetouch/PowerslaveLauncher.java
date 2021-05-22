@@ -12,6 +12,7 @@ public class PowerslaveLauncher extends RazeBaseLauncher
     PowerslaveLauncher()
     {
         SUB_DIR = "PS";
+        new File(getRunDirectory()).mkdirs();
     }
 
     @Override
@@ -21,9 +22,7 @@ public class PowerslaveLauncher extends RazeBaseLauncher
 
         availableSubGames.clear();
 
-        new File(getRunDirectory()).mkdirs();
-
-        SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR, "", 0, WEAPON_WHEEL_NBR, new String[]{"STUFF.DAT"}, R.drawable.quake1,
+        SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR, "", 0, WEAPON_WHEEL_NBR, new String[]{"STUFF.DAT"}, R.drawable.raze,
                         "Powerslave", "Copy STUFF.DAT to:", "Put your Powerslave files here.txt");
     }
 }
