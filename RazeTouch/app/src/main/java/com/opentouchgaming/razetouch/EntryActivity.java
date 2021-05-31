@@ -91,7 +91,7 @@ public class EntryActivity extends FragmentActivity
                                R.drawable.dn3d, 0x00755020,
                                EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_SW, 0, "Duke Nukem 3D", "shadow_warrior", "", new String[]{"1.1.0"},
+                new GameEngine(GameEngine.Engine.RAZE_SW, 0, "Shadow Warrior", "shadow_warrior", "", new String[]{"1.1.0"},
                                new String[][]{{"touchcontrols", "openal", "zmusic","raze"}},
                                "",
                                GamepadDefinitions.getDefinition(AppInfo.Apps.QUAD_TOUCH),
