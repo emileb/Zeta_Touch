@@ -24,5 +24,13 @@ public class SwLauncher extends RazeBaseLauncher
 
         SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR, "", 0, WEAPON_WHEEL_NBR, new String[]{"sw.grp"}, R.drawable.raze,
                         "Shadow Warrior", "Copy SW.GRP to:", "Put your SW.GRP files here.txt");
+
+        SubGame sg = SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR, "addons", 0, WEAPON_WHEEL_NBR, new String[]{"addons/td.grp"}, R.drawable.raze,
+                                     "Shadow Warrior: Twin Dragon", "Copy your TD.GRP file to:", "Put your TD.GRP here.txt");
+        sg.setExtraArgs("-gamegrp TD.GRP");
+
+        sg = SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR, "addons", 0, WEAPON_WHEEL_NBR, new String[]{"addons/wt.grp"}, R.drawable.raze,
+                             "Shadow Warrior: Wanton Destruction", "Copy your WT.GRP file to:", "Put your WT.GRP here.txt");
+        sg.setExtraArgs("-gamegrp WT.GRP");
     }
 }
