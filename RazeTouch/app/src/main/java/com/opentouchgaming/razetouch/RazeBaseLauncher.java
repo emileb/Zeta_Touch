@@ -56,8 +56,10 @@ public class RazeBaseLauncher implements GameLauncherInterface
     @Override
     public void updateSubGames(GameEngine engine, ArrayList<SubGame> availableSubGames)
     {
-
-
+        for(SubGame game: availableSubGames)
+        {
+            game.load(AppInfo.getContext());
+        }
     }
 
     private String quote(String s)

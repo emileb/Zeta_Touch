@@ -160,8 +160,8 @@ public class LauncherFragment extends MainFragment
 
         intent.putExtra("app", AppInfo.app.name());
         intent.putExtra("game_type", selectedSubGame.getGameType());
-        intent.putExtra("gles_version", 3);
-        intent.putExtra("use_gl4es", false);
+        intent.putExtra("gles_version", gles_version);
+        intent.putExtra("use_gl4es", useGL4ES);
         intent.putExtra("framebuffer_width", runInfo.frameBufferWidth);
         intent.putExtra("framebuffer_height", runInfo.frameBufferHeight);
         intent.putExtra("wheel_nbr", wheelNbr);

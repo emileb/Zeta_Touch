@@ -73,7 +73,7 @@ public class EngineOptionsRaze implements EngineOptionsInterface
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 
         dialog.setTitle("Raze options");
-        dialog.setContentView(R.layout.dialog_options_quakespasm);
+        dialog.setContentView(R.layout.dialog_options_raze);
         dialog.setCanceledOnTouchOutside(true);
         dialog.setCancelable(true);
 
