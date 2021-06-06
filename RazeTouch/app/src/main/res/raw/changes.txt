@@ -1,6 +1,7 @@
-v0.2
+v0.6
 * Updated Raze, fixes Blood ammo graphics
 * Fixed custom button assignment in menu
+* Fixed icon.png usage
 * Added Cryptic Passage
 * Added Shadow Warrior addons
 * Removed Software mode as does not work

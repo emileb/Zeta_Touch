@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog bulletedList="true">
 
-    <changelogversion versionName="0.2" changeDate="June 06, 2021">
+    <changelogversion versionName="0.6" changeDate="June 06, 2021">
         <changelogtext>Updated Raze, fixes Blood ammo graphics</changelogtext>
         <changelogtext>Fixed custom button assignment in menu</changelogtext>
+        <changelogtext>Fixed icon.png usage</changelogtext>
         <changelogtext>Added Cryptic Passage</changelogtext>
         <changelogtext>Added Shadow Warrior addons</changelogtext>
         <changelogtext>Removed Software mode as does not work</changelogtext>
