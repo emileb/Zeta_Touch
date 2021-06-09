@@ -38,6 +38,8 @@ public class DukeLauncher extends RazeBaseLauncher
                              R.drawable.raze, "Duke It Out in D.C.", "Copy your Duke files to:", "Put your Duke DC files here.txt");
         sg.setExtraArgs("-gamegrp dukedc.grp");
 
+        addAddonsDir(engine, availableSubGames, new String[]{"nw", "vacation", "dc"});
+
         super.updateSubGames(engine, availableSubGames);
     }
 }

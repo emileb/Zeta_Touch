@@ -33,6 +33,8 @@ public class SwLauncher extends RazeBaseLauncher
                              "Shadow Warrior: Wanton Destruction", "Copy your WT.GRP file to:", "Put your WT.GRP here.txt");
         sg.setExtraArgs("-gamegrp WT.GRP");
 
+        addAddonsDir(engine, availableSubGames, new String[]{"td", "wt"});
+
         super.updateSubGames(engine, availableSubGames);
     }
 }

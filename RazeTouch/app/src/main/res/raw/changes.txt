@@ -1,3 +1,10 @@
+v0.7
+* Add your own folders to 'addons' to create custom mods
+* Change colours
+* Fixed a crash on exit
+* Fixed version text
+* Fixed paths
+
 v0.6
 * Updated Raze, fixes Blood ammo graphics
 * Fixed custom button assignment in menu

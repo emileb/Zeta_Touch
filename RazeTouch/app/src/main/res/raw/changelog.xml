@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog bulletedList="true">
 
+    <changelogversion versionName="0.7" changeDate="June 09, 2021">
+        <changelogtext>Add your own folders to 'addons' to create custom mods</changelogtext>
+        <changelogtext>Change colours</changelogtext>
+        <changelogtext>Fixed a crash on exit</changelogtext>
+        <changelogtext>Fixed version text</changelogtext>
+        <changelogtext>Fixed paths</changelogtext>
+    </changelogversion>
+
     <changelogversion versionName="0.6" changeDate="June 06, 2021">
         <changelogtext>Updated Raze, fixes Blood ammo graphics</changelogtext>
         <changelogtext>Fixed custom button assignment in menu</changelogtext>
@@ -11,8 +19,7 @@
         <changelogtext>Updated Raze, fixes Blood ammo graphics</changelogtext>
         <changelogtext>Updated graphic icons</changelogtext>
     </changelogversion>
-
-
+    
     <changelogversion versionName="0.1" changeDate="May 31, 2021">
         <changelogtext>Inital test release</changelogtext>
     </changelogversion>

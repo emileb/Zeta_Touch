@@ -8,8 +8,10 @@ import com.opentouchgaming.androidcore.AppInfo;
 import com.opentouchgaming.androidcore.DebugLog;
 import com.opentouchgaming.androidcore.GameEngine;
 import com.opentouchgaming.androidcore.SubGame;
+import com.opentouchgaming.androidcore.Utils;
 import com.opentouchgaming.androidcore.common.GameLauncherInterface;
 
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -56,7 +58,7 @@ public class RazeBaseLauncher implements GameLauncherInterface
     @Override
     public void updateSubGames(GameEngine engine, ArrayList<SubGame> availableSubGames)
     {
-        for(SubGame game: availableSubGames)
+        for (SubGame game : availableSubGames)
         {
             game.load(AppInfo.getContext());
         }
@@ -72,9 +74,43 @@ public class RazeBaseLauncher implements GameLauncherInterface
             return s;
     }
 
+    public void addAddonsDir(GameEngine engine, ArrayList<SubGame> availableSubGames, String[] ignore)
+    {
+        String addons = "/addons";
+        ArrayList<File> files = Utils.listFiles(new String[]{getRunDirectory() + addons, getSecondaryDirectory() + addons});
+
+        if (files != null)
+        {
+            for (File f : files)
+            {
+                String dirName = f.getName().toLowerCase();
+                String pathName = f.getParent();
+                if (f.isDirectory())
+                {
+                    boolean skip = false;
+                    for (String i : ignore)
+                    {
+                        if (dirName.contentEquals(i))
+                            skip = true;
+                    }
+
+                    if (skip)
+                        continue;
+
+                    String pathInfo = f.getAbsolutePath();
+                    String fileInfo = Utils.filesInfoString(pathInfo, null, 3);
+
+                    SubGame subgame = new SubGame(SUB_DIR + dirName, dirName, dirName, pathName, 0, R.drawable.raze, pathInfo, fileInfo, WEAPON_WHEEL_NBR);
+                    subgame.setExtraArgs("-game_dir " + pathInfo);
+                    availableSubGames.add(subgame);
+                }
+            }
+        }
+    }
+
     public String getArgs(GameEngine engine, SubGame subGame)
     {
-        return " +set cl_syncinput 1 +set vid_fps 1 ";
+        return " +set vid_fps 1 ";
     }
 
     @Override

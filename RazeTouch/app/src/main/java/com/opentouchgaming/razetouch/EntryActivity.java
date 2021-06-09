@@ -84,56 +84,57 @@ public class EntryActivity extends FragmentActivity
         AppInfo.tutorials.add(tut);
 
         MainFragment.gameEngines = new GameEngine[]{
-                new GameEngine(GameEngine.Engine.RAZE_DUKE, 0, "Duke Nukem 3D", "duke3d", "", new String[]{"1.1.0"},
+                new GameEngine(GameEngine.Engine.RAZE_DUKE, 0, "Duke Nukem 3D", "duke3d", "", new String[]{"1.1.2"},
                                new String[][]{{"touchcontrols", "openal", "zmusic","raze"}},
-                               "",
+                               " +set cl_syncinput 1 ",
                                GamepadDefinitions.getDefinition(AppInfo.Apps.QUAD_TOUCH),
-                               R.drawable.dn3d, 0x00755020,
+                               R.drawable.dn3d, 0x00d1bd10,
                                EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_SW, 0, "Shadow Warrior", "shadow_warrior", "", new String[]{"1.1.0"},
+                new GameEngine(GameEngine.Engine.RAZE_SW, 0, "Shadow Warrior", "shadow_warrior", "", new String[]{"1.1.2"},
                                new String[][]{{"touchcontrols", "openal", "zmusic","raze"}},
-                               "",
+                               " +set cl_syncinput 1 ",
                                GamepadDefinitions.getDefinition(AppInfo.Apps.QUAD_TOUCH),
-                               R.drawable.sw, 0x00755020,
+                               R.drawable.sw, 0x00dad9d2,
                                EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_BLOOD, 0, "Blood", "blood", "", new String[]{"1.1.0"},
+                new GameEngine(GameEngine.Engine.RAZE_BLOOD, 0, "Blood", "blood", "", new String[]{"1.1.2"},
                                new String[][]{{"touchcontrols", "openal", "zmusic","raze"}},
-                               "",
+                               " +set cl_syncinput 1 ",
                                GamepadDefinitions.getDefinition(AppInfo.Apps.QUAD_TOUCH),
-                               R.drawable.blood, 0x00755020,
+                               R.drawable.blood, 0x00d20829,
                                EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_REDNECK, 0, "Redneck Rampage", "redneck", "", new String[]{"1.1.0"},
+                new GameEngine(GameEngine.Engine.RAZE_REDNECK, 0, "Redneck Rampage", "redneck", "", new String[]{"1.1.2"},
                                new String[][]{{"touchcontrols", "openal", "zmusic","raze"}},
-                               "",
+                               " +set cl_syncinput 1 ",
                                GamepadDefinitions.getDefinition(AppInfo.Apps.QUAD_TOUCH),
-                               R.drawable.redneck, 0x00755020,
+                               R.drawable.redneck, 0x008f6407,
                                EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_NAM, 0, "NAM", "nam", "", new String[]{"1.1.0"},
+                new GameEngine(GameEngine.Engine.RAZE_NAM, 0, "NAM", "nam", "", new String[]{"1.1.2"},
                                new String[][]{{"touchcontrols", "openal", "zmusic","raze"}},
-                               "",
+                               " +set cl_syncinput 1 ",
                                GamepadDefinitions.getDefinition(AppInfo.Apps.QUAD_TOUCH),
-                               R.drawable.nam, 0x00755020,
+                               R.drawable.nam, 0x00428747,
                                EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_POWERSLAVE, 0, "Powerslave", "powerslave", "", new String[]{"1.1.0"},
+                new GameEngine(GameEngine.Engine.RAZE_POWERSLAVE, 0, "Powerslave", "powerslave", "", new String[]{"1.1.2"},
                                new String[][]{{"touchcontrols", "openal", "zmusic","raze"}},
-                               "",
+                               " +set cl_syncinput 1 ",
                                GamepadDefinitions.getDefinition(AppInfo.Apps.QUAD_TOUCH),
-                               R.drawable.ps, 0x00755020,
+                               R.drawable.ps, 0x00c319bd,
                                EngineOptionsRaze.class),
         };
 
         List<StorageConfigDialog.StorageExamples> examples = new ArrayList<>();
-        examples.add(new StorageConfigDialog.StorageExamples("Quake 1","(pak0.pak, pak1.pak):", StorageConfigDialog.PathLocation.BOTH , "/Q1/id1"));
-        examples.add(new StorageConfigDialog.StorageExamples("Quake 2","(pak0.pak, pak1.pak, pak2.pak):",StorageConfigDialog.PathLocation.BOTH, "/Q2/baseq2"));
-        examples.add(new StorageConfigDialog.StorageExamples("Quake 3", "(pak0.pk3 ... pak8.pk3):", StorageConfigDialog.PathLocation.BOTH, "/Q3/baseq3"));
+        examples.add(new StorageConfigDialog.StorageExamples("Duke Nukem 3D","(DUKE3D.GRP):", StorageConfigDialog.PathLocation.BOTH , "/DUKE"));
+        examples.add(new StorageConfigDialog.StorageExamples("BLOOD","(BLOOD.RFF, tilesxxx.art, ...):",StorageConfigDialog.PathLocation.BOTH, "/BLOOD"));
+        examples.add(new StorageConfigDialog.StorageExamples("Shadow Warrior", "(SW.GRP):", StorageConfigDialog.PathLocation.BOTH, "/SW"));
 
-        examples.add(new StorageConfigDialog.StorageExamples("Quake 2 music","(track02.ogg, track02.ogg...):",StorageConfigDialog.PathLocation.BOTH, "/Q2/baseq2/music"));
-        examples.add(new StorageConfigDialog.StorageExamples("Quake 1 music","(track02.ogg, track02.ogg...):", StorageConfigDialog.PathLocation.BOTH,"/Q1/id1/music"));
+        examples.add(new StorageConfigDialog.StorageExamples("Redneck Rampage","(All files):",StorageConfigDialog.PathLocation.BOTH, "/REDNECK"));
+        examples.add(new StorageConfigDialog.StorageExamples("NAM","(NAM.GRP, GAME.COM, NAM.RTS):", StorageConfigDialog.PathLocation.BOTH,"/NAM"));
+        examples.add(new StorageConfigDialog.StorageExamples("Powerslave","(STUFF.DAT):", StorageConfigDialog.PathLocation.BOTH,"/PS"));
 
         examples.add(new StorageConfigDialog.StorageExamples("User files","(config, saves etc):", StorageConfigDialog.PathLocation.PRIM, "/user_files"));
 

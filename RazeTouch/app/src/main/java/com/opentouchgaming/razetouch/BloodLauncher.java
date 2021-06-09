@@ -30,6 +30,8 @@ public class BloodLauncher extends RazeBaseLauncher
 
         sg.setExtraArgs("-game_dir addons/cryptic -cryptic");
 
+        addAddonsDir(engine, availableSubGames, new String[]{"cryptic"});
+
         super.updateSubGames(engine,availableSubGames);
     }
 }
