@@ -150,10 +150,10 @@ public class EngineOptionsRaze implements EngineOptionsInterface
         delete.setOnClickListener(view ->
                                   {
                                       {
-                                          final String file = AppInfo.getUserFiles() + "/raze/config/gzdoom.ini";
+                                          final String file = AppInfo.getUserFiles() + "/raze/config/raze.ini";
                                           AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(activity);
                                           dialogBuilder.setTitle("Delete config file");
-                                          dialogBuilder.setMessage("Delete GZDoom config file? (" + file + ")");
+                                          dialogBuilder.setMessage("Delete Raze config file? (" + file + ")");
                                           dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener()
                                           {
                                               @Override

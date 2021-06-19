@@ -1,8 +1,10 @@
 package com.opentouchgaming.razetouch;
 
+import com.opentouchgaming.androidcore.AppInfo;
 import com.opentouchgaming.androidcore.DebugLog;
 import com.opentouchgaming.androidcore.GameEngine;
 import com.opentouchgaming.androidcore.SubGame;
+import com.opentouchgaming.androidcore.Utils;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -13,6 +15,7 @@ public class DukeLauncher extends RazeBaseLauncher
     {
         SUB_DIR = "DUKE";
         new File(getRunDirectory()).mkdirs();
+        Utils.mkdirs(AppInfo.getContext(), getRunDirectory() + "/mods/", "Put your mods files here.txt");
     }
 
     @Override

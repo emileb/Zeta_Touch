@@ -1,3 +1,10 @@
+v0.8
+* Updated to latest Raze code, ladder problem fixed
+* Select mod files
+* Save and load mod configurations
+* Fix weapon slot 10
+
+
 v0.7
 * Add your own folders to 'addons' to create custom mods
 * Change colours

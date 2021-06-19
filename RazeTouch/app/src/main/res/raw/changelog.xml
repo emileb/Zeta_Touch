@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog bulletedList="true">
 
+    <changelogversion versionName="0.8" changeDate="June 19, 2021">
+        <changelogtext>Updated to latest Raze code, ladder problem fixed</changelogtext>
+        <changelogtext>Select mod files</changelogtext>
+        <changelogtext>Save and load mod configurations</changelogtext>
+        <changelogtext>Fix weapon slot 10</changelogtext>
+    </changelogversion>
+
     <changelogversion versionName="0.7" changeDate="June 09, 2021">
         <changelogtext>Add your own folders to 'addons' to create custom mods</changelogtext>
         <changelogtext>Change colours</changelogtext>
@@ -19,7 +26,7 @@
         <changelogtext>Updated Raze, fixes Blood ammo graphics</changelogtext>
         <changelogtext>Updated graphic icons</changelogtext>
     </changelogversion>
-    
+
     <changelogversion versionName="0.1" changeDate="May 31, 2021">
         <changelogtext>Inital test release</changelogtext>
     </changelogversion>

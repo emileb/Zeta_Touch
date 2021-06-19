@@ -83,7 +83,7 @@ public class EntryActivity extends FragmentActivity
         tut.addScreen(new Tutorial.Screen("Add new commands by pressing the add button", "", "http://opentouchgaming.com/tutorial/quad/quick_cmd_6.png"));
         AppInfo.tutorials.add(tut);
 
-        MainFragment.gameEngines = new GameEngine[]{
+        AppInfo.gameEngines = new GameEngine[]{
                 new GameEngine(GameEngine.Engine.RAZE_DUKE, 0, "Duke Nukem 3D", "duke3d", "", new String[]{"1.1.2"},
                                new String[][]{{"touchcontrols", "openal", "zmusic","raze"}},
                                " +set cl_syncinput 1 ",
@@ -158,7 +158,7 @@ public class EntryActivity extends FragmentActivity
 
         AppSettings.reloadSettings(getApplication());
 
-        AppInfo.setAppInfo(getApplicationContext(), AppInfo.Apps.RAZE_TOUCH, "Raze Touch", "Raze", BuildConfig.APPLICATION_ID, "quadlogs@opentouchgaming.com", false);
+        AppInfo.setAppInfo(getApplicationContext(), AppInfo.Apps.RAZE_TOUCH, "Raze Touch", "Raze", BuildConfig.APPLICATION_ID, "razelogs@opentouchgaming.com", false, R.drawable.raze);
 
         // Check that the activity is using the layout version with
         // the fragment_container FrameLayout
