@@ -1,19 +1,29 @@
 package com.opentouchgaming.razetouch;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
 
+import androidx.core.util.Consumer;
 import androidx.core.util.Pair;
 
 import com.opentouchgaming.androidcore.AppInfo;
 import com.opentouchgaming.androidcore.AppSettings;
 import com.opentouchgaming.androidcore.DebugLog;
 import com.opentouchgaming.androidcore.EngineOptionsInterface;
+import com.opentouchgaming.androidcore.GD;
 import com.opentouchgaming.androidcore.GameEngine;
 import com.opentouchgaming.androidcore.ServerAPI;
+import com.opentouchgaming.androidcore.SimpleServerAccess;
 import com.opentouchgaming.androidcore.Utils;
 import com.opentouchgaming.androidcore.common.MainFragment;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 
 import static com.opentouchgaming.androidcore.DebugLog.Level.D;
 
@@ -21,6 +31,7 @@ import static com.opentouchgaming.androidcore.DebugLog.Level.D;
 public class LauncherFragment extends MainFragment
 {
     static DebugLog log;
+
     static
     {
         log = new DebugLog(DebugLog.Module.GAMEFRAGMENT, "LauncherFragment");
@@ -52,6 +63,51 @@ public class LauncherFragment extends MainFragment
         redneckLauncher = new RedneckLauncher();
         namLauncher = new NamLauncher();
         powerslaveLauncher = new PowerslaveLauncher();
+
+
+    }
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
+        View view = super.onCreateView(inflater,container,savedInstanceState);
+
+        downloadNewVersion.setOnClickListener(v ->
+                                              {
+                                                  Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://opentouchgaming.com/raze-touch/"));
+                                                  startActivity(browserIntent);
+                                              });
+
+        SimpleServerAccess.AccessInfo versionAccess = new SimpleServerAccess.AccessInfo();
+        versionAccess.url = "http://opentouchgaming.com/api/version_raze.txt";
+        versionAccess.callback = new Consumer<ByteArrayOutputStream>()
+        {
+            @Override
+            public void accept(ByteArrayOutputStream byteArrayOutputStream)
+            {
+                int version = 0;
+                try
+                {
+                    version = Integer.decode(byteArrayOutputStream.toString());
+                } catch (Exception e)
+                {
+
+                }
+
+                if (version != 0)
+                {
+                    log.log(DebugLog.Level.D, "FOUND VERSION: " + version);
+                    if( version > GD.version)
+                    {
+                        Toast.makeText(getActivity(), "New version available", Toast.LENGTH_LONG).show();
+                        downloadNewVersion.setVisibility(View.VISIBLE);
+                    }
+                }
+            }
+        };
+
+        new SimpleServerAccess(getContext(), versionAccess);
+
+        return view;
     }
 
     public void setLauncher()
@@ -98,7 +154,8 @@ public class LauncherFragment extends MainFragment
                 }
             };
 
-            Utils.showDownloadDialog(getActivity(), "Download " + selectedSubGame.getDownloadFilename() + "?", selectedSubGame.getDownloadPath(), selectedSubGame.getDownloadFilename(), 80 * 1024 * 1024, cb);
+            Utils.showDownloadDialog(getActivity(), "Download " + selectedSubGame.getDownloadFilename() + "?", selectedSubGame.getDownloadPath(), selectedSubGame.getDownloadFilename(),
+                                     80 * 1024 * 1024, cb);
             return;
         }
 
@@ -111,7 +168,7 @@ public class LauncherFragment extends MainFragment
         // Check for engine specific downloads or issues
         if (download)
         {
-            if(launcher.checkForDownloads(getActivity(), AppInfo.currentEngine, selectedSubGame))
+            if (launcher.checkForDownloads(getActivity(), AppInfo.currentEngine, selectedSubGame))
                 return;
         }
 
@@ -127,7 +184,7 @@ public class LauncherFragment extends MainFragment
 
         if (engine.engineOptions != null)
         {
-            runInfo =  engine.engineOptions.getRunInfo(selectedVersion);
+            runInfo = engine.engineOptions.getRunInfo(selectedVersion);
 
             args += runInfo.args + " ";
 
@@ -140,7 +197,10 @@ public class LauncherFragment extends MainFragment
         }
 
         Utils.copyAsset(getActivity(), "raze.pk3", AppInfo.getAppDirectory() + "/res/");
-        Utils.copyAsset(getActivity(), "raze.sf2", AppInfo.getAppDirectory() + "/res/");
+
+        File sf2 = new File(AppInfo.getAppDirectory() + "/res/raze.sf2");
+        if (!sf2.exists())
+            Utils.copyAsset(getActivity(), "raze.sf2", AppInfo.getAppDirectory() + "/res/");
 
         args += argsFinal;
 
@@ -156,7 +216,7 @@ public class LauncherFragment extends MainFragment
 
         int wheelNbr = selectedSubGame.getWheelNbr();
 
-        Pair<String,String> quickCommandPaths = launcher.getQuickCommandsDirectory(selectedSubGame);
+        Pair<String, String> quickCommandPaths = launcher.getQuickCommandsDirectory(selectedSubGame);
 
         intent.putExtra("app", AppInfo.app.name());
         intent.putExtra("game_type", selectedSubGame.getGameType());
@@ -169,14 +229,14 @@ public class LauncherFragment extends MainFragment
         intent.putExtra("audio_samples", audiosamples);
         intent.putExtra("res_div", res_div);
         intent.putExtra("load_libs", engine.loadLibs[selectedVersion]);
-        intent.putExtra("log_filename",  AppInfo.currentEngine.getLogFilename());
+        intent.putExtra("log_filename", AppInfo.currentEngine.getLogFilename());
         intent.putExtra("game_path", rootPath);
         intent.putExtra("user_files", AppInfo.getUserFiles());
         intent.putExtra("args", args);
         intent.putExtra("quick_command_main_path", quickCommandPaths.first);
         intent.putExtra("quick_command_mod_path", quickCommandPaths.second);
 
-        log.log(D,"Intent = " + intent);
+        log.log(D, "Intent = " + intent);
 
         startActivity(intent);
     }

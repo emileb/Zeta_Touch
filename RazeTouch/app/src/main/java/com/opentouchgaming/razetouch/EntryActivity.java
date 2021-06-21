@@ -11,6 +11,7 @@ import android.view.WindowManager;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.core.util.Consumer;
 import androidx.fragment.app.FragmentActivity;
 
 import com.opentouchgaming.androidcore.AboutDialog;
@@ -20,12 +21,13 @@ import com.opentouchgaming.androidcore.DebugLog;
 import com.opentouchgaming.androidcore.GD;
 import com.opentouchgaming.androidcore.GameEngine;
 import com.opentouchgaming.androidcore.ScopedStorage;
-import com.opentouchgaming.androidcore.common.MainFragment;
+import com.opentouchgaming.androidcore.SimpleServerAccess;
 import com.opentouchgaming.androidcore.controls.GamepadDefinitions;
 import com.opentouchgaming.androidcore.ui.StorageConfigDialog;
 import com.opentouchgaming.androidcore.ui.tutorial.Tutorial;
 import com.opentouchgaming.razetouch.engineoptions.EngineOptionsRaze;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,19 +48,15 @@ public class EntryActivity extends FragmentActivity
     final int MY_PERMISSIONS_REQUEST_SD_WRITE = 1;
 
     static {
-        Tutorial tut = new Tutorial("Installing games", "ic_tut_install");
-        tut.addScreen(new Tutorial.Screen("Download the PC version of the game you wish to install to your computer.", "", "http://opentouchgaming.com/tutorial/quad/install_1_download.png"));
-        tut.addScreen(new Tutorial.Screen("Connect your device to your PC and enable file transfer.", "", "http://opentouchgaming.com/tutorial/quad/install_2_connect.png"));
-        tut.addScreen(new Tutorial.Screen("Find the path to copy files to. The path before '/OpenTouch/' is the internal memory of your device.", "", "http://opentouchgaming.com/tutorial/quad/install_3_findpath.png"));
-        tut.addScreen(new Tutorial.Screen("Copy the files to your device. Default Steam location:\n" +
-                "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Quake\\Id1", "", "http://opentouchgaming.com/tutorial/quad/install_4_copyfiles.png"));
-        tut.addScreen(new Tutorial.Screen("Default folder locations:", "", "http://opentouchgaming.com/tutorial/quad/install_5_default.png"));
-        AppInfo.tutorials.add(tut);
-
-        tut = new Tutorial("Installing music files", "ic_tut_music_note");
-        tut.addScreen(new Tutorial.Screen("Download the music files. They should be in OGG format and named exactly as below.", "", "http://opentouchgaming.com/tutorial/quad/music_1_files.png"));
-        tut.addScreen(new Tutorial.Screen("Connect your device to your PC and enable file transfer.", "", "http://opentouchgaming.com/tutorial/quad/install_2_connect.png"));
-        tut.addScreen(new Tutorial.Screen("Copy the music files to the following folders:", "", "http://opentouchgaming.com/tutorial/quad/music_3_default.png"));
+        Tutorial tut;
+        tut = new Tutorial("Using the Custom touch buttons.", "ic_tut_custom");
+        tut.addScreen(new Tutorial.Screen("Press the touch settings button.", "", "http://opentouchgaming.com/tutorial/delta/custom_cog.png"));
+        tut.addScreen(new Tutorial.Screen("Press the touch options button.", "", "http://opentouchgaming.com/tutorial/delta/custom_sliders.png"));
+        tut.addScreen(new Tutorial.Screen("Press the 'Hide/Show' button.", "", "http://opentouchgaming.com/tutorial/delta/custom_hideshow.png"));
+        tut.addScreen(new Tutorial.Screen("Enable the 'Show custom' button. This adds a new button to the game touch controls.", "", "http://opentouchgaming.com/tutorial/delta/custom_enablecustom.png"));
+        tut.addScreen(new Tutorial.Screen("Press the new button to show the custom controls. Press the touch settings button to edit and move them.", "", "http://opentouchgaming.com/tutorial/delta/custom_showcustom.png"));
+        tut.addScreen(new Tutorial.Screen("To assign them go to 'Options -> Customise Controls' and select the action.", "", "http://opentouchgaming.com/tutorial/delta/custom_controloptions.png"));
+        tut.addScreen(new Tutorial.Screen("Press a custom button to assign. Slide from the centre of the 'Quad-buttons' up, down, left or right. ", "", "http://opentouchgaming.com/tutorial/delta/custom_assign.png"));
         AppInfo.tutorials.add(tut);
 
         tut = new Tutorial("Using the console/keyboard", "ic_tut_keyboard");
@@ -159,6 +157,7 @@ public class EntryActivity extends FragmentActivity
         AppSettings.reloadSettings(getApplication());
 
         AppInfo.setAppInfo(getApplicationContext(), AppInfo.Apps.RAZE_TOUCH, "Raze Touch", "Raze", BuildConfig.APPLICATION_ID, "razelogs@opentouchgaming.com", false, R.drawable.raze);
+        AppInfo.showRateButton = false;
 
         // Check that the activity is using the layout version with
         // the fragment_container FrameLayout
@@ -198,6 +197,8 @@ public class EntryActivity extends FragmentActivity
             // Permission has already been granted
             log.log(DebugLog.Level.D, "Permission already granted");
         }
+
+
 
     }
 

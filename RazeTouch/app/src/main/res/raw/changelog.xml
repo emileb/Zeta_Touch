@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog bulletedList="true">
 
+    <changelogversion versionName="0.9 BETA" changeDate="June 21, 2021">
+        <changelogtext>Fixed small font</changelogtext>
+        <changelogtext>Fixed to allow spaces in directory names</changelogtext>
+        <changelogtext>Added app version checker</changelogtext>
+    </changelogversion>
+
     <changelogversion versionName="0.8" changeDate="June 19, 2021">
         <changelogtext>Updated to latest Raze code, ladder problem fixed</changelogtext>
         <changelogtext>Select mod files</changelogtext>

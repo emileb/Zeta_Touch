@@ -101,7 +101,7 @@ public class RazeBaseLauncher implements GameLauncherInterface
                     String fileInfo = Utils.filesInfoString(pathInfo, null, 3);
 
                     SubGame subgame = new SubGame(SUB_DIR + dirName, dirName, dirName, pathName, 0, R.drawable.raze, pathInfo, fileInfo, WEAPON_WHEEL_NBR);
-                    subgame.setExtraArgs("-game_dir " + pathInfo);
+                    subgame.setExtraArgs("-game_dir " + quote(pathInfo));
                     availableSubGames.add(subgame);
                 }
             }
