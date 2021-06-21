@@ -1,4 +1,5 @@
 v0.9
+* Added gamepad config
 * Fixed small font
 * Fixed to allow spaces in directory names
 * Added version checker

@@ -19,7 +19,6 @@
         android:supportsRtl="false"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:replace="android:label,android:supportsRtl,android:allowBackup">
-        <uses-library android:name="org.apache.http.legacy" android:required="true"/>
 
         <!-- android:process=":game" -->
         <activity
