@@ -1,6 +1,6 @@
 Raze Touch
 
-Android port of the incredible 'Raze' engine created by the GZDoom devs.
+Android port of the incredible 'Raze' engine.
 
 https://raze.zdoom.org
 Raze is a fork of Build engine games backed by GZDoom tech and combines Duke Nukem 3D, Blood, Redneck Rampage, Shadow Warrior and Exhumed/Powerslave in a single package. It is also capable of playing Nam and WW2 GI.
@@ -35,3 +35,13 @@ See the included license file "BUILDLIC.TXT" for license info.
 
 
 Android port by Emile Belanger.
+
+Thanks also to:
+
+Garrett(Monolyth-42) for creating the game icons, and for testing with help from:
+
+- ANTARES
+- DarkK1ller
+- ddrsoul
+- ProydohaRupert
+- Dark Death

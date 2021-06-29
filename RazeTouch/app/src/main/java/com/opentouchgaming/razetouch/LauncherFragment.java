@@ -204,6 +204,9 @@ public class LauncherFragment extends MainFragment
 
         args += argsFinal;
 
+        if (launcher.getSecondaryDirectory() != null)
+            args += " -secondary_path " + launcher.getSecondaryDirectory() + " ";
+
         // Save history
         engineData.addArgsHistory();
 

@@ -31,7 +31,7 @@ public class BloodLauncher extends RazeBaseLauncher
         SubGame sg = SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR, "addons/cryptic", 0, WEAPON_WHEEL_NBR, new String[]{"addons/cryptic/CP01.MAP", "addons/cryptic/cryptic.ini"}, R.drawable.raze,
                              "BLOOD: Cryptic Passage", "Copy your Cryptic Passage files to:", "Put your Cryptic Passage files here.txt");
 
-        sg.setExtraArgs("-game_dir addons/cryptic -cryptic");
+        sg.setExtraArgs(" -cryptic -game_dir " + sg.getRootPath() + "/addons/cryptic");
 
         addAddonsDir(engine, availableSubGames, new String[]{"cryptic"});
 

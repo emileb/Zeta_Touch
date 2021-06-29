@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog bulletedList="true">
 
+    <changelogversion versionName="0.10 BETA" changeDate="June 29, 2021">
+        <changelogtext>Added Quick Command utility</changelogtext>
+        <changelogtext>Fixed secondary storage</changelogtext>
+        <changelogtext>Added Alt Attack to gamepad</changelogtext>
+    </changelogversion>
+
     <changelogversion versionName="0.9 BETA" changeDate="June 21, 2021">
         <changelogtext>Added gamepad config</changelogtext>
         <changelogtext>Fixed small font</changelogtext>
         <changelogtext>Fixed to allow spaces in directory names</changelogtext>
-        <changelogtext>Fixed small font</changelogtext>
         <changelogtext>Added app version checker</changelogtext>
     </changelogversion>
 

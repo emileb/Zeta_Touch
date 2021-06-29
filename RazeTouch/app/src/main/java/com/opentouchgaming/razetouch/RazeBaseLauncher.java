@@ -22,7 +22,7 @@ public class RazeBaseLauncher implements GameLauncherInterface
 {
     static DebugLog log;
 
-    final int WEAPON_WHEEL_NBR = 8;
+    final int WEAPON_WHEEL_NBR = 10;
 
     static
     {
@@ -50,8 +50,8 @@ public class RazeBaseLauncher implements GameLauncherInterface
     @Override
     public Pair<String, String> getQuickCommandsDirectory(SubGame subGame)
     {
-        String commonPath = AppInfo.getUserFiles() + "/" + SUB_DIR;
-        String modPath = commonPath + "/" + subGame.getName();
+        String commonPath = AppInfo.getUserFiles() + "/QC";
+        String modPath = commonPath + "/" + SUB_DIR;
         return new Pair<>(commonPath, modPath);
     }
 
@@ -110,7 +110,7 @@ public class RazeBaseLauncher implements GameLauncherInterface
 
     public String getArgs(GameEngine engine, SubGame subGame)
     {
-        return " +set vid_fps 1 ";
+        return "";
     }
 
     @Override

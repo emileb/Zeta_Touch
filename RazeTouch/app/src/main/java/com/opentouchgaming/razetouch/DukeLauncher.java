@@ -45,4 +45,5 @@ public class DukeLauncher extends RazeBaseLauncher
 
         super.updateSubGames(engine, availableSubGames);
     }
+
 }

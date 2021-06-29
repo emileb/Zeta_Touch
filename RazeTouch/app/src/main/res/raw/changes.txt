@@ -1,3 +1,9 @@
+v0.10
+* Added Quick Command utility
+* Fixed secondary storage
+* Added Alt Attack to gamepad
+
+
 v0.9
 * Added gamepad config
 * Fixed small font
