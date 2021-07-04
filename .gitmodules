@@ -1,31 +1,35 @@
-﻿[submodule "SAFFAL"]
-        path = SAFFAL
-        url = https://github.com/emileb/SAFFAL.git
+[submodule "SAFFAL"]
+	path = SAFFAL
+	url = https://github.com/emileb/SAFFAL.git
 
 [submodule "AndroidCore_OpenTouch"]
-        path = AndroidCore_OpenTouch
-        url = https://github.com/emileb/AndroidCore_OpenTouch.git
+	path = AndroidCore_OpenTouch
+	url = https://github.com/emileb/AndroidCore_OpenTouch.git
 
 [submodule "RazeTouch/app/src/main/jni/AudioLibs_OpenTouch"]
-        path = RazeTouch/app/src/main/jni/AudioLibs_OpenTouch
-        url = https://github.com/emileb/AudioLibs_OpenTouch.git
+	path = RazeTouch/app/src/main/jni/AudioLibs_OpenTouch
+	url = https://github.com/emileb/AudioLibs_OpenTouch.git
 
 [submodule "RazeTouch/app/src/main/jni/Clibs_OpenTouch"]
         path = RazeTouch/app/src/main/jni/Clibs_OpenTouch
         url = https://github.com/emileb/Clibs_OpenTouch.git
 
 [submodule "RazeTouch/app/src/main/jni/MobileTouchControls"]
-        path = RazeTouch/app/src/main/jni/MobileTouchControls
-        url = https://github.com/emileb/MobileTouchControls.git
+	path = RazeTouch/app/src/main/jni/MobileTouchControls
+	url = https://github.com/emileb/MobileTouchControls.git
 
 [submodule "RazeTouch/app/src/main/jni/Raze"]
-        path = RazeTouch/app/src/main/jni/Raze
-        url = https://github.com/emileb/Raze.git
+	path = RazeTouch/app/src/main/jni/Raze
+	url = https://github.com/emileb/Raze.git
+	branch = master_mobile
 
 [submodule "RazeTouch/app/src/main/jni/SDL2_OpenTouch"]
-        path = RazeTouch/app/src/main/jni/SDL2_OpenTouch
-        url = https://github.com/emileb/SDL2_OpenTouch.git
+	path = RazeTouch/app/src/main/jni/SDL2_OpenTouch
+	url = https://github.com/emileb/SDL2_OpenTouch.git
 
 [submodule "RazeTouch/app/src/main/jni/ZMusic"]
-        path = RazeTouch/app/src/main/jni/ZMusic
-        url = https://github.com/emileb/ZMusic.git
+	path = RazeTouch/app/src/main/jni/ZMusic
+	url = https://github.com/emileb/ZMusic.git
+	branch = mobile
+
+
