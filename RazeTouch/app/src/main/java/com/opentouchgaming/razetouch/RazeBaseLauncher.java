@@ -24,6 +24,13 @@ public class RazeBaseLauncher implements GameLauncherInterface
 
     final int WEAPON_WHEEL_NBR = 10;
 
+    final int RAZE_GAME_DUKE  = 100;
+    final int RAZE_GAME_BLOOD = 101;
+    final int RAZE_GAME_SW    = 102;
+    final int RAZE_GAME_RR    = 103;
+    final int RAZE_GAME_NAM   = 104;
+    final int RAZE_GAME_PS    = 105;
+
     static
     {
         log = new DebugLog(DebugLog.Module.CONTROLS, "RazeBaseLauncher");
@@ -74,7 +81,7 @@ public class RazeBaseLauncher implements GameLauncherInterface
             return s;
     }
 
-    public void addAddonsDir(GameEngine engine, ArrayList<SubGame> availableSubGames, String[] ignore)
+    public void addAddonsDir(GameEngine engine,int gameType,  ArrayList<SubGame> availableSubGames, String[] ignore)
     {
         String addons = "/addons";
         ArrayList<File> files = Utils.listFiles(new String[]{getRunDirectory() + addons, getSecondaryDirectory() + addons});
@@ -100,7 +107,7 @@ public class RazeBaseLauncher implements GameLauncherInterface
                     String pathInfo = f.getAbsolutePath();
                     String fileInfo = Utils.filesInfoString(pathInfo, null, 3);
 
-                    SubGame subgame = new SubGame(SUB_DIR + dirName, dirName, dirName, pathName, 0, R.drawable.raze, pathInfo, fileInfo, WEAPON_WHEEL_NBR);
+                    SubGame subgame = new SubGame(SUB_DIR + dirName, dirName, dirName, pathName, gameType, R.drawable.raze, pathInfo, fileInfo, WEAPON_WHEEL_NBR);
                     subgame.setExtraArgs("-game_dir " + quote(pathInfo));
                     availableSubGames.add(subgame);
                 }

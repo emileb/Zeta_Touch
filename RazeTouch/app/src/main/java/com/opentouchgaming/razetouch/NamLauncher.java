@@ -25,10 +25,10 @@ public class NamLauncher extends RazeBaseLauncher
 
         availableSubGames.clear();
 
-        SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR, ".", 0, WEAPON_WHEEL_NBR, new String[]{"NAM.grp","GAME.CON"}, R.drawable.nam,
+        SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR, ".", RAZE_GAME_NAM, WEAPON_WHEEL_NBR, new String[]{"NAM.grp","GAME.CON"}, R.drawable.nam,
                         "NAM", "Copy NAM.GRP and GAME.CON to:", "Put your NAM files here.txt");
 
-        addAddonsDir(engine, availableSubGames, new String[]{""});
+        addAddonsDir(engine, RAZE_GAME_NAM, availableSubGames, new String[]{""});
 
         super.updateSubGames(engine,availableSubGames);
     }

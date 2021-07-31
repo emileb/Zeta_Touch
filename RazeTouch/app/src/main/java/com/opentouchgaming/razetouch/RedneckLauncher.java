@@ -25,10 +25,10 @@ public class RedneckLauncher extends RazeBaseLauncher
 
         availableSubGames.clear();
 
-        SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR + ".", ".", 0, WEAPON_WHEEL_NBR, new String[]{"redneck.grp"}, R.drawable.redneck,
+        SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR + ".", ".", RAZE_GAME_RR, WEAPON_WHEEL_NBR, new String[]{"redneck.grp"}, R.drawable.redneck,
                         "Redneck Rampage", "Copy REDNECK.GRP to:", "Put your REDNECK.GRP files here.txt");
 
-        addAddonsDir(engine, availableSubGames, new String[]{""});
+        addAddonsDir(engine, RAZE_GAME_RR, availableSubGames, new String[]{""});
 
         super.updateSubGames(engine,availableSubGames);
     }

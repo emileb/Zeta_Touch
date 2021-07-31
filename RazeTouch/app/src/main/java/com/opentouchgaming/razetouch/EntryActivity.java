@@ -11,7 +11,7 @@ import android.view.WindowManager;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.core.util.Consumer;
+import androidx.core.util.Pair;
 import androidx.fragment.app.FragmentActivity;
 
 import com.opentouchgaming.androidcore.AboutDialog;
@@ -21,13 +21,12 @@ import com.opentouchgaming.androidcore.DebugLog;
 import com.opentouchgaming.androidcore.GD;
 import com.opentouchgaming.androidcore.GameEngine;
 import com.opentouchgaming.androidcore.ScopedStorage;
-import com.opentouchgaming.androidcore.SimpleServerAccess;
 import com.opentouchgaming.androidcore.controls.GamepadDefinitions;
+import com.opentouchgaming.androidcore.ui.ScopedStorageDialog;
 import com.opentouchgaming.androidcore.ui.StorageConfigDialog;
 import com.opentouchgaming.androidcore.ui.tutorial.Tutorial;
 import com.opentouchgaming.razetouch.engineoptions.EngineOptionsRaze;
 
-import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,42 +81,42 @@ public class EntryActivity extends FragmentActivity
         AppInfo.tutorials.add(tut);
 
         AppInfo.gameEngines = new GameEngine[]{
-                new GameEngine(GameEngine.Engine.RAZE_DUKE, 0, "Duke Nukem 3D", "duke3d", "", new String[]{"1.1.2"},
+                new GameEngine(GameEngine.Engine.RAZE_DUKE, 0, "Duke Nukem 3D", "duke3d", "", new String[]{"1.1.3"},
                                new String[][]{{"touchcontrols", "openal", "zmusic","raze"}},
                                " +set cl_syncinput 1 ",
                                GamepadDefinitions.getDefinition(AppInfo.Apps.QUAD_TOUCH),
                                R.drawable.dn3d, 0x00d1bd10,
                                EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_SW, 0, "Shadow Warrior", "shadow_warrior", "", new String[]{"1.1.2"},
+                new GameEngine(GameEngine.Engine.RAZE_SW, 0, "Shadow Warrior", "shadow_warrior", "", new String[]{"1.1.3"},
                                new String[][]{{"touchcontrols", "openal", "zmusic","raze"}},
                                " +set cl_syncinput 1 ",
                                GamepadDefinitions.getDefinition(AppInfo.Apps.QUAD_TOUCH),
                                R.drawable.sw, 0x00dad9d2,
                                EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_BLOOD, 0, "Blood", "blood", "", new String[]{"1.1.2"},
+                new GameEngine(GameEngine.Engine.RAZE_BLOOD, 0, "Blood", "blood", "", new String[]{"1.1.3"},
                                new String[][]{{"touchcontrols", "openal", "zmusic","raze"}},
                                " +set cl_syncinput 1 ",
                                GamepadDefinitions.getDefinition(AppInfo.Apps.QUAD_TOUCH),
                                R.drawable.blood, 0x00d20829,
                                EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_REDNECK, 0, "Redneck Rampage", "redneck", "", new String[]{"1.1.2"},
+                new GameEngine(GameEngine.Engine.RAZE_REDNECK, 0, "Redneck Rampage", "redneck", "", new String[]{"1.1.3"},
                                new String[][]{{"touchcontrols", "openal", "zmusic","raze"}},
                                " +set cl_syncinput 1 ",
                                GamepadDefinitions.getDefinition(AppInfo.Apps.QUAD_TOUCH),
                                R.drawable.redneck, 0x008f6407,
                                EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_NAM, 0, "NAM", "nam", "", new String[]{"1.1.2"},
+                new GameEngine(GameEngine.Engine.RAZE_NAM, 0, "NAM", "nam", "", new String[]{"1.1.3"},
                                new String[][]{{"touchcontrols", "openal", "zmusic","raze"}},
                                " +set cl_syncinput 1 ",
                                GamepadDefinitions.getDefinition(AppInfo.Apps.QUAD_TOUCH),
                                R.drawable.nam, 0x00428747,
                                EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_POWERSLAVE, 0, "Powerslave", "powerslave", "", new String[]{"1.1.2"},
+                new GameEngine(GameEngine.Engine.RAZE_POWERSLAVE, 0, "Powerslave", "powerslave", "", new String[]{"1.1.3"},
                                new String[][]{{"touchcontrols", "openal", "zmusic","raze"}},
                                " +set cl_syncinput 1 ",
                                GamepadDefinitions.getDefinition(AppInfo.Apps.QUAD_TOUCH),
@@ -137,6 +136,16 @@ public class EntryActivity extends FragmentActivity
         examples.add(new StorageConfigDialog.StorageExamples("User files","(config, saves etc):", StorageConfigDialog.PathLocation.PRIM, "/user_files"));
 
         AppInfo.storageExamples = examples;
+
+        ScopedStorageDialog.Tutorial scopedTutorial = new ScopedStorageDialog.Tutorial();
+        scopedTutorial.folder = "Device > OpenTouch > Raze";
+        scopedTutorial.items = new ArrayList<>();
+        scopedTutorial.items.add(new Pair<>(R.drawable.ss_2, "Select where you want your files."));
+        scopedTutorial.items.add(new Pair<>(R.drawable.ss_3, "Create (or select) the 'OpenTouch' folder."));
+        scopedTutorial.items.add(new Pair<>(R.drawable.ss_4, "Create (or select) the 'Quad' folder."));
+        scopedTutorial.items.add(new Pair<>(R.drawable.ss_5, "Check the path is correct and press 'USE THIS FOLDER'"));
+
+        AppInfo.scopedTutorial = scopedTutorial;
     }
 
 
