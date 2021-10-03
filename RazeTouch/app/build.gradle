@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
 
     defaultConfig {
         applicationId "com.opentouchgaming.razetouch"
@@ -29,6 +29,12 @@ android {
 
     sourceSets.main {
         jniLibs.srcDir 'src/main/libs'
+    }
+
+    externalNativeBuild {
+        ndkBuild {
+            path file('src/main/jni/Android_dummy.mk')
+        }
     }
 
     tasks.whenTaskAdded { task ->
