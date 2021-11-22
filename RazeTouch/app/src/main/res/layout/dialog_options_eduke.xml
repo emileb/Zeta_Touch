@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <RadioGroup
+            android:id="@+id/render_radioGroup"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+
+            <RadioButton
+                android:id="@+id/gles2_radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:text="GLES2"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@android:color/darker_gray"/>
+
+            <RadioButton
+                android:id="@+id/software_radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Software"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text="W:"/>
+
+            <EditText
+                android:id="@+id/width_editText"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="H:"/>
+
+            <EditText
+                android:id="@+id/height_editText"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"/>
+        </RadioGroup>
+
+        <include layout="@layout/audio_override"/>
+
+        <Button
+            android:id="@+id/delete_cfg_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="Delete cfg file"/>
+    </LinearLayout>
+</ScrollView>

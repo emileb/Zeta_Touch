@@ -1,5 +1,7 @@
 package com.opentouchgaming.razetouch;
 
+import static com.opentouchgaming.androidcore.DebugLog.Level.D;
+
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -25,8 +27,6 @@ import com.opentouchgaming.androidcore.common.MainFragment;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 
-import static com.opentouchgaming.androidcore.DebugLog.Level.D;
-
 
 public class LauncherFragment extends MainFragment
 {
@@ -43,6 +43,7 @@ public class LauncherFragment extends MainFragment
     RedneckLauncher redneckLauncher;
     NamLauncher namLauncher;
     PowerslaveLauncher powerslaveLauncher;
+    IonFuryLauncher ionfuryLauncher;
 
     public LauncherFragment()
     {
@@ -63,9 +64,9 @@ public class LauncherFragment extends MainFragment
         redneckLauncher = new RedneckLauncher();
         namLauncher = new NamLauncher();
         powerslaveLauncher = new PowerslaveLauncher();
-
-
+        ionfuryLauncher = new IonFuryLauncher();
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
@@ -132,6 +133,12 @@ public class LauncherFragment extends MainFragment
             case RAZE_POWERSLAVE:
                 launcher = powerslaveLauncher;
                 break;
+            case EDUKE32:
+                launcher = dukeLauncher;
+                break;
+            case EDUKE32_IONFURY:
+                launcher = ionfuryLauncher;
+                break;
         }
     }
 
@@ -179,6 +186,7 @@ public class LauncherFragment extends MainFragment
         boolean useGL4ES = false;
         int audioFreq = 0;
         int audiosamples = 0;
+        int audioEngine = 0;
 
         EngineOptionsInterface.RunInfo runInfo = null;
 
@@ -194,6 +202,18 @@ public class LauncherFragment extends MainFragment
 
             audioFreq = engine.engineOptions.audioOverrideFreq();
             audiosamples = engine.engineOptions.audioOverrideSamples();
+
+            int audioDefault = AppSettings.getIntOption(getActivity(), "sdl_audio_backend", 0);
+            int audioBackendOverride = engine.engineOptions.audioOverrideBackend();
+
+            if( audioBackendOverride == -1)
+            {
+                audioEngine = audioDefault;
+            }
+            else
+            {
+                audioEngine = audioBackendOverride;
+            }
         }
 
         Utils.copyAsset(getActivity(), "raze.pk3", AppInfo.getAppDirectory() + "/res/");
@@ -230,6 +250,7 @@ public class LauncherFragment extends MainFragment
         intent.putExtra("wheel_nbr", wheelNbr);
         intent.putExtra("audio_freq", audioFreq);
         intent.putExtra("audio_samples", audiosamples);
+        intent.putExtra("audio_backend", audioEngine);
         intent.putExtra("res_div", res_div);
         intent.putExtra("load_libs", engine.loadLibs[selectedVersion]);
         intent.putExtra("log_filename", AppInfo.currentEngine.getLogFilename());

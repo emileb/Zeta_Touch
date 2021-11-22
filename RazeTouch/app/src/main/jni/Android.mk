@@ -25,3 +25,6 @@ include $(TOP_DIR)/Raze/mobile/Android.mk
 
 
 
+include $(TOP_DIR)/gl4es/Android.mk
+
+include $(TOP_DIR)/eduke32_mobile/Android.mk

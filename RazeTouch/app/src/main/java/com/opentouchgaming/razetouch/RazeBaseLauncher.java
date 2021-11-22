@@ -24,12 +24,13 @@ public class RazeBaseLauncher implements GameLauncherInterface
 
     final int WEAPON_WHEEL_NBR = 10;
 
-    final int RAZE_GAME_DUKE  = 100;
-    final int RAZE_GAME_BLOOD = 101;
-    final int RAZE_GAME_SW    = 102;
-    final int RAZE_GAME_RR    = 103;
-    final int RAZE_GAME_NAM   = 104;
-    final int RAZE_GAME_PS    = 105;
+    final int RAZE_GAME_DUKE    = 100;
+    final int RAZE_GAME_BLOOD   = 101;
+    final int RAZE_GAME_SW      = 102;
+    final int RAZE_GAME_RR      = 103;
+    final int RAZE_GAME_NAM     = 104;
+    final int RAZE_GAME_PS      = 105;
+    final int RAZE_GAME_IONFURY = 106;
 
     static
     {
