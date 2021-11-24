@@ -86,7 +86,14 @@ public class EntryActivity extends FragmentActivity
                                new String[][]{{"touchcontrols", "GL4ES", "openal","eduke32"}},
                                " ",
                                GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH),
-                               R.drawable.dn3d, 0x00d1bd10,
+                               R.drawable.ionfury, 0x009321c8,
+                               EngineOptionsEDuke32.class),
+
+                new GameEngine(GameEngine.Engine.EDUKE32, 1, "Eduke32", "duke3d", "", new String[]{"dev"},
+                               new String[][]{{"touchcontrols", "GL4ES", "openal","eduke32"}},
+                               " ",
+                               GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH),
+                               R.drawable.dn3d_eduke, 0x00d1bd10,
                                EngineOptionsEDuke32.class),
 
                 new GameEngine(GameEngine.Engine.RAZE_DUKE, 1, "Duke Nukem 3D", "duke3d", "", new String[]{"1.2.1"},
@@ -96,12 +103,7 @@ public class EntryActivity extends FragmentActivity
                                R.drawable.dn3d, 0x00d1bd10,
                                EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.EDUKE32, 1, "Eduke32", "duke3d", "", new String[]{"dev"},
-                               new String[][]{{"touchcontrols", "GL4ES", "openal","eduke32"}},
-                               " ",
-                               GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH),
-                               R.drawable.dn3d, 0x00d1bd10,
-                               EngineOptionsEDuke32.class),
+
 
                 new GameEngine(GameEngine.Engine.RAZE_SW, 2, "Shadow Warrior", "shadow_warrior", "", new String[]{"1.2.1"},
                                new String[][]{{"touchcontrols", "openal", "zmusic","raze"}},
