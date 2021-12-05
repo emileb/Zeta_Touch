@@ -268,7 +268,7 @@ public class EngineOptionsRaze implements EngineOptionsInterface
 
             if (modernRenderer == 2)
             {
-                ret += " -gles2_renderer +set gl_customshader 0 + set gl_sort_textures 1 ";
+                ret += " -gles2_renderer +set vid_preferbackend 3 +set gl_customshader 0 + set gl_sort_textures 1 ";
 
                 if (modernGLSLMedium)
                     ret += " +set gles_glsl_precision 1 ";

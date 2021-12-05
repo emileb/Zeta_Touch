@@ -44,6 +44,7 @@ public class LauncherFragment extends MainFragment
     NamLauncher namLauncher;
     PowerslaveLauncher powerslaveLauncher;
     IonFuryLauncher ionfuryLauncher;
+    EDuke32Launcher edukeLauncher;
 
     public LauncherFragment()
     {
@@ -65,6 +66,7 @@ public class LauncherFragment extends MainFragment
         namLauncher = new NamLauncher();
         powerslaveLauncher = new PowerslaveLauncher();
         ionfuryLauncher = new IonFuryLauncher();
+        edukeLauncher = new EDuke32Launcher();
     }
 
     @Override
@@ -133,11 +135,11 @@ public class LauncherFragment extends MainFragment
             case RAZE_POWERSLAVE:
                 launcher = powerslaveLauncher;
                 break;
-            case EDUKE32:
-                launcher = dukeLauncher;
-                break;
             case EDUKE32_IONFURY:
                 launcher = ionfuryLauncher;
+                break;
+            case EDUKE32:
+                launcher = edukeLauncher;
                 break;
         }
     }
@@ -222,10 +224,10 @@ public class LauncherFragment extends MainFragment
         if (!sf2.exists())
             Utils.copyAsset(getActivity(), "raze.sf2", AppInfo.getAppDirectory() + "/res/");
 
-        args += argsFinal;
-
         if (launcher.getSecondaryDirectory() != null)
             args += " -secondary_path " + launcher.getSecondaryDirectory() + " ";
+
+        args += argsFinal;
 
         // Save history
         engineData.addArgsHistory();

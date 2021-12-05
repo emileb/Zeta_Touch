@@ -9,11 +9,11 @@ import com.opentouchgaming.androidcore.Utils;
 import java.io.File;
 import java.util.ArrayList;
 
-public class IonFuryLauncher extends RazeBaseLauncher
+public class EDuke32Launcher extends RazeBaseLauncher
 {
-    IonFuryLauncher()
+    EDuke32Launcher()
     {
-        SUB_DIR = "IONFURY";
+        SUB_DIR = "EDUKE32";
         new File(getRunDirectory()).mkdirs();
         Utils.mkdirs(AppInfo.getContext(), getRunDirectory() + "/mods/", "Put your mods files here.txt");
     }
@@ -25,12 +25,9 @@ public class IonFuryLauncher extends RazeBaseLauncher
 
         availableSubGames.clear();
 
-        SubGame sg = SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR + ".", ".", RAZE_GAME_IONFURY, WEAPON_WHEEL_NBR, new String[]{"fury.grp","fury.grpinfo","fury.def"}, R.drawable.ionfury, "Ion Fury",
-                        "Copy fury.grp, fury.grpinfo, fury.def to:", "Put your Ion Fury files here.txt");
+        SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR + ".", ".", RAZE_GAME_EDUKE32, WEAPON_WHEEL_NBR, new String[]{"duke3d.grp"}, R.drawable.dn3d_eduke, "Duke Nukem 3D",
+                        "Copy duke3d.grp to:", "Put your Duke 3D files here.txt");
 
-        //sg.setExtraArgs("-gamegrp "+  sg.getRootPath() + "/fury.grp " + "-h " + sg.getRootPath() +  "/fury.def");
-        sg.setExtraArgs("-gamegrp fury.grp " + " -h fury.def");
-        //sg.setExtraArgs("-game_dir " + sg.getRootPath());
         addAddonsDir(engine, RAZE_GAME_IONFURY, availableSubGames, new String[]{});
 
         super.updateSubGames(engine, availableSubGames);
