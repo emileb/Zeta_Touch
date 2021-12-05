@@ -25,12 +25,16 @@ public class IonFuryLauncher extends RazeBaseLauncher
 
         availableSubGames.clear();
 
-        SubGame sg = SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR + ".", ".", RAZE_GAME_IONFURY, WEAPON_WHEEL_NBR, new String[]{"fury.grp","fury.grpinfo","fury.def"}, R.drawable.ionfury, "Ion Fury",
-                        "Copy fury.grp, fury.grpinfo, fury.def to:", "Put your Ion Fury files here.txt");
+        SubGame sg = SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR + ".", ".", RAZE_GAME_IONFURY, WEAPON_WHEEL_NBR,
+                                     new String[]{"fury.grp", "fury.grpinfo", "fury.def"}, R.drawable.ionfury, "Ion Fury", "Copy fury.grp, fury.grpinfo, fury.def to:",
+                                     "Put your Ion Fury files here.txt");
 
         //sg.setExtraArgs("-gamegrp "+  sg.getRootPath() + "/fury.grp " + "-h " + sg.getRootPath() +  "/fury.def");
-        sg.setExtraArgs("-gamegrp fury.grp " + " -h fury.def");
-        //sg.setExtraArgs("-game_dir " + sg.getRootPath());
+        sg.setExtraArgs("-gamegrp fury.grp -h fury.def");
+
+        if (!sg.getRootPath().startsWith(AppInfo.getAppDirectory()))
+            sg.setExtraArgs("-game_dir " + sg.getRootPath());
+
         addAddonsDir(engine, RAZE_GAME_IONFURY, availableSubGames, new String[]{});
 
         super.updateSubGames(engine, availableSubGames);
