@@ -1,3 +1,10 @@
+Update Raze to 1.3.1
+Update EDuke to fury 2.0
+EDuke: Fixed mouse
+EDuke: Fixed weapon wheel
+EDuke: Fixed keyboard
+EDuke: Backspace can clear key config
+EDuke: Fixed palette broken on some devices
 
 v1.0
 * Updated to Raze 1.1.3

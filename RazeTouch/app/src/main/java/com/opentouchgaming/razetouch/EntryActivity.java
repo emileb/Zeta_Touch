@@ -98,7 +98,7 @@ public class EntryActivity extends FragmentActivity
                                R.drawable.dn3d_eduke, 0x00ae00da,
                                EngineOptionsEduke32_Duke.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_DUKE, 1, "Duke Nukem 3D", "duke3d", "", new String[]{"dev"},
+                new GameEngine(GameEngine.Engine.RAZE_DUKE, 1, "Duke Nukem 3D", "duke3d", "", new String[]{"1.3.1"},
                                new String[][]{{"touchcontrols", "openal", "zmusic","raze"}},
                                " +set cl_syncinput 1 ",
                                GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH),
@@ -107,7 +107,7 @@ public class EntryActivity extends FragmentActivity
 
 
 
-                new GameEngine(GameEngine.Engine.RAZE_SW, 2, "Shadow Warrior", "shadow_warrior", "", new String[]{"dev"},
+                new GameEngine(GameEngine.Engine.RAZE_SW, 2, "Shadow Warrior", "shadow_warrior", "", new String[]{"1.3.1"},
                                new String[][]{{"touchcontrols", "openal", "zmusic","raze"}},
                                " +set cl_syncinput 1 ",
                                GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH),
@@ -121,21 +121,21 @@ public class EntryActivity extends FragmentActivity
                                R.drawable.blood, 0x00d20829,
                                EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_REDNECK, 4, "Redneck Rampage", "redneck", "", new String[]{"dev"},
+                new GameEngine(GameEngine.Engine.RAZE_REDNECK, 4, "Redneck Rampage", "redneck", "", new String[]{"1.3.1"},
                                new String[][]{{"touchcontrols", "openal", "zmusic","raze"}},
                                " +set cl_syncinput 1 ",
                                GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH),
                                R.drawable.redneck, 0x008f6407,
                                EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_NAM, 5, "NAM", "nam", "", new String[]{"dev"},
+                new GameEngine(GameEngine.Engine.RAZE_NAM, 5, "NAM", "nam", "", new String[]{"1.3.1"},
                                new String[][]{{"touchcontrols", "openal", "zmusic","raze"}},
                                " +set cl_syncinput 1 ",
                                GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH),
                                R.drawable.nam, 0x00428747,
                                EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_POWERSLAVE, 6, "Powerslave", "powerslave", "", new String[]{"dev"},
+                new GameEngine(GameEngine.Engine.RAZE_POWERSLAVE, 6, "Powerslave", "powerslave", "", new String[]{"1.3.1"},
                                new String[][]{{"touchcontrols", "openal", "zmusic","raze"}},
                                " +set cl_syncinput 1 ",
                                GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH),

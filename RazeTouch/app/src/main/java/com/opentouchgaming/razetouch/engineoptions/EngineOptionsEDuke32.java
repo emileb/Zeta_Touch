@@ -112,6 +112,7 @@ public class EngineOptionsEDuke32 implements EngineOptionsInterface
                                     {
                                         renderMode = swRadio.isChecked() ? 0 : 2;
                                         resolutionOptionsSoftware.save();
+                                        resolutionOptionsGL.save();
                                         saveSettings();
                                     });
 
@@ -179,7 +180,11 @@ public class EngineOptionsEDuke32 implements EngineOptionsInterface
         ResolutionOptionsView.ResolutionOptions optionGL = ResolutionOptionsView.getResOption(settingPrefix + "eduke_gl_");
 
         if (renderMode == 0)
+        {
             info.args = " -screen_bpp 8 -screen_width " + optionSW.w + "  -screen_height " + optionSW.h + " ";
+            info.frameBufferWidth = optionSW.w;
+            info.frameBufferHeight = optionSW.h;
+        }
         else
         {
             info.args = " -screen_bpp 32 -screen_width " + optionGL.w + "  -screen_height " + optionGL.h + " ";

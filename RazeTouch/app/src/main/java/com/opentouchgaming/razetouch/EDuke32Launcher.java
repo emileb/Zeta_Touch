@@ -16,6 +16,7 @@ public class EDuke32Launcher extends RazeBaseLauncher
         SUB_DIR = "EDUKE32";
         new File(getRunDirectory()).mkdirs();
         Utils.mkdirs(AppInfo.getContext(), getRunDirectory() + "/mods/", "Put your mods files here.txt");
+        Utils.mkdirs(AppInfo.getContext(),AppInfo.getUserFiles() + "/eduke32/",null );
     }
 
     @Override
