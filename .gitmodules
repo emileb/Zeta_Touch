@@ -32,4 +32,12 @@
 	url = https://github.com/emileb/ZMusic.git
 	branch = mobile
 
+[submodule "RazeTouch/app/src/main/jni/eduke32_mobile"]
+	path = RazeTouch/app/src/main/jni/eduke32_mobile
+	url = https://github.com/emileb/eduke32_mobile.git
+	branch = fury-2.0_mobile
 
+[submodule "RazeTouch/app/src/main/jni/gl4es"]
+	path = RazeTouch/app/src/main/jni/gl4es
+	url = https://github.com/emileb/gl4es.git
+	branch = mobile_eduke
