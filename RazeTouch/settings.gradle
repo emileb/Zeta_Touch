@@ -1,5 +1,5 @@
 include ':app'
-rootProject.name = "Raze Touch"
+rootProject.name = "Ezeta Touch"
 
 
 include ':androidcore'

@@ -185,8 +185,10 @@ public class EntryActivity extends FragmentActivity
 
         AppSettings.reloadSettings(getApplication());
 
-        AppInfo.setAppInfo(getApplicationContext(), AppInfo.Apps.RAZE_TOUCH, "Raze32 Touch", "Raze", BuildConfig.APPLICATION_ID, "razelogs@opentouchgaming.com", false, R.drawable.raze);
+        AppInfo.setAppInfo(getApplicationContext(), AppInfo.Apps.RAZE_TOUCH, "Ezeta Touch", "Raze", BuildConfig.APPLICATION_ID, "razelogs@opentouchgaming.com", false, R.drawable.raze);
         AppInfo.showRateButton = false;
+        AppInfo.sidePanelImage = R.drawable.side_panel;
+
         AppInfo.website = "http://opentouchgaming.com/raze-touch/";
         // Check that the activity is using the layout version with
         // the fragment_container FrameLayout
