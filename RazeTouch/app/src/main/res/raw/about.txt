@@ -1,4 +1,4 @@
-Ezeta Touch
+Zeta Touch
 
 Android port of the incredible 'Raze' engine.
 
