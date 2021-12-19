@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog bulletedList="true">
 
+    <changelogversion versionName="2.0 - BETA 2" changeDate="December 19, 2021">
+        <changelogtext>Changed name to Zeta Touch</changelogtext>
+        <changelogtext>Updated side engine panel visuals</changelogtext>
+        <changelogtext>Fixed Eduke32 music to default and play SF2</changelogtext>
+        <changelogtext>Eduke32 user files now stored in the correct place</changelogtext>
+        <changelogtext>Updated icon</changelogtext>
+        <changelogtext>Bug fixes</changelogtext>
+    </changelogversion>
+
+
     <changelogversion versionName="2.0 - BETA 1" changeDate="December 16, 2021">
         <changelogtext>Added Eduke32 engine (EXPERIMENTAL)</changelogtext>
         <changelogtext>Added Ion Fury engine (EXPERIMENTAL)</changelogtext>

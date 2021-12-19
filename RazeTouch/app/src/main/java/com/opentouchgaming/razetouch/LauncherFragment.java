@@ -220,9 +220,13 @@ public class LauncherFragment extends MainFragment
 
         Utils.copyAsset(getActivity(), "raze.pk3", AppInfo.getAppDirectory() + "/res/");
 
-        File sf2 = new File(AppInfo.getAppDirectory() + "/res/raze.sf2");
+        File sf2 = new File(AppInfo.getAppDirectory() +  "/EDUKE32/soundfont.sf2");
         if (!sf2.exists())
+        {
             Utils.copyAsset(getActivity(), "raze.sf2", AppInfo.getAppDirectory() + "/res/");
+            Utils.copyAsset(getActivity(), "raze.sf2", AppInfo.getAppDirectory() + "/EDUKE32","soundfont.sf2");
+
+        }
 
         if (launcher.getSecondaryDirectory() != null)
             args += " -secondary_path " + launcher.getSecondaryDirectory() + " ";
