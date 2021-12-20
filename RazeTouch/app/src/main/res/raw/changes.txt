@@ -1,3 +1,13 @@
+v2.0 Beta 4
+* Eduke32: Fix voxels so they are drawn
+* Eduke32: Fix game exit crash
+* Eduke32: Fix map crash
+* Eduke32: Fix console button
+* Changed icon
+
+v2.0 Beta 3
+Fix memory issue
+
 v2.0 Beta 2
 * Changed name to Zeta Touch
 * Updated side engine panel visuals

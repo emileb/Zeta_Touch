@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog bulletedList="true">
 
-    <changelogversion versionName="2.0 - BETA 2" changeDate="December 19, 2021">
+    <changelogversion versionName="2.0 - BETA 4" changeDate="December 20, 2021">
+        <changelogtext>Eduke32: Fix voxels so they are drawn</changelogtext>
+        <changelogtext>Eduke32: Fix game exit crash</changelogtext>
+        <changelogtext>Eduke32: Fix map crash</changelogtext>
+        <changelogtext>Eduke32: Fix console button</changelogtext>
+        <changelogtext>Changed app icon again</changelogtext>
+    </changelogversion>
+
+    <changelogversion versionName="2.0 - BETA 3" changeDate="December 19, 2021">
         <changelogtext>Changed name to Zeta Touch</changelogtext>
         <changelogtext>Updated side engine panel visuals</changelogtext>
         <changelogtext>Fixed Eduke32 music to default and play SF2</changelogtext>
         <changelogtext>Eduke32 user files now stored in the correct place</changelogtext>
+        <changelogtext>Fix memory usage issue for some devices</changelogtext>
         <changelogtext>Updated icon</changelogtext>
         <changelogtext>Bug fixes</changelogtext>
     </changelogversion>
