@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.RadioButton;
 
 import androidx.arch.core.util.Function;
@@ -41,6 +42,8 @@ public class EngineOptionsEDuke32 implements EngineOptionsInterface
     ResolutionOptionsView resolutionOptionsSoftware;
     ResolutionOptionsView resolutionOptionsGL;
 
+    CheckBox autoloadCheckbox;
+
     int renderMode = 0; // 0=soft, 1 = gl2
 
     final String settingPrefix;
@@ -70,6 +73,12 @@ public class EngineOptionsEDuke32 implements EngineOptionsInterface
 
         resolutionOptionsSoftware = new ResolutionOptionsView(activity, softResolutionLayout, settingPrefix + "eduke_sw_");
         resolutionOptionsGL = new ResolutionOptionsView(activity, glResolutionLayout, settingPrefix + "eduke_gl_");
+
+        autoloadCheckbox = dialog.findViewById(R.id.autoload_checkBox);
+
+        // Autoload vheckbox
+        autoloadCheckbox.setChecked(AppSettings.getBoolOption(AppInfo.getContext(), "eduke32_autoload_" + settingPrefix, false));
+        autoloadCheckbox.setOnCheckedChangeListener((compoundButton, b) -> AppSettings.setBoolOption(AppInfo.getContext(), "eduke32_autoload_" + settingPrefix, b));
 
         // Handles audio override
         audioOverride.linkUI(activity, dialog);
@@ -179,15 +188,20 @@ public class EngineOptionsEDuke32 implements EngineOptionsInterface
         ResolutionOptionsView.ResolutionOptions optionSW = ResolutionOptionsView.getResOption(settingPrefix + "eduke_sw_");
         ResolutionOptionsView.ResolutionOptions optionGL = ResolutionOptionsView.getResOption(settingPrefix + "eduke_gl_");
 
+        boolean autoload = AppSettings.getBoolOption(AppInfo.getContext(), "eduke32_autoload_" + settingPrefix, false);
+
+        if(!autoload)
+            info.args += " -noautoload ";
+
         if (renderMode == 0)
         {
-            info.args = " -screen_bpp 8 -screen_width " + optionSW.w + "  -screen_height " + optionSW.h + " ";
+            info.args += " -screen_bpp 8 -screen_width " + optionSW.w + "  -screen_height " + optionSW.h + " ";
             info.frameBufferWidth = optionSW.w;
             info.frameBufferHeight = optionSW.h;
         }
         else
         {
-            info.args = " -screen_bpp 32 -screen_width " + optionGL.w + "  -screen_height " + optionGL.h + " ";
+            info.args += " -screen_bpp 32 -screen_width " + optionGL.w + "  -screen_height " + optionGL.h + " ";
             info.frameBufferWidth = optionGL.w;
             info.frameBufferHeight = optionGL.h;
         }

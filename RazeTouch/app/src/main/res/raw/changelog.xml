@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog bulletedList="true">
 
+    <changelogversion versionName="2.0 - BETA 5" changeDate="December 23, 2021">
+        <changelogtext>Eduke32: Fix sound lockup causing crash</changelogtext>
+        <changelogtext>Eduke32: Mods now load with "-g" to command line</changelogtext>
+        <changelogtext>Loads folders in EDUKE32 folder</changelogtext>
+        <changelogtext>Added option to run from sub-folder (for Total Conversions)</changelogtext>
+    </changelogversion>
+
     <changelogversion versionName="2.0 - BETA 4" changeDate="December 20, 2021">
         <changelogtext>Eduke32: Fix voxels so they are drawn</changelogtext>
         <changelogtext>Eduke32: Fix game exit crash</changelogtext>

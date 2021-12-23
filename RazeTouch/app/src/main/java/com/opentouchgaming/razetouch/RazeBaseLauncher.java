@@ -24,12 +24,12 @@ public class RazeBaseLauncher implements GameLauncherInterface
 
     final int WEAPON_WHEEL_NBR = 10;
 
-    final int RAZE_GAME_DUKE    = 100;
-    final int RAZE_GAME_BLOOD   = 101;
-    final int RAZE_GAME_SW      = 102;
-    final int RAZE_GAME_RR      = 103;
-    final int RAZE_GAME_NAM     = 104;
-    final int RAZE_GAME_PS      = 105;
+    final int RAZE_GAME_DUKE = 100;
+    final int RAZE_GAME_BLOOD = 101;
+    final int RAZE_GAME_SW = 102;
+    final int RAZE_GAME_RR = 103;
+    final int RAZE_GAME_NAM = 104;
+    final int RAZE_GAME_PS = 105;
     final int RAZE_GAME_IONFURY = 106;
     final int RAZE_GAME_EDUKE32 = 107;
 
@@ -83,9 +83,14 @@ public class RazeBaseLauncher implements GameLauncherInterface
             return s;
     }
 
-    public void addAddonsDir(GameEngine engine,int gameType,  ArrayList<SubGame> availableSubGames, String[] ignore)
+    public void addAddonsDir(GameEngine engine, int gameType, ArrayList<SubGame> availableSubGames, String[] ignore)
     {
-        String addons = "/addons";
+        addAddonsDir(engine, "/addons", gameType, availableSubGames, ignore);
+    }
+
+    public void addAddonsDir(GameEngine engine, String addonsDir, int gameType, ArrayList<SubGame> availableSubGames, String[] ignore)
+    {
+        String addons = addonsDir;
         ArrayList<File> files = Utils.listFiles(new String[]{getRunDirectory() + addons, getSecondaryDirectory() + addons});
 
         if (files != null)

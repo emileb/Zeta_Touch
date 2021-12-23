@@ -147,7 +147,7 @@ public class LauncherFragment extends MainFragment
 
     public void launchGame(final GameEngine engine, boolean download, final String multiplayerArgs)
     {
-        final String rootPath = launcher.getRunDirectory();
+        final String rootPath = launcher.getRunDirectory(selectedSubGame);
 
         // Check if needed to download
         if (selectedSubGame.getDownloadFilename() != null)

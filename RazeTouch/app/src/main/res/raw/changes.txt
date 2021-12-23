@@ -1,3 +1,8 @@
+* Eduke32: Fix sound lockup causing crash
+* Eduke32: Mods now load with "-g" to command line
+* Loads folders in EDUKE32 folder
+* Added option to run from sub-folder (for Total Conversions)
+
 v2.0 Beta 4
 * Eduke32: Fix voxels so they are drawn
 * Eduke32: Fix game exit crash
