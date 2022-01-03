@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog bulletedList="true">
 
+    <changelogversion versionName="2.0 - BETA 6" changeDate="January 23, 2022">
+        <changelogtext>Changed default data folder from 'Raze' to 'Zeta'. WILL BE UPDATED ON NEW INSTALLS</changelogtext>
+        <changelogtext>Eduke32: Graphical bug fixes</changelogtext>
+        <changelogtext>Eduke32: Fixed -game_dir option</changelogtext>
+        <changelogtext>Eduke32: Fixed 'DELETE CFG FILE' button</changelogtext>
+        <changelogtext>Eduke32: Added -cachesize option to launcher</changelogtext>
+        <changelogtext>Eduke32: Fixed so saves works for mods</changelogtext>
+    </changelogversion>
+
     <changelogversion versionName="2.0 - BETA 5" changeDate="December 23, 2021">
+        <changelogtext>Eduke32: Added option to load 'autoload' folder</changelogtext>
         <changelogtext>Eduke32: Fix sound lockup causing crash</changelogtext>
         <changelogtext>Eduke32: Mods now load with "-g" to command line</changelogtext>
         <changelogtext>Loads folders in EDUKE32 folder</changelogtext>

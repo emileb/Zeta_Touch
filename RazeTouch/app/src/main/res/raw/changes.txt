@@ -1,7 +1,15 @@
+* Changed default data folder from 'Raze' to 'Zeta'. WILL BE UPDATED ON NEW INSTALLS
+* Eduke32: Graphical bug fixes
+* Eduke32: Fixed -game_dir option
+* Eduke32: Fixed 'DELETE CFG FILE' button
+* Eduke32: Added -cachesize option to launcher
+* Eduke32: Fixed so saves works for mods
+
+* Eduke32: Added option to load 'autoload' folder
 * Eduke32: Fix sound lockup causing crash
 * Eduke32: Mods now load with "-g" to command line
-* Loads folders in EDUKE32 folder
-* Added option to run from sub-folder (for Total Conversions)
+* Eduke32: Loads folders in EDUKE32 folder
+* Eduke32:Added option to run from sub-folder (for Total Conversions)
 
 v2.0 Beta 4
 * Eduke32: Fix voxels so they are drawn

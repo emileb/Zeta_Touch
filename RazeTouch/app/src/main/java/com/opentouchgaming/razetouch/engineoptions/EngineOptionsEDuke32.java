@@ -4,12 +4,16 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.util.Pair;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
+import android.widget.Spinner;
 
 import androidx.arch.core.util.Function;
 
@@ -31,6 +35,9 @@ public class EngineOptionsEDuke32 implements EngineOptionsInterface
 {
     static DebugLog log;
 
+    static Pair<String, Integer>[] cacheSizes =
+            new Pair[]{new Pair("96 MB", 96), new Pair("128 MB", 128), new Pair("256 MB", 256), new Pair("384 MB", 384), new Pair("512 MB", 512), new Pair("768 MB", 768)};
+
     static
     {
         log = new DebugLog(DebugLog.Module.GAMEFRAGMENT, "EngineOptionsEDuke32");
@@ -47,10 +54,12 @@ public class EngineOptionsEDuke32 implements EngineOptionsInterface
     int renderMode = 0; // 0=soft, 1 = gl2
 
     final String settingPrefix;
+    final String userFilesDir;
 
-    public EngineOptionsEDuke32(String prefix)
+    public EngineOptionsEDuke32(String settingPrefix, String userFilesDir)
     {
-        settingPrefix = prefix;
+        this.settingPrefix = settingPrefix;
+        this.userFilesDir = userFilesDir;
         audioOverride = new AudioOverride(settingPrefix + "eduke_");
     }
 
@@ -117,6 +126,36 @@ public class EngineOptionsEDuke32 implements EngineOptionsInterface
                                                 }
                                             });
 
+
+        Spinner spinner = dialog.findViewById(R.id.cache_size_spinner);
+
+        String[] cacheSizesLable = new String[cacheSizes.length];
+        for (int n = 0; n < cacheSizes.length; n++)
+        {
+            cacheSizesLable[n] = cacheSizes[n].first;
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(activity, android.R.layout.simple_spinner_item, cacheSizesLable);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setSelection(AppSettings.getIntOption(activity, "eduke32_cachesize_" + settingPrefix, 0));
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                AppSettings.setIntOption(activity, "eduke32_cachesize_" + settingPrefix, position);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent)
+            {
+
+            }
+        });
+
+
         dialog.setOnDismissListener(dialogInterface ->
                                     {
                                         renderMode = swRadio.isChecked() ? 0 : 2;
@@ -127,37 +166,34 @@ public class EngineOptionsEDuke32 implements EngineOptionsInterface
 
 
         Button delete = dialog.findViewById(R.id.delete_cfg_button);
-        delete.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                {
-                    final String cfgRoot = AppInfo.getUserFiles() + "/yq2/";
-                    AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(activity);
-                    dialogBuilder.setMessage("Delete all Eduke32 config files?");
-                    dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener()
-                    {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which)
-                        {
-                            //new File(file).delete();
-                            log.log(DebugLog.Level.D, "cfgRoot = " + cfgRoot);
-                            ArrayList<String> files = new ArrayList<>();
-                            Utils.findFiles(new File(cfgRoot), "config.cfg", files);
-                            for (String f : files)
-                            {
-                                log.log(DebugLog.Level.D, "file to delete = " + f);
-                                new File(f).delete();
-                            }
-                        }
-                    });
-                    AlertDialog dialog = dialogBuilder.create();
-                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                    dialog.show();
-                }
-            }
-        });
+        delete.setOnClickListener(view ->
+                                  {
+                                      {
+                                          final String cfgRoot = AppInfo.getUserFiles() + "/" + userFilesDir;
+                                          AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(activity);
+                                          dialogBuilder.setMessage("Delete all Eduke32 config files?");
+                                          dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener()
+                                          {
+                                              @Override
+                                              public void onClick(DialogInterface dialog, int which)
+                                              {
+                                                  //new File(file).delete();
+                                                  log.log(DebugLog.Level.D, "cfgRoot = " + cfgRoot);
+                                                  ArrayList<String> files = new ArrayList<>();
+                                                  Utils.findFiles(new File(cfgRoot), "eduke32.cfg", files);
+                                                  Utils.findFiles(new File(cfgRoot), "settings.cfg", files);
+                                                  for (String f : files)
+                                                  {
+                                                      log.log(DebugLog.Level.D, "file to delete = " + f);
+                                                      new File(f).delete();
+                                                  }
+                                              }
+                                          });
+                                          AlertDialog dialog = dialogBuilder.create();
+                                          dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                                          dialog.show();
+                                      }
+                                  });
 
         dialog.show();
     }
@@ -190,8 +226,13 @@ public class EngineOptionsEDuke32 implements EngineOptionsInterface
 
         boolean autoload = AppSettings.getBoolOption(AppInfo.getContext(), "eduke32_autoload_" + settingPrefix, false);
 
-        if(!autoload)
+        if (!autoload)
             info.args += " -noautoload ";
+
+        int cacheSize = AppSettings.getIntOption(AppInfo.getContext(), "eduke32_cachesize_" + settingPrefix, 0);
+        int cacheSizeMB = cacheSizes[cacheSize].second;
+
+        info.args += " -cachesize " + cacheSizeMB * 1024 + " "; // -cachesize is in KB
 
         if (renderMode == 0)
         {

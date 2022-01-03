@@ -47,8 +47,7 @@ public class EDuke32Launcher extends RazeBaseLauncher
                         "Copy duke3d.grp to:", "Put your Duke 3D files here.txt");
 
         addAddonsDir(engine, "", RAZE_GAME_EDUKE32, availableSubGames, new String[]{"mods","autoload"});
-
-
+        
         super.updateSubGames(engine, availableSubGames);
     }
 

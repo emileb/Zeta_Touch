@@ -9,13 +9,11 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
         <RadioGroup
             android:id="@+id/render_radioGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
 
             <RadioButton
                 android:id="@+id/gles2_radioButton"
@@ -45,11 +43,29 @@
 
         </RadioGroup>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:background="@android:color/darker_gray" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"></LinearLayout>
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Cache size: "
+                android:textSize="15dp" />
+
+            <Spinner
+                android:id="@+id/cache_size_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
@@ -61,8 +77,7 @@
             android:id="@+id/autoload_checkBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Load 'autoload' folder">
-        </CheckBox>
+            android:text="Load 'autoload' folder"></CheckBox>
 
         <View
             android:layout_width="match_parent"
