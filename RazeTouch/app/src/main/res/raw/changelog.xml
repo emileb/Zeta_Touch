@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog bulletedList="true">
 
-    <changelogversion versionName="2.0 - BETA 6" changeDate="January 23, 2022">
+    <changelogversion versionName="2.0 - RC1" changeDate="January 09, 2022">
+        <changelogtext>Eduke32: Fix wobbling textures on some devices</changelogtext>
+        <changelogtext>Eduke32: Remove Keypad keys from default keys to custom buttons work</changelogtext>
+        <changelogtext>Eduke32: Fix gamepad button binding</changelogtext>
+        <changelogtext>Ion Fury: Added Medkit, Radar and Reload buttons</changelogtext>
+        <changelogtext>Disabled Scoped Storage button until it is fixed</changelogtext>
+    </changelogversion>
+
+    <changelogversion versionName="2.0 - BETA 6" changeDate="January 03, 2022">
         <changelogtext>Changed default data folder from 'Raze' to 'Zeta'. WILL BE UPDATED ON NEW INSTALLS</changelogtext>
         <changelogtext>Eduke32: Graphical bug fixes</changelogtext>
         <changelogtext>Eduke32: Fixed -game_dir option</changelogtext>

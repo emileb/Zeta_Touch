@@ -1,3 +1,10 @@
+* Eduke32: Fix wobbling textures on some devices
+* Eduke32: Remove Keypad keys from default keys to custom buttons work
+* Eduke32: Fix gamepad button binding
+* Ion Fury: Added Medkit, Radar and Reload buttons
+* Disabled Scoped Storage button until it is fixed
+
+v2.0 Beta 6
 * Changed default data folder from 'Raze' to 'Zeta'. WILL BE UPDATED ON NEW INSTALLS
 * Eduke32: Graphical bug fixes
 * Eduke32: Fixed -game_dir option
@@ -5,6 +12,7 @@
 * Eduke32: Added -cachesize option to launcher
 * Eduke32: Fixed so saves works for mods
 
+v2.0 Beta 5
 * Eduke32: Added option to load 'autoload' folder
 * Eduke32: Fix sound lockup causing crash
 * Eduke32: Mods now load with "-g" to command line
