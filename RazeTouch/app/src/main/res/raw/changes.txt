@@ -1,3 +1,9 @@
+
+
+v2.0 RC2
+* Fix toggle buttons
+
+v2.0 RC1
 * Eduke32: Fix wobbling textures on some devices
 * Eduke32: Remove Keypad keys from default keys to custom buttons work
 * Eduke32: Fix gamepad button binding
