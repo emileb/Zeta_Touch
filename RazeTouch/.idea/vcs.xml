@@ -21,6 +21,8 @@
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/eduke32_mobile - works" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/eduke32_mobile- works" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/eduke32_mobile-new_slow" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/src/main/jni/eduke32_mobile_dev" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/src/main/jni/eduke32_mobile_fury_2.0" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/gl4es" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/gl4es_" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/gl4es_new" vcs="Git" />

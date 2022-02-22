@@ -26,7 +26,7 @@ public class BloodLauncher extends RazeBaseLauncher
         availableSubGames.clear();
 
         SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR + ".", ".", RAZE_GAME_BLOOD, WEAPON_WHEEL_NBR, new String[]{"blood.ini"}, R.drawable.blood,
-                        "BLOOD", "Copy Blood files to:", "Put your BLOOD.GRP files here.txt");
+                        "BLOOD", "Copy Blood files (BLOOD.RFF, tilesXXX.art, blood.ini) to:", "Put your Blood files here.txt");
 
         SubGame sg = SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR, "addons/cryptic", 0, WEAPON_WHEEL_NBR, new String[]{"addons/cryptic/CP01.MAP", "addons/cryptic/cryptic.ini"}, R.drawable.raze,
                              "BLOOD: Cryptic Passage", "Copy your Cryptic Passage files to:", "Put your Cryptic Passage files here.txt");

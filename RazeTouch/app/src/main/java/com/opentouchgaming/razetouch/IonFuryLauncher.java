@@ -26,7 +26,7 @@ public class IonFuryLauncher extends RazeBaseLauncher
         availableSubGames.clear();
 
         SubGame sg = SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR + ".", ".", RAZE_GAME_IONFURY, WEAPON_WHEEL_NBR,
-                                     new String[]{"fury.grp", "fury.grpinfo", "fury.def"}, R.drawable.ionfury, "Ion Fury", "Copy fury.grp, fury.grpinfo, fury.def to:",
+                                     new String[]{"fury.grp", "fury.grpinfo"}, R.drawable.ionfury, "Ion Fury", "Copy fury.grp, fury.grpinfo to:",
                                      "Put your Ion Fury files here.txt");
 
         //sg.setExtraArgs("-gamegrp "+  sg.getRootPath() + "/fury.grp " + "-h " + sg.getRootPath() +  "/fury.def");

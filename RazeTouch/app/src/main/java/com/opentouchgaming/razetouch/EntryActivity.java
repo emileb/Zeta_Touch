@@ -83,15 +83,15 @@ public class EntryActivity extends FragmentActivity
 
         AppInfo.gameEngines = new GameEngine[]{
 
-                new GameEngine(GameEngine.Engine.EDUKE32_IONFURY, 0, "Ion fury", "duke3d", "", new String[]{"dev"},
+                new GameEngine(GameEngine.Engine.EDUKE32_IONFURY, 0, "Ion fury", "duke3d", "", new String[]{"fury_2.0"},
                                new String[][]{{"touchcontrols", "GL4ES", "openal","eduke32"}},
                                " ",
                                GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH),
                                R.drawable.ionfury, 0x009321c8, R.drawable.eduke_button_bg_foucable,
                                EngineOptionsEduke32_IonFury.class),
 
-                new GameEngine(GameEngine.Engine.EDUKE32, 1, "Eduke32", "duke3d", "", new String[]{"dev"},
-                               new String[][]{{"touchcontrols", "GL4ES", "openal","eduke32"}},
+                new GameEngine(GameEngine.Engine.EDUKE32, 1, "Eduke32", "duke3d", "", new String[]{"fury_2.0", "dev"},
+                               new String[][]{{"touchcontrols", "GL4ES", "openal","eduke32"},{"touchcontrols", "GL4ES", "openal","eduke32_dev"}},
                                " ",
                                GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH),
                                R.drawable.dn3d_eduke, 0x00ae00da, R.drawable.eduke_button_bg_foucable,

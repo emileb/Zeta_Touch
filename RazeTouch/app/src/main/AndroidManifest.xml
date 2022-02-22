@@ -26,7 +26,8 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:launchMode="singleTop"
             android:process=":game"
-            android:screenOrientation="sensorLandscape"></activity>
+            android:screenOrientation="sensorLandscape">
+        </activity>
 
         <activity
             android:name=".EntryActivity"

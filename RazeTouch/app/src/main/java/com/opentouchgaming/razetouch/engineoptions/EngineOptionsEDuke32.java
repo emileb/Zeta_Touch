@@ -36,7 +36,7 @@ public class EngineOptionsEDuke32 implements EngineOptionsInterface
     static DebugLog log;
 
     static Pair<String, Integer>[] cacheSizes =
-            new Pair[]{new Pair("96 MB", 96), new Pair("128 MB", 128), new Pair("256 MB", 256), new Pair("384 MB", 384), new Pair("512 MB", 512), new Pair("768 MB", 768)};
+            new Pair[]{new Pair("Default", 0), new Pair("128 MB", 128), new Pair("256 MB", 256), new Pair("384 MB", 384), new Pair("512 MB", 512), new Pair("768 MB", 768)};
 
     static
     {
@@ -232,7 +232,8 @@ public class EngineOptionsEDuke32 implements EngineOptionsInterface
         int cacheSize = AppSettings.getIntOption(AppInfo.getContext(), "eduke32_cachesize_" + settingPrefix, 0);
         int cacheSizeMB = cacheSizes[cacheSize].second;
 
-        info.args += " -cachesize " + cacheSizeMB * 1024 + " "; // -cachesize is in KB
+        if(cacheSize > 0)
+            info.args += " -cachesize " + cacheSizeMB * 1024 + " "; // -cachesize is in KB
 
         if (renderMode == 0)
         {
