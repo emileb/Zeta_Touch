@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog bulletedList="true">
 
-    <changelogversion versionName="2.1" changeDate="February 23, 2022">
+    <changelogversion versionName="2.1.1" changeDate="February 24, 2022">
         <changelogtext>Added latest EDuke32 code as new engine version 'dev'</changelogtext>
         <changelogtext>Ion Fury: Removed need for 'fury.def' file</changelogtext>
         <changelogtext>Eduke32: Re-enabled smalloc library</changelogtext>

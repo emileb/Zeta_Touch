@@ -1,10 +1,9 @@
 * Added latest EDuke32 code as new engine version 'dev'
 * Ion Fury: Removed need for 'fury.def' file
-* Re-enabled smalloc library
-* Added more scaling options to 'Resolution override' slider
+* Eduke32: Re-enabled smalloc library
 * Eduke32: Fixed screen tints (E.g red tint on damage)
 * Fix scaling of Touch Settings so not stretched on wide devices + added fling scrolling
-
+* Added more scaling options to 'Resolution override' slider
 
 v2.0 RC2
 * Fix toggle buttons
