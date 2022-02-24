@@ -83,14 +83,14 @@ public class EntryActivity extends FragmentActivity
 
         AppInfo.gameEngines = new GameEngine[]{
 
-                new GameEngine(GameEngine.Engine.EDUKE32_IONFURY, 0, "Ion fury", "duke3d", "", new String[]{"fury_2.0"},
-                               new String[][]{{"touchcontrols", "GL4ES", "openal","eduke32"}},
+                new GameEngine(GameEngine.Engine.EDUKE32_IONFURY, 0, "Ion fury", "duke3d", "", new String[]{"stable", "dev"},
+                               new String[][]{{"touchcontrols", "GL4ES", "openal","eduke32"},{"touchcontrols", "GL4ES", "openal","eduke32_dev"}},
                                " ",
                                GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH),
-                               R.drawable.ionfury, 0x009321c8, R.drawable.eduke_button_bg_foucable,
+                               R.drawable.ionfury, 0x002006e0, R.drawable.eduke_button_bg_foucable,
                                EngineOptionsEduke32_IonFury.class),
 
-                new GameEngine(GameEngine.Engine.EDUKE32, 1, "Eduke32", "duke3d", "", new String[]{"fury_2.0", "dev"},
+                new GameEngine(GameEngine.Engine.EDUKE32, 1, "Eduke32", "duke3d", "", new String[]{"stable", "dev"},
                                new String[][]{{"touchcontrols", "GL4ES", "openal","eduke32"},{"touchcontrols", "GL4ES", "openal","eduke32_dev"}},
                                " ",
                                GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH),
@@ -103,8 +103,6 @@ public class EntryActivity extends FragmentActivity
                                GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH),
                                R.drawable.dn3d, 0x00d1bd10, R.drawable.raze_button_bg_foucable,
                                EngineOptionsRaze.class),
-
-
 
                 new GameEngine(GameEngine.Engine.RAZE_SW, 2, "Shadow Warrior", "shadow_warrior", "", new String[]{"1.3.1"},
                                new String[][]{{"touchcontrols", "openal", "zmusic","raze"}},
@@ -138,7 +136,7 @@ public class EntryActivity extends FragmentActivity
                                new String[][]{{"touchcontrols", "openal", "zmusic","raze"}},
                                " +set cl_syncinput 1 ",
                                GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH),
-                               R.drawable.ps, 0x00c319bd, R.drawable.raze_button_bg_foucable,
+                               R.drawable.ps, 0x0008dfdc, R.drawable.raze_button_bg_foucable,
                                EngineOptionsRaze.class),
         };
 

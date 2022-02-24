@@ -33,7 +33,7 @@ public class IonFuryLauncher extends RazeBaseLauncher
         sg.setExtraArgs("-gamegrp fury.grp -h fury.def");
 
         if (!sg.getRootPath().startsWith(AppInfo.getAppDirectory()))
-            sg.setExtraArgs("-game_dir " + sg.getRootPath());
+            sg.setExtraArgs("-gamegrp fury.grp " + "-h fury.def -game_dir " + sg.getRootPath());
 
         addAddonsDir(engine, RAZE_GAME_IONFURY, availableSubGames, new String[]{});
 

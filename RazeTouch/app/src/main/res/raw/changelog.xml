@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog bulletedList="true">
 
-    <changelogversion versionName="2.1.1" changeDate="February 24, 2022">
+    <changelogversion versionName="2.1.2" changeDate="February 25, 2022">
         <changelogtext>Added latest EDuke32 code as new engine version 'dev'</changelogtext>
         <changelogtext>Ion Fury: Removed need for 'fury.def' file</changelogtext>
         <changelogtext>Eduke32: Re-enabled smalloc library</changelogtext>
         <changelogtext>Eduke32: Fixed screen tints (E.g red tint on damage)</changelogtext>
+        <changelogtext>Improve load time of games on Android 11+</changelogtext>
         <changelogtext>Fix scaling of Touch Settings so not stretched on wide devices + added fling scrolling</changelogtext>
         <changelogtext>Added more scaling options to 'Resolution override' slider</changelogtext>
     </changelogversion>

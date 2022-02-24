@@ -2,8 +2,10 @@
 * Ion Fury: Removed need for 'fury.def' file
 * Eduke32: Re-enabled smalloc library
 * Eduke32: Fixed screen tints (E.g red tint on damage)
-* Fix scaling of Touch Settings so not stretched on wide devices + added fling scrolling
 * Added more scaling options to 'Resolution override' slider
+* Improve load time of games on Android 11+
+* Fix scaling of Touch Settings so not stretched on wide devices + added fling scrolling
+* Fix Ion Fury not loading from SD Card
 
 v2.0 RC2
 * Fix toggle buttons
