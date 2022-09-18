@@ -14,32 +14,40 @@
         android:orientation="vertical">
 
         <include
-            android:id="@+id/modern_renderer_spinner"
+            android:id="@+id/renderer_spinner"
             layout="@layout/widget_view_spinner" />
 
-        <include
-            android:id="@+id/use_polymost_switch"
-            layout="@layout/widget_view_switch" />
 
         <LinearLayout
-            android:id="@+id/modern_gl2_options_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
+            android:id="@+id/gl2_options"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:orientation="vertical">
 
             <include
-                android:id="@+id/modern_use_mapped_buffers_switch"
-                layout="@layout/widget_view_switch" />
-
-            <include
-                android:id="@+id/modern_force_glsl_v100_switch"
-                layout="@layout/widget_view_switch" />
-
-            <include
-                android:id="@+id/modern_glslPrecision_med_switch"
-                layout="@layout/widget_view_switch" />
+                android:id="@+id/resolution_select_gl"
+                layout="@layout/widget_view_resolution_select" />
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sw_options"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/resolution_select_sw"
+                layout="@layout/widget_view_resolution_select" />
+        </LinearLayout>
+
+        <include
+            android:id="@+id/load_autoload_switch"
+            layout="@layout/widget_view_switch" />
+
+        <include layout="@layout/widget_view_spinner"
+            android:id="@+id/cache_spinner" />
 
         <Button
             android:id="@+id/delete_cfg_button"
@@ -47,5 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:text="Delete cfg file" />
+
     </LinearLayout>
+
 </ScrollView>

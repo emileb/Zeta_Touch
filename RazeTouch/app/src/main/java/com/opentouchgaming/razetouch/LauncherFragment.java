@@ -218,18 +218,24 @@ public class LauncherFragment extends MainFragment
             }
         }
 
-        Utils.copyAsset(getActivity(), "raze.pk3", AppInfo.getAppDirectory() + "/res/");
+        Utils.copyAsset(getActivity(), "raze.pk3", AppInfo.getResFiles());
+        Utils.copyAsset(getActivity(), "raze_dev.pk3", AppInfo.getResFiles());
 
         File sf2 = new File(AppInfo.getAppDirectory() +  "/EDUKE32/soundfont.sf2");
         if (!sf2.exists())
         {
-            Utils.copyAsset(getActivity(), "raze.sf2", AppInfo.getAppDirectory() + "/res/");
+            Utils.copyAsset(getActivity(), "raze.sf2", AppInfo.getResFiles());
             Utils.copyAsset(getActivity(), "raze.sf2", AppInfo.getAppDirectory() + "/EDUKE32","soundfont.sf2");
-
         }
 
-        if (launcher.getSecondaryDirectory() != null)
-            args += " -secondary_path " + launcher.getSecondaryDirectory() + " ";
+        if (selectedSubGame.isRunFromHere())
+        {
+            args += " -secondary_path " + selectedSubGame.getFullPath();
+        }
+        else {
+            if (launcher.getSecondaryDirectory() != null)
+                args += " -secondary_path " + launcher.getSecondaryDirectory();
+        }
 
         args += argsFinal;
 
@@ -262,6 +268,7 @@ public class LauncherFragment extends MainFragment
         intent.putExtra("log_filename", AppInfo.currentEngine.getLogFilename());
         intent.putExtra("game_path", rootPath);
         intent.putExtra("user_files", AppInfo.getUserFiles());
+        intent.putExtra("res_files",AppInfo.getResFiles());
         intent.putExtra("args", args);
         intent.putExtra("quick_command_main_path", quickCommandPaths.first);
         intent.putExtra("quick_command_mod_path", quickCommandPaths.second);

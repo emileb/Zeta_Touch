@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog bulletedList="true">
 
+    <changelogversion versionName="2.2" changeDate="September 18, 2022">
+        <changelogtext>Added Raze 1.5.0</changelogtext>
+        <changelogtext>Updated EDuke32 dev to latest code</changelogtext>
+        <changelogtext>Added Gyro 'Smart toggle' button to touch screen and gamepad</changelogtext>
+        <changelogtext>Added Redneck Rampage : Ride Again</changelogtext>
+        <changelogtext>Added Quick Kick button</changelogtext>
+        <changelogtext>Fixed Scoped Storage to work (optional). Can decrease loads times on Android 11+ if enabled</changelogtext>
+    </changelogversion>
+
     <changelogversion versionName="2.1.2" changeDate="February 25, 2022">
         <changelogtext>Added latest EDuke32 code as new engine version 'dev'</changelogtext>
         <changelogtext>Ion Fury: Removed need for 'fury.def' file</changelogtext>

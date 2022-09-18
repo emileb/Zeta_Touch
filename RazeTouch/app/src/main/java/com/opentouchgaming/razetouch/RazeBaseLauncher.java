@@ -1,5 +1,7 @@
 package com.opentouchgaming.razetouch;
 
+import static com.opentouchgaming.androidcore.DebugLog.Level.D;
+
 import android.app.Activity;
 
 import androidx.core.util.Pair;
@@ -44,6 +46,20 @@ public class RazeBaseLauncher implements GameLauncherInterface
     public String getRunDirectory()
     {
         return AppInfo.getAppDirectory() + "/" + SUB_DIR;
+    }
+
+    @Override
+    public String getRunDirectory(SubGame subGame)
+    {
+        if(subGame.isRunFromHere()) // Check if we are chaning the run directory
+        {
+            log.log(D, "Running from: " + subGame.getFullPath());
+            return subGame.getFullPath();
+        }
+        else
+        {
+            return getRunDirectory();
+        }
     }
 
     @Override
@@ -110,7 +126,6 @@ public class RazeBaseLauncher implements GameLauncherInterface
 
                     if (skip)
                         continue;
-
 
                     String pathInfo = f.getAbsolutePath();
                     String fileInfo = Utils.filesInfoString(pathInfo, null, 3);

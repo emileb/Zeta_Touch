@@ -23,7 +23,7 @@
 
             <include
                 android:id="@+id/gl_resolution"
-                layout="@layout/view_resolution_select" />
+                layout="@layout/widget_view_resolution_select" />
 
             <View
                 android:layout_width="match_parent"
@@ -39,7 +39,7 @@
 
             <include
                 android:id="@+id/soft_resolution"
-                layout="@layout/view_resolution_select" />
+                layout="@layout/widget_view_resolution_select" />
 
         </RadioGroup>
 
@@ -85,7 +85,7 @@
             android:layout_margin="10dp"
             android:background="@android:color/darker_gray" />
 
-        <include layout="@layout/audio_override" />
+        <include layout="@layout/widget_view_audio_override" />
 
         <Button
             android:id="@+id/delete_cfg_button"

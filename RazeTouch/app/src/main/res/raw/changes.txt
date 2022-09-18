@@ -1,3 +1,12 @@
+v2.2
+* Added Raze 1.5.0
+* Updated EDuke32 dev to latest code
+* Added Gyro 'Smart toggle' button to touch screen and gamepad
+* Added Redneck Rampage : Ride Again
+* Added Quick Kick button
+* Fixed Scoped Storage to work (optional). Can decrease loads times on Android 11+ if enabled
+
+v2.1.2
 * Added latest EDuke32 code as new engine version 'dev'
 * Ion Fury: Removed need for 'fury.def' file
 * Eduke32: Re-enabled smalloc library

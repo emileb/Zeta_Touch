@@ -27,12 +27,15 @@
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/RazeTouch/app/src/main/res/drawable/raze_button.xml" value="0.33697916666666666" />
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/RazeTouch/app/src/main/res/drawable/raze_button_bg_foucable.xml" value="0.33697916666666666" />
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/RazeTouch/app/src/main/res/layout/dialog_options_eduke.xml" value="0.436046511627907" />
+        <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/RazeTouch/app/src/main/res/layout/dialog_options_eduke_new.xml" value="0.3109375" />
+        <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/RazeTouch/app/src/main/res/layout/dialog_options_raze.xml" value="0.55" />
+        <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/RazeTouch/app/src/main/res/layout/dialog_options_raze_new.xml" value="0.55" />
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/RazeTouch/app/src/main/res/layout/list_item_subgame.xml" value="0.31354166666666666" />
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/RazeTouch/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3375" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

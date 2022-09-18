@@ -23,8 +23,8 @@ import com.opentouchgaming.androidcore.DebugLog;
 import com.opentouchgaming.androidcore.EngineOptionsInterface;
 import com.opentouchgaming.androidcore.GameEngine;
 import com.opentouchgaming.androidcore.Utils;
-import com.opentouchgaming.androidcore.ui.AudioOverride;
-import com.opentouchgaming.androidcore.ui.ResolutionOptionsView;
+import com.opentouchgaming.androidcore.ui.widgets.AudioOverrideWidget;
+import com.opentouchgaming.androidcore.ui.widgets.ResolutionOptionsWidget;
 import com.opentouchgaming.razetouch.R;
 
 import java.io.File;
@@ -44,10 +44,10 @@ public class EngineOptionsEDuke32 implements EngineOptionsInterface
     }
 
     Dialog dialog;
-    AudioOverride audioOverride;
+    AudioOverrideWidget audioOverride;
 
-    ResolutionOptionsView resolutionOptionsSoftware;
-    ResolutionOptionsView resolutionOptionsGL;
+    ResolutionOptionsWidget resolutionOptionsSoftware;
+    ResolutionOptionsWidget resolutionOptionsGL;
 
     CheckBox autoloadCheckbox;
 
@@ -60,7 +60,7 @@ public class EngineOptionsEDuke32 implements EngineOptionsInterface
     {
         this.settingPrefix = settingPrefix;
         this.userFilesDir = userFilesDir;
-        audioOverride = new AudioOverride(settingPrefix + "eduke_");
+        audioOverride = new AudioOverrideWidget(settingPrefix + "eduke_");
     }
 
     @Override
@@ -80,8 +80,8 @@ public class EngineOptionsEDuke32 implements EngineOptionsInterface
         View softResolutionLayout = dialog.findViewById(R.id.soft_resolution);
         View glResolutionLayout = dialog.findViewById(R.id.gl_resolution);
 
-        resolutionOptionsSoftware = new ResolutionOptionsView(activity, softResolutionLayout, settingPrefix + "eduke_sw_");
-        resolutionOptionsGL = new ResolutionOptionsView(activity, glResolutionLayout, settingPrefix + "eduke_gl_");
+        resolutionOptionsSoftware = new ResolutionOptionsWidget(activity, softResolutionLayout, settingPrefix + "eduke_sw_");
+        resolutionOptionsGL = new ResolutionOptionsWidget(activity, glResolutionLayout, settingPrefix + "eduke_gl_");
 
         autoloadCheckbox = dialog.findViewById(R.id.autoload_checkBox);
 
@@ -221,8 +221,8 @@ public class EngineOptionsEDuke32 implements EngineOptionsInterface
         info.glesVersion = 2;
         info.useGL4ES = true;
 
-        ResolutionOptionsView.ResolutionOptions optionSW = ResolutionOptionsView.getResOption(settingPrefix + "eduke_sw_");
-        ResolutionOptionsView.ResolutionOptions optionGL = ResolutionOptionsView.getResOption(settingPrefix + "eduke_gl_");
+        ResolutionOptionsWidget.ResolutionOptions optionSW = ResolutionOptionsWidget.getResOption(settingPrefix + "eduke_sw_");
+        ResolutionOptionsWidget.ResolutionOptions optionGL = ResolutionOptionsWidget.getResOption(settingPrefix + "eduke_gl_");
 
         boolean autoload = AppSettings.getBoolOption(AppInfo.getContext(), "eduke32_autoload_" + settingPrefix, false);
 
