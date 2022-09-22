@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog bulletedList="true">
 
-    <changelogversion versionName="2.2" changeDate="September 18, 2022">
+    <changelogversion versionName="2.2" changeDate="September 22, 2022">
         <changelogtext>Added Raze 1.5.0</changelogtext>
         <changelogtext>Updated EDuke32 dev to latest code</changelogtext>
         <changelogtext>Added Gyro 'Smart toggle' button to touch screen and gamepad</changelogtext>
-        <changelogtext>Added Redneck Rampage : Ride Again</changelogtext>
+        <changelogtext>Added Redneck Rampage : Ride Again to launcher</changelogtext>
+        <changelogtext>Added WWII GI to launcher</changelogtext>
         <changelogtext>Added Quick Kick button</changelogtext>
         <changelogtext>Fixed Scoped Storage to work (optional). Can decrease loads times on Android 11+ if enabled</changelogtext>
     </changelogversion>
