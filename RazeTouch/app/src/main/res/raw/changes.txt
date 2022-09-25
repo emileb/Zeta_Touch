@@ -1,3 +1,6 @@
+v2.2.1
+* Updated EDuke32 dev to latest code (fixes some crashes)
+
 v2.2
 * Added Raze 1.5.0
 * Updated EDuke32 dev to latest code
