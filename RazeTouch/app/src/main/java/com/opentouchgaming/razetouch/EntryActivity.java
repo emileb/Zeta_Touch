@@ -36,31 +36,31 @@ public class EntryActivity extends FragmentActivity
 {
     static DebugLog log;
 
-    static {
+    static
+    {
         log = new DebugLog(DebugLog.Module.APP, "EntryActivity");
     }
 
-    final String key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArVTuCs3MUfRpivh5ETTzfgq+pdSHPfvWKKOsqLdyugv37TPWGfjHADzI+Ryst8qdObT9qEfKQXbd5PLC6+Lspl3/N8L+FXJO5tNSzcxDNr/gCXgR/vs+YiRpyuCJMNcuwPHfDIKdBmPaFxQAxSggdzoWfEmTXyaA1S8PZprT1GcOIB1scLUWpXPjzZeOTXwEzD20HWKeR+oG7PzFBAF85clKu5Y2bypoBcmnlpBl3nK2TdNJdESitxjS5CssRp5zBxYQ6BnMfDI1W8n2QCatFb+lAHcnhye/FB8/nA476b2WOw3VBkk5CspXhDNRom6dCMfP1HTxHrH6Q0LFh81SxQIDAQAB";
-
-
-    LauncherFragment mainFragment;
-
-    final int MY_PERMISSIONS_REQUEST_SD_WRITE = 1;
-
-    static {
+    static
+    {
         Tutorial tut;
         tut = new Tutorial("Using the Custom touch buttons.", "ic_tut_custom");
         tut.addScreen(new Tutorial.Screen("Press the touch settings button.", "", "http://opentouchgaming.com/tutorial/delta/custom_cog.png"));
         tut.addScreen(new Tutorial.Screen("Press the touch options button.", "", "http://opentouchgaming.com/tutorial/delta/custom_sliders.png"));
         tut.addScreen(new Tutorial.Screen("Press the 'Hide/Show' button.", "", "http://opentouchgaming.com/tutorial/delta/custom_hideshow.png"));
-        tut.addScreen(new Tutorial.Screen("Enable the 'Show custom' button. This adds a new button to the game touch controls.", "", "http://opentouchgaming.com/tutorial/delta/custom_enablecustom.png"));
-        tut.addScreen(new Tutorial.Screen("Press the new button to show the custom controls. Press the touch settings button to edit and move them.", "", "http://opentouchgaming.com/tutorial/delta/custom_showcustom.png"));
-        tut.addScreen(new Tutorial.Screen("To assign them go to 'Options -> Customise Controls' and select the action.", "", "http://opentouchgaming.com/tutorial/delta/custom_controloptions.png"));
-        tut.addScreen(new Tutorial.Screen("Press a custom button to assign. Slide from the centre of the 'Quad-buttons' up, down, left or right. ", "", "http://opentouchgaming.com/tutorial/delta/custom_assign.png"));
+        tut.addScreen(new Tutorial.Screen("Enable the 'Show custom' button. This adds a new button to the game touch controls.", "",
+                "http://opentouchgaming.com/tutorial/delta/custom_enablecustom.png"));
+        tut.addScreen(new Tutorial.Screen("Press the new button to show the custom controls. Press the touch settings button to edit and move them.", "",
+                "http://opentouchgaming.com/tutorial/delta/custom_showcustom.png"));
+        tut.addScreen(new Tutorial.Screen("To assign them go to 'Options -> Customise Controls' and select the action.", "",
+                "http://opentouchgaming.com/tutorial/delta/custom_controloptions.png"));
+        tut.addScreen(new Tutorial.Screen("Press a custom button to assign. Slide from the centre of the 'Quad-buttons' up, down, left or right. ", "",
+                "http://opentouchgaming.com/tutorial/delta/custom_assign.png"));
         AppInfo.tutorials.add(tut);
 
         tut = new Tutorial("Using the console/keyboard", "ic_tut_keyboard");
-        tut.addScreen(new Tutorial.Screen("Start a new game and press the 'cog' to edit the touch controls", "", "http://opentouchgaming.com/tutorial/quad/keyboard_1.png"));
+        tut.addScreen(new Tutorial.Screen("Start a new game and press the 'cog' to edit the touch controls", "",
+                "http://opentouchgaming.com/tutorial/quad/keyboard_1.png"));
         tut.addScreen(new Tutorial.Screen("Press the 'sliders' button", "", "http://opentouchgaming.com/tutorial/quad/keyboard_2.png"));
         tut.addScreen(new Tutorial.Screen("Press 'Hide/Show buttons'", "", "http://opentouchgaming.com/tutorial/quad/keyboard_3.png"));
         tut.addScreen(new Tutorial.Screen("Enable the Keyboard button", "", "http://opentouchgaming.com/tutorial/quad/keyboard_4.png"));
@@ -68,12 +68,15 @@ public class EntryActivity extends FragmentActivity
         AppInfo.tutorials.add(tut);
 
         tut = new Tutorial("Enable the gyroscope", "ic_tut_gyro");
-        tut.addScreen(new Tutorial.Screen("Go to the menu of the game and press the 'gyro' button in the top right", "", "http://opentouchgaming.com/tutorial/quad/gyro_1.png"));
-        tut.addScreen(new Tutorial.Screen("Enable the gyroscope. Remember your device needs to have the gyroscope hardware to enable this feature", "", "http://opentouchgaming.com/tutorial/quad/gyro_2.png"));
+        tut.addScreen(new Tutorial.Screen("Go to the menu of the game and press the 'gyro' button in the top right", "",
+                "http://opentouchgaming.com/tutorial/quad/gyro_1.png"));
+        tut.addScreen(new Tutorial.Screen("Enable the gyroscope. Remember your device needs to have the gyroscope hardware to enable this feature", "",
+                "http://opentouchgaming.com/tutorial/quad/gyro_2.png"));
         AppInfo.tutorials.add(tut);
 
         tut = new Tutorial("Using Quick Commands", "ic_baseline_star_border");
-        tut.addScreen(new Tutorial.Screen("Start a new game and press the 'cog' to edit the touch controls", "", "http://opentouchgaming.com/tutorial/quad/quick_cmd_1.png"));
+        tut.addScreen(new Tutorial.Screen("Start a new game and press the 'cog' to edit the touch controls", "",
+                "http://opentouchgaming.com/tutorial/quad/quick_cmd_1.png"));
         tut.addScreen(new Tutorial.Screen("Press the 'sliders' button", "", "http://opentouchgaming.com/tutorial/quad/quick_cmd_2.png"));
         tut.addScreen(new Tutorial.Screen("Press 'Hide/Show buttons'", "", "http://opentouchgaming.com/tutorial/quad/quick_cmd_3.png"));
         tut.addScreen(new Tutorial.Screen("Enable 'Quick Commands'", "", "http://opentouchgaming.com/tutorial/quad/quick_cmd_4.png"));
@@ -84,78 +87,55 @@ public class EntryActivity extends FragmentActivity
         AppInfo.gameEngines = new GameEngine[]{
 
                 new GameEngine(GameEngine.Engine.EDUKE32_IONFURY, 0, "Ion fury", "duke3d", "", new String[]{"stable", "dev"},
-                               new String[][]{{"touchcontrols", "GL4ES", "openal","eduke32"},{"touchcontrols", "GL4ES", "openal","eduke32_dev"}},
-                               " ",
-                               GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH),
-                               R.drawable.ionfury, 0x002006e0, R.drawable.eduke_button_bg_foucable,
-                               EngineOptionsEDuke32_IonFury.class),
+                        new String[][]{{"touchcontrols", "GL4ES", "openal", "eduke32"}, {"touchcontrols", "GL4ES", "openal", "eduke32_dev"}}, " ",
+                        GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.ionfury, 0x002006e0, R.drawable.eduke_button_bg_foucable,
+                        EngineOptionsEDuke32_IonFury.class),
 
                 new GameEngine(GameEngine.Engine.EDUKE32, 1, "Eduke32", "duke3d", "", new String[]{"stable", "dev"},
-                               new String[][]{{"touchcontrols", "GL4ES", "openal","eduke32"},{"touchcontrols", "GL4ES", "openal","eduke32_dev"}},
-                               " ",
-                               GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH),
-                               R.drawable.dn3d_eduke, 0x002f7fad, R.drawable.eduke_button_bg_foucable,
-                               EngineOptionsEDuke32_Duke.class),
+                        new String[][]{{"touchcontrols", "GL4ES", "openal", "eduke32"}, {"touchcontrols", "GL4ES", "openal", "eduke32_dev"}}, " ",
+                        GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.dn3d_eduke, 0x002f7fad, R.drawable.eduke_button_bg_foucable,
+                        EngineOptionsEDuke32_Duke.class),
 
                 new GameEngine(GameEngine.Engine.RAZE_DUKE, 1, "Duke Nukem 3D", "duke3d", "", new String[]{"1.3.1", "dev (1.5.0)"},
-                               new String[][]{{"touchcontrols", "openal", "zmusic","raze"},
-                                       {"touchcontrols", "openal", "zmusic","raze_dev"}},
-                               " +set cl_syncinput 1 ",
-                               GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH),
-                               R.drawable.dn3d, 0x00d1bd10, R.drawable.raze_button_bg_foucable,
-                               EngineOptionsRaze.class),
+                        new String[][]{{"touchcontrols", "openal", "zmusic", "raze"}, {"touchcontrols", "openal", "zmusic", "raze_dev"}},
+                        " +set cl_syncinput 1 ", GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.dn3d, 0x00d1bd10,
+                        R.drawable.raze_button_bg_foucable, EngineOptionsRaze.class),
 
                 new GameEngine(GameEngine.Engine.RAZE_SW, 2, "Shadow Warrior", "shadow_warrior", "", new String[]{"1.3.1", "dev (1.5.0)"},
-                               new String[][]{{"touchcontrols", "openal", "zmusic","raze"},
-                                       {"touchcontrols", "openal", "zmusic","raze_dev"}},
-                               " +set cl_syncinput 1 ",
-                               GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH),
-                               R.drawable.sw, 0x00dad9d2, R.drawable.raze_button_bg_foucable,
-                               EngineOptionsRaze.class),
+                        new String[][]{{"touchcontrols", "openal", "zmusic", "raze"}, {"touchcontrols", "openal", "zmusic", "raze_dev"}},
+                        " +set cl_syncinput 1 ", GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.sw, 0x00dad9d2,
+                        R.drawable.raze_button_bg_foucable, EngineOptionsRaze.class),
 
                 new GameEngine(GameEngine.Engine.RAZE_BLOOD, 3, "Blood", "blood", "", new String[]{"1.3.1", "dev (1.5.0)"},
-                               new String[][]{{"touchcontrols", "openal", "zmusic","raze"},
-                                       {"touchcontrols", "openal", "zmusic","raze_dev"}},
-                               " +set cl_syncinput 1 ",
-                               GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH),
-                               R.drawable.blood, 0x00d20829, R.drawable.raze_button_bg_foucable,
-                               EngineOptionsRaze.class),
+                        new String[][]{{"touchcontrols", "openal", "zmusic", "raze"}, {"touchcontrols", "openal", "zmusic", "raze_dev"}},
+                        " +set cl_syncinput 1 ", GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.blood, 0x00d20829,
+                        R.drawable.raze_button_bg_foucable, EngineOptionsRaze.class),
 
                 new GameEngine(GameEngine.Engine.RAZE_REDNECK, 4, "Redneck Rampage", "redneck", "", new String[]{"1.3.1", "dev (1.5.0)"},
-                               new String[][]{{"touchcontrols", "openal", "zmusic","raze"},
-                                       {"touchcontrols", "openal", "zmusic","raze_dev"}},
-                               " +set cl_syncinput 1 ",
-                               GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH),
-                               R.drawable.redneck, 0x008f6407, R.drawable.raze_button_bg_foucable,
-                               EngineOptionsRaze.class),
+                        new String[][]{{"touchcontrols", "openal", "zmusic", "raze"}, {"touchcontrols", "openal", "zmusic", "raze_dev"}},
+                        " +set cl_syncinput 1 ", GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.redneck, 0x008f6407,
+                        R.drawable.raze_button_bg_foucable, EngineOptionsRaze.class),
 
                 new GameEngine(GameEngine.Engine.RAZE_NAM, 5, "NAM", "nam", "", new String[]{"1.3.1", "dev (1.5.0)"},
-                               new String[][]{{"touchcontrols", "openal", "zmusic","raze"},
-                                       {"touchcontrols", "openal", "zmusic","raze_dev"}},
-                               " +set cl_syncinput 1 ",
-                               GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH),
-                               R.drawable.nam, 0x00428747, R.drawable.raze_button_bg_foucable,
-                               EngineOptionsRaze.class),
+                        new String[][]{{"touchcontrols", "openal", "zmusic", "raze"}, {"touchcontrols", "openal", "zmusic", "raze_dev"}},
+                        " +set cl_syncinput 1 ", GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.nam, 0x00428747,
+                        R.drawable.raze_button_bg_foucable, EngineOptionsRaze.class),
 
                 new GameEngine(GameEngine.Engine.RAZE_POWERSLAVE, 6, "Powerslave", "powerslave", "", new String[]{"1.3.1", "dev (1.5.0)"},
-                               new String[][]{{"touchcontrols", "openal", "zmusic","raze"},
-                                       {"touchcontrols", "openal", "zmusic","raze_dev"}},
-                               " +set cl_syncinput 1 ",
-                               GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH),
-                               R.drawable.ps, 0x0008dfdc, R.drawable.raze_button_bg_foucable,
-                               EngineOptionsRaze.class),
-        };
+                        new String[][]{{"touchcontrols", "openal", "zmusic", "raze"}, {"touchcontrols", "openal", "zmusic", "raze_dev"}},
+                        " +set cl_syncinput 1 ", GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.ps, 0x0008dfdc,
+                        R.drawable.raze_button_bg_foucable, EngineOptionsRaze.class),};
 
         List<StorageConfigDialog.StorageExamples> examples = new ArrayList<>();
-        examples.add(new StorageConfigDialog.StorageExamples("Duke Nukem 3D","(DUKE3D.GRP):", StorageConfigDialog.PathLocation.BOTH , "/DUKE"));
-        examples.add(new StorageConfigDialog.StorageExamples("BLOOD","(BLOOD.RFF, tilesxxx.art, ...):",StorageConfigDialog.PathLocation.BOTH, "/BLOOD"));
+        examples.add(new StorageConfigDialog.StorageExamples("Duke Nukem 3D", "(DUKE3D.GRP):", StorageConfigDialog.PathLocation.BOTH, "/DUKE"));
+        examples.add(new StorageConfigDialog.StorageExamples("BLOOD", "(BLOOD.RFF, tilesxxx.art, ...):", StorageConfigDialog.PathLocation.BOTH, "/BLOOD"));
         examples.add(new StorageConfigDialog.StorageExamples("Shadow Warrior", "(SW.GRP):", StorageConfigDialog.PathLocation.BOTH, "/SW"));
 
-        examples.add(new StorageConfigDialog.StorageExamples("Redneck Rampage","(All files):",StorageConfigDialog.PathLocation.BOTH, "/REDNECK"));
-        examples.add(new StorageConfigDialog.StorageExamples("NAM","(NAM.GRP, GAME.COM, NAM.RTS):", StorageConfigDialog.PathLocation.BOTH,"/NAM"));
-        examples.add(new StorageConfigDialog.StorageExamples("Powerslave","(STUFF.DAT):", StorageConfigDialog.PathLocation.BOTH,"/PS"));
+        examples.add(new StorageConfigDialog.StorageExamples("Redneck Rampage", "(All files):", StorageConfigDialog.PathLocation.BOTH, "/REDNECK"));
+        examples.add(new StorageConfigDialog.StorageExamples("NAM", "(NAM.GRP, GAME.COM, NAM.RTS):", StorageConfigDialog.PathLocation.BOTH, "/NAM"));
+        examples.add(new StorageConfigDialog.StorageExamples("Powerslave", "(STUFF.DAT):", StorageConfigDialog.PathLocation.BOTH, "/PS"));
 
-        examples.add(new StorageConfigDialog.StorageExamples("User files","(config, saves etc):", StorageConfigDialog.PathLocation.PRIM, "/user_files"));
+        examples.add(new StorageConfigDialog.StorageExamples("User files", "(config, saves etc):", StorageConfigDialog.PathLocation.PRIM, "/user_files"));
 
         AppInfo.storageExamples = examples;
 
@@ -171,9 +151,16 @@ public class EntryActivity extends FragmentActivity
         AppInfo.scopedTutorial = scopedTutorial;
     }
 
+    final String key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArVTuCs3MUfRpivh5ETTzfgq+pdSHPfvWKKOsqLdyugv37TPWGfjHADzI+Ryst8qdObT9qEfKQXbd5PLC6+Lspl3" +
+                       "/N8L+FXJO5tNSzcxDNr/gCXgR/vs+YiRpyuCJMNcuwPHfDIKdBmPaFxQAxSggdzoWfEmTXyaA1S8PZprT1GcOIB1scLUWpXPjzZeOTXwEzD20HWKeR" +
+                       "+oG7PzFBAF85clKu5Y2bypoBcmnlpBl3nK2TdNJdESitxjS5CssRp5zBxYQ6BnMfDI1W8n2QCatFb+lAHcnhye/FB8" +
+                       "/nA476b2WOw3VBkk5CspXhDNRom6dCMfP1HTxHrH6Q0LFh81SxQIDAQAB";
+    final int MY_PERMISSIONS_REQUEST_SD_WRITE = 1;
+    LauncherFragment mainFragment;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -188,18 +175,21 @@ public class EntryActivity extends FragmentActivity
 
         AppSettings.reloadSettings(getApplication());
 
-        AppInfo.setAppInfo(getApplicationContext(), AppInfo.Apps.RAZE_TOUCH, "Zeta Touch", "Zeta", BuildConfig.APPLICATION_ID, "razelogs@opentouchgaming.com", false, R.drawable.raze, false);
+        AppInfo.setAppInfo(getApplicationContext(), AppInfo.Apps.RAZE_TOUCH, "Zeta Touch", "Zeta", BuildConfig.APPLICATION_ID, "razelogs@opentouchgaming.com",
+                false, R.drawable.raze, false);
         AppInfo.showRateButton = false;
         AppInfo.sidePanelImage = R.drawable.side_panel;
 
         AppInfo.website = "http://opentouchgaming.com/raze-touch/";
         // Check that the activity is using the layout version with
         // the fragment_container FrameLayout
-        if (findViewById(R.id.fragment_container) != null) {
+        if (findViewById(R.id.fragment_container) != null)
+        {
             // However, if we're being restored from a previous state,
             // then we don't need to do anything and should return or else
             // we could end up with overlapping fragments.
-            if (savedInstanceState != null) {
+            if (savedInstanceState != null)
+            {
                 mainFragment = (LauncherFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_container);
                 return;
             }
@@ -212,33 +202,31 @@ public class EntryActivity extends FragmentActivity
             mainFragment.setArguments(getIntent().getExtras());
 
             // Add the fragment to the 'fragment_container' FrameLayout
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.fragment_container, mainFragment).commit();
+            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, mainFragment).commit();
         }
 
         // Here, thisActivity is the current activity
-        if (ContextCompat.checkSelfPermission(this,
-                                              Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                != PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
+        {
 
-            ActivityCompat.requestPermissions(this,
-                                              new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                                              MY_PERMISSIONS_REQUEST_SD_WRITE);
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, MY_PERMISSIONS_REQUEST_SD_WRITE);
 
             log.log(DebugLog.Level.D, "Sending request");
 
-        } else {
+        }
+        else
+        {
             // Permission has already been granted
             log.log(DebugLog.Level.D, "Permission already granted");
         }
-
 
 
     }
 
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
         super.onActivityResult(requestCode, resultCode, data);
 
         log.log(DebugLog.Level.D, "onActivityResult, requestCode = " + requestCode + " resultCode = " + resultCode);
@@ -248,15 +236,19 @@ public class EntryActivity extends FragmentActivity
 
 
     @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           String permissions[], int[] grantResults) {
-        switch (requestCode) {
-            case MY_PERMISSIONS_REQUEST_SD_WRITE: {
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults)
+    {
+        switch (requestCode)
+        {
+            case MY_PERMISSIONS_REQUEST_SD_WRITE:
+            {
                 // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+                {
                     log.log(DebugLog.Level.D, "Permission granted");
-                } else {
+                }
+                else
+                {
                     log.log(DebugLog.Level.D, "Permission denined");
                 }
 
@@ -266,11 +258,15 @@ public class EntryActivity extends FragmentActivity
     }
 
     @Override
-    public void onBackPressed() {
-        if (mainFragment.onBackPressed()) {
+    public void onBackPressed()
+    {
+        if (mainFragment.onBackPressed())
+        {
             // Fragment ate back button press
             return;
-        } else {
+        }
+        else
+        {
             super.onBackPressed();
         }
 
@@ -278,21 +274,27 @@ public class EntryActivity extends FragmentActivity
     }
 
     @Override
-    public boolean onGenericMotionEvent(MotionEvent event) {
+    public boolean onGenericMotionEvent(MotionEvent event)
+    {
         return mainFragment.onGenericMotionEvent(event);
     }
 
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (mainFragment.onKeyDown(keyCode, event)) {
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if (mainFragment.onKeyDown(keyCode, event))
+        {
             return true;
-        } else {
+        }
+        else
+        {
             return super.onKeyDown(keyCode, event);
         }
     }
 
     @Override
-    public void onResume() {
+    public void onResume()
+    {
         super.onResume();
     }
 

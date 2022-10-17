@@ -35,26 +35,22 @@ public class EngineOptionsEDuke32 implements EngineOptionsInterface
 {
     static DebugLog log;
 
-    static Pair<String, Integer>[] cacheSizes =
-            new Pair[]{new Pair("Default", 0), new Pair("128 MB", 128), new Pair("256 MB", 256), new Pair("384 MB", 384), new Pair("512 MB", 512), new Pair("768 MB", 768)};
+    static Pair<String, Integer>[] cacheSizes = new Pair[]{new Pair("Default", 0), new Pair("128 MB", 128), new Pair("256 MB", 256), new Pair("384 MB", 384),
+            new Pair("512 MB", 512), new Pair("768 MB", 768)};
 
     static
     {
         log = new DebugLog(DebugLog.Module.GAMEFRAGMENT, "EngineOptionsEDuke32");
     }
 
-    Dialog dialog;
-    AudioOverrideWidget audioOverride;
-
-    ResolutionOptionsWidget resolutionOptionsSoftware;
-    ResolutionOptionsWidget resolutionOptionsGL;
-
-    CheckBox autoloadCheckbox;
-
-    int renderMode = 0; // 0=soft, 1 = gl2
-
     final String settingPrefix;
     final String userFilesDir;
+    Dialog dialog;
+    AudioOverrideWidget audioOverride;
+    ResolutionOptionsWidget resolutionOptionsSoftware;
+    ResolutionOptionsWidget resolutionOptionsGL;
+    CheckBox autoloadCheckbox;
+    int renderMode = 0; // 0=soft, 1 = gl2
 
     public EngineOptionsEDuke32(String settingPrefix, String userFilesDir)
     {
@@ -87,7 +83,8 @@ public class EngineOptionsEDuke32 implements EngineOptionsInterface
 
         // Autoload vheckbox
         autoloadCheckbox.setChecked(AppSettings.getBoolOption(AppInfo.getContext(), "eduke32_autoload_" + settingPrefix, false));
-        autoloadCheckbox.setOnCheckedChangeListener((compoundButton, b) -> AppSettings.setBoolOption(AppInfo.getContext(), "eduke32_autoload_" + settingPrefix, b));
+        autoloadCheckbox.setOnCheckedChangeListener(
+                (compoundButton, b) -> AppSettings.setBoolOption(AppInfo.getContext(), "eduke32_autoload_" + settingPrefix, b));
 
         // Handles audio override
         audioOverride.linkUI(activity, dialog);
@@ -109,22 +106,22 @@ public class EngineOptionsEDuke32 implements EngineOptionsInterface
         }
 
         swRadio.setOnCheckedChangeListener((compoundButton, b) ->
-                                           {
-                                               if (b == true)
-                                               {
-                                                   resolutionOptionsSoftware.setEnabled(true);
-                                                   resolutionOptionsGL.setEnabled(false);
-                                               }
-                                           });
+        {
+            if (b == true)
+            {
+                resolutionOptionsSoftware.setEnabled(true);
+                resolutionOptionsGL.setEnabled(false);
+            }
+        });
 
         gl2Radio.setOnCheckedChangeListener((compoundButton, b) ->
-                                            {
-                                                if (b == true)
-                                                {
-                                                    resolutionOptionsSoftware.setEnabled(false);
-                                                    resolutionOptionsGL.setEnabled(true);
-                                                }
-                                            });
+        {
+            if (b == true)
+            {
+                resolutionOptionsSoftware.setEnabled(false);
+                resolutionOptionsGL.setEnabled(true);
+            }
+        });
 
 
         Spinner spinner = dialog.findViewById(R.id.cache_size_spinner);
@@ -157,43 +154,43 @@ public class EngineOptionsEDuke32 implements EngineOptionsInterface
 
 
         dialog.setOnDismissListener(dialogInterface ->
-                                    {
-                                        renderMode = swRadio.isChecked() ? 0 : 2;
-                                        resolutionOptionsSoftware.save();
-                                        resolutionOptionsGL.save();
-                                        saveSettings();
-                                    });
+        {
+            renderMode = swRadio.isChecked() ? 0 : 2;
+            resolutionOptionsSoftware.save();
+            resolutionOptionsGL.save();
+            saveSettings();
+        });
 
 
         Button delete = dialog.findViewById(R.id.delete_cfg_button);
         delete.setOnClickListener(view ->
-                                  {
-                                      {
-                                          final String cfgRoot = AppInfo.getUserFiles() + "/" + userFilesDir;
-                                          AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(activity);
-                                          dialogBuilder.setMessage("Delete all Eduke32 config files?");
-                                          dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener()
-                                          {
-                                              @Override
-                                              public void onClick(DialogInterface dialog, int which)
-                                              {
-                                                  //new File(file).delete();
-                                                  log.log(DebugLog.Level.D, "cfgRoot = " + cfgRoot);
-                                                  ArrayList<String> files = new ArrayList<>();
-                                                  Utils.findFiles(new File(cfgRoot), "eduke32.cfg", files);
-                                                  Utils.findFiles(new File(cfgRoot), "settings.cfg", files);
-                                                  for (String f : files)
-                                                  {
-                                                      log.log(DebugLog.Level.D, "file to delete = " + f);
-                                                      new File(f).delete();
-                                                  }
-                                              }
-                                          });
-                                          AlertDialog dialog = dialogBuilder.create();
-                                          dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                                          dialog.show();
-                                      }
-                                  });
+        {
+            {
+                final String cfgRoot = AppInfo.getUserFiles() + "/" + userFilesDir;
+                AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(activity);
+                dialogBuilder.setMessage("Delete all Eduke32 config files?");
+                dialogBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        //new File(file).delete();
+                        log.log(DebugLog.Level.D, "cfgRoot = " + cfgRoot);
+                        ArrayList<String> files = new ArrayList<>();
+                        Utils.findFiles(new File(cfgRoot), "eduke32.cfg", files);
+                        Utils.findFiles(new File(cfgRoot), "settings.cfg", files);
+                        for (String f : files)
+                        {
+                            log.log(DebugLog.Level.D, "file to delete = " + f);
+                            new File(f).delete();
+                        }
+                    }
+                });
+                AlertDialog dialog = dialogBuilder.create();
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.show();
+            }
+        });
 
         dialog.show();
     }
@@ -232,7 +229,7 @@ public class EngineOptionsEDuke32 implements EngineOptionsInterface
         int cacheSize = AppSettings.getIntOption(AppInfo.getContext(), "eduke32_cachesize_" + settingPrefix, 0);
         int cacheSizeMB = cacheSizes[cacheSize].second;
 
-        if(cacheSize > 0)
+        if (cacheSize > 0)
             info.args += " -cachesize " + cacheSizeMB * 1024 + " "; // -cachesize is in KB
 
         if (renderMode == 0)

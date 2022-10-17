@@ -19,13 +19,13 @@ public class EDuke32Launcher extends RazeBaseLauncher
 
         new File(getRunDirectory()).mkdirs();
         Utils.mkdirs(AppInfo.getContext(), getRunDirectory() + "/mods/", "Put your mods files here.txt");
-        Utils.mkdirs(AppInfo.getContext(),AppInfo.getUserFiles() + "/eduke32/",null );
+        Utils.mkdirs(AppInfo.getContext(), AppInfo.getUserFiles() + "/eduke32/", null);
     }
 
     @Override
     public String getRunDirectory(SubGame subGame)
     {
-        if(subGame.isRunFromHere()) // Check if we are chaning the run directory
+        if (subGame.isRunFromHere()) // Check if we are chaning the run directory
         {
             log.log(D, "Running from: " + subGame.getFullPath());
             return subGame.getFullPath();
@@ -43,11 +43,11 @@ public class EDuke32Launcher extends RazeBaseLauncher
 
         availableSubGames.clear();
 
-        SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR + ".", "", RAZE_GAME_EDUKE32, WEAPON_WHEEL_NBR, new String[]{"duke3d.grp"}, R.drawable.dn3d_eduke, "Duke Nukem 3D",
-                        "Copy duke3d.grp to:", "Put your Duke 3D files here.txt");
+        SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR + ".", "", RAZE_GAME_EDUKE32, WEAPON_WHEEL_NBR,
+                new String[]{"duke3d.grp"}, R.drawable.dn3d_eduke, "Duke Nukem 3D", "Copy duke3d.grp to:", "Put your Duke 3D files here.txt");
 
-        addAddonsDir(engine, "", RAZE_GAME_EDUKE32, availableSubGames, new String[]{"mods","autoload"});
-        
+        addAddonsDir(engine, "", RAZE_GAME_EDUKE32, availableSubGames, new String[]{"mods", "autoload"});
+
         super.updateSubGames(engine, availableSubGames);
     }
 

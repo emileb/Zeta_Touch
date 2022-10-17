@@ -72,13 +72,13 @@ public class LauncherFragment extends MainFragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        View view = super.onCreateView(inflater,container,savedInstanceState);
+        View view = super.onCreateView(inflater, container, savedInstanceState);
 
         downloadNewVersion.setOnClickListener(v ->
-                                              {
-                                                  Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://opentouchgaming.com/raze-touch/"));
-                                                  startActivity(browserIntent);
-                                              });
+        {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://opentouchgaming.com/raze-touch/"));
+            startActivity(browserIntent);
+        });
 
         SimpleServerAccess.AccessInfo versionAccess = new SimpleServerAccess.AccessInfo();
         versionAccess.url = "http://opentouchgaming.com/api/version_raze.txt";
@@ -91,7 +91,8 @@ public class LauncherFragment extends MainFragment
                 try
                 {
                     version = Integer.decode(byteArrayOutputStream.toString());
-                } catch (Exception e)
+                }
+                catch (Exception e)
                 {
 
                 }
@@ -99,7 +100,7 @@ public class LauncherFragment extends MainFragment
                 if (version != 0)
                 {
                     log.log(DebugLog.Level.D, "FOUND VERSION: " + version);
-                    if( version > GD.version)
+                    if (version > GD.version)
                     {
                         Toast.makeText(getActivity(), "New version available", Toast.LENGTH_LONG).show();
                         downloadNewVersion.setVisibility(View.VISIBLE);
@@ -163,8 +164,8 @@ public class LauncherFragment extends MainFragment
                 }
             };
 
-            Utils.showDownloadDialog(getActivity(), "Download " + selectedSubGame.getDownloadFilename() + "?", selectedSubGame.getDownloadPath(), selectedSubGame.getDownloadFilename(),
-                                     80 * 1024 * 1024, cb);
+            Utils.showDownloadDialog(getActivity(), "Download " + selectedSubGame.getDownloadFilename() + "?", selectedSubGame.getDownloadPath(),
+                    selectedSubGame.getDownloadFilename(), 80 * 1024 * 1024, cb);
             return;
         }
 
@@ -208,7 +209,7 @@ public class LauncherFragment extends MainFragment
             int audioDefault = AppSettings.getIntOption(getActivity(), "sdl_audio_backend", 0);
             int audioBackendOverride = engine.engineOptions.audioOverrideBackend();
 
-            if( audioBackendOverride == -1)
+            if (audioBackendOverride == -1)
             {
                 audioEngine = audioDefault;
             }
@@ -221,18 +222,19 @@ public class LauncherFragment extends MainFragment
         Utils.copyAsset(getActivity(), "raze.pk3", AppInfo.getResFiles());
         Utils.copyAsset(getActivity(), "raze_dev.pk3", AppInfo.getResFiles());
 
-        File sf2 = new File(AppInfo.getAppDirectory() +  "/EDUKE32/soundfont.sf2");
+        File sf2 = new File(AppInfo.getAppDirectory() + "/EDUKE32/soundfont.sf2");
         if (!sf2.exists())
         {
             Utils.copyAsset(getActivity(), "raze.sf2", AppInfo.getResFiles());
-            Utils.copyAsset(getActivity(), "raze.sf2", AppInfo.getAppDirectory() + "/EDUKE32","soundfont.sf2");
+            Utils.copyAsset(getActivity(), "raze.sf2", AppInfo.getAppDirectory() + "/EDUKE32", "soundfont.sf2");
         }
 
         if (selectedSubGame.isRunFromHere())
         {
             args += " -secondary_path " + selectedSubGame.getFullPath();
         }
-        else {
+        else
+        {
             if (launcher.getSecondaryDirectory() != null)
                 args += " -secondary_path " + launcher.getSecondaryDirectory();
         }
@@ -268,7 +270,7 @@ public class LauncherFragment extends MainFragment
         intent.putExtra("log_filename", AppInfo.currentEngine.getLogFilename());
         intent.putExtra("game_path", rootPath);
         intent.putExtra("user_files", AppInfo.getUserFiles());
-        intent.putExtra("res_files",AppInfo.getResFiles());
+        intent.putExtra("res_files", AppInfo.getResFiles());
         intent.putExtra("args", args);
         intent.putExtra("quick_command_main_path", quickCommandPaths.first);
         intent.putExtra("quick_command_mod_path", quickCommandPaths.second);

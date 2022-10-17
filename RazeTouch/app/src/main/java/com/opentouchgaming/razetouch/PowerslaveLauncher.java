@@ -25,11 +25,11 @@ public class PowerslaveLauncher extends RazeBaseLauncher
 
         availableSubGames.clear();
 
-        SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR + ".", ".", RAZE_GAME_PS, WEAPON_WHEEL_NBR, new String[]{"STUFF.DAT"}, R.drawable.ps,
-                        "Powerslave", "Copy STUFF.DAT to:", "Put your Powerslave files here.txt");
+        SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR + ".", ".", RAZE_GAME_PS, WEAPON_WHEEL_NBR,
+                new String[]{"STUFF.DAT"}, R.drawable.ps, "Powerslave", "Copy STUFF.DAT to:", "Put your Powerslave files here.txt");
 
         addAddonsDir(engine, RAZE_GAME_PS, availableSubGames, new String[]{""});
 
-        super.updateSubGames(engine,availableSubGames);
+        super.updateSubGames(engine, availableSubGames);
     }
 }

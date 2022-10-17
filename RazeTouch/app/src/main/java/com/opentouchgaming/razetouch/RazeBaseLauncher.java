@@ -24,8 +24,12 @@ public class RazeBaseLauncher implements GameLauncherInterface
 {
     static DebugLog log;
 
-    final int WEAPON_WHEEL_NBR = 10;
+    static
+    {
+        log = new DebugLog(DebugLog.Module.CONTROLS, "RazeBaseLauncher");
+    }
 
+    final int WEAPON_WHEEL_NBR = 10;
     final int RAZE_GAME_DUKE = 100;
     final int RAZE_GAME_BLOOD = 101;
     final int RAZE_GAME_SW = 102;
@@ -34,12 +38,6 @@ public class RazeBaseLauncher implements GameLauncherInterface
     final int RAZE_GAME_PS = 105;
     final int RAZE_GAME_IONFURY = 106;
     final int RAZE_GAME_EDUKE32 = 107;
-
-    static
-    {
-        log = new DebugLog(DebugLog.Module.CONTROLS, "RazeBaseLauncher");
-    }
-
     String SUB_DIR = null;
 
     @Override
@@ -51,7 +49,7 @@ public class RazeBaseLauncher implements GameLauncherInterface
     @Override
     public String getRunDirectory(SubGame subGame)
     {
-        if(subGame.isRunFromHere()) // Check if we are chaning the run directory
+        if (subGame.isRunFromHere()) // Check if we are chaning the run directory
         {
             log.log(D, "Running from: " + subGame.getFullPath());
             return subGame.getFullPath();
@@ -130,7 +128,8 @@ public class RazeBaseLauncher implements GameLauncherInterface
                     String pathInfo = f.getAbsolutePath();
                     String fileInfo = Utils.filesInfoString(pathInfo, null, 3);
 
-                    SubGame subgame = new SubGame(SUB_DIR + dirName, dirName, dirName, pathName, gameType, R.drawable.raze, pathInfo, fileInfo, WEAPON_WHEEL_NBR);
+                    SubGame subgame = new SubGame(SUB_DIR + dirName, dirName, dirName, pathName, gameType, R.drawable.raze, pathInfo, fileInfo,
+                            WEAPON_WHEEL_NBR);
 
                     if (gameType == RAZE_GAME_EDUKE32 || gameType == RAZE_GAME_IONFURY)
                         subgame.setExtraArgs("-game_dir " + quote(dirName));

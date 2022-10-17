@@ -25,11 +25,11 @@ public class NamLauncher extends RazeBaseLauncher
 
         availableSubGames.clear();
 
-        SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR, ".", RAZE_GAME_NAM, WEAPON_WHEEL_NBR, new String[]{"NAM.grp", "GAME.CON"}, R.drawable.nam,
-                "NAM", "Copy NAM.GRP and GAME.CON to:", "Put your NAM files here.txt");
+        SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR, ".", RAZE_GAME_NAM, WEAPON_WHEEL_NBR,
+                new String[]{"NAM.grp", "GAME.CON"}, R.drawable.nam, "NAM", "Copy NAM.GRP and GAME.CON to:", "Put your NAM files here.txt");
 
-        SubGame sg = SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR + "ww2gi", ".", RAZE_GAME_NAM, WEAPON_WHEEL_NBR, new String[]{"WW2GI.grp"}, R.drawable.nam,
-                "World War II GI", "Copy WW2GI.GRP to:", "Put your NAM files here.txt");
+        SubGame sg = SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR + "ww2gi", ".", RAZE_GAME_NAM, WEAPON_WHEEL_NBR,
+                new String[]{"WW2GI.grp"}, R.drawable.nam, "World War II GI", "Copy WW2GI.GRP to:", "Put your NAM files here.txt");
         sg.setExtraArgs(" -file " + sg.getRootPath() + "/WW2GI.GRP");
 
         addAddonsDir(engine, RAZE_GAME_NAM, availableSubGames, new String[]{""});
