@@ -45,6 +45,7 @@ public class LauncherFragment extends MainFragment
     PowerslaveLauncher powerslaveLauncher;
     IonFuryLauncher ionfuryLauncher;
     EDuke32Launcher edukeLauncher;
+    AWOLLauncher awolLauncher;
 
     public LauncherFragment()
     {
@@ -67,6 +68,7 @@ public class LauncherFragment extends MainFragment
         powerslaveLauncher = new PowerslaveLauncher();
         ionfuryLauncher = new IonFuryLauncher();
         edukeLauncher = new EDuke32Launcher();
+        awolLauncher = new AWOLLauncher();
     }
 
     @Override
@@ -141,6 +143,9 @@ public class LauncherFragment extends MainFragment
                 break;
             case EDUKE32:
                 launcher = edukeLauncher;
+                break;
+            case EDUKE32_AWOL:
+                launcher = awolLauncher;
                 break;
         }
     }

@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog bulletedList="true">
 
+    <changelogversion versionName="3.0_TEST" changeDate="October 30, 2022">
+        <changelogtext>Added A.W.O.L engine</changelogtext>
+        <changelogtext>Added Detail and Glow option back to Eduke32 dev menu</changelogtext>
+        <changelogtext>Bug fixes</changelogtext>
+    </changelogversion>
+
     <changelogversion versionName="2.2.1" changeDate="September 25, 2022">
         <changelogtext>Updated EDuke32 dev to latest code (fixes some crashes)</changelogtext>
     </changelogversion>

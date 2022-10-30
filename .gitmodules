@@ -46,3 +46,9 @@
 	path = RazeTouch/app/src/main/jni/gl4es
 	url = https://github.com/emileb/gl4es.git
 	branch = mobile_eduke
+
+[submodule "RazeTouch/app/src/main/jni/awol"]
+	path = RazeTouch/app/src/main/jniawol
+	url = https://github.com/emileb/eduke32_mobile.git
+	branch = awol
+	

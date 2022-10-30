@@ -9,6 +9,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/drawable/focusable.xml" value="0.33697916666666666" />
+        <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/drawable/ic_baseline_phone_android_black.xml" value="0.314" />
+        <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/drawable/ic_baseline_sd_card_black.xml" value="0.314" />
+        <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/drawable/ic_settings_black_24dp.xml" value="0.3865" />
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/drawable/imagebutton_background.xml" value="0.33697916666666666" />
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/drawable/imagebutton_focus.xml" value="0.33697916666666666" />
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/drawable/imagebutton_focus_selected.xml" value="0.33697916666666666" />
@@ -16,11 +19,15 @@
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/layout/audio_override.xml" value="0.2765625" />
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/layout/dialog_main_options.xml" value="0.27291666666666664" />
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/layout/dialog_select_mods_wads.xml" value="0.3145833333333333" />
+        <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/layout/dialog_storage_config.xml" value="0.22756119673617406" />
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/layout/dialog_subgame_options.xml" value="0.3307291666666667" />
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/layout/left_slide_panel.xml" value="0.3234375" />
+        <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/layout/list_item_storage_example.xml" value="0.2552372808892689" />
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/layout/list_item_subgame.xml" value="0.1524822695035461" />
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/layout/super_mod_item.xml" value="0.3145833333333333" />
+        <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/layout/view_horizontal_line.xml" value="0.55" />
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/layout/view_resolution_select.xml" value="0.33177083333333335" />
+        <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/layout/widget_view_spinner.xml" value="0.2552372808892689" />
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/RazeTouch/app/src/main/res/drawable-v24/eduke_button.xml" value="0.33697916666666666" />
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/RazeTouch/app/src/main/res/drawable-v24/eduke_button_bg_foucable.xml" value="0.33697916666666666" />
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/RazeTouch/app/src/main/res/drawable/eduke_button.xml" value="0.33697916666666666" />

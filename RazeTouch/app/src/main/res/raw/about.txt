@@ -1,6 +1,6 @@
 Zeta Touch
 
-Android port of the incredible 'Raze' engine.
+Android port of the 'Raze' and 'EDuke32' engines, with Ion Fury and A.W.O.L support
 
 https://raze.zdoom.org
 Raze is a fork of Build engine games backed by GZDoom tech and combines Duke Nukem 3D, Blood, Redneck Rampage, Shadow Warrior and Exhumed/Powerslave in a single package. It is also capable of playing Nam and WW2 GI.

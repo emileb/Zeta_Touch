@@ -1,3 +1,8 @@
+v3.0
+* Added A.W.O.L engine
+* Added Detail and Glow option back to Eduke32 dev menu
+* Bug fixes
+
 v2.2.1
 * Updated EDuke32 dev to latest code (fixes some crashes)
 
