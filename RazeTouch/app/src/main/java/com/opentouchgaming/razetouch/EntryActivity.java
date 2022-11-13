@@ -131,6 +131,8 @@ public class EntryActivity extends FragmentActivity
 
         List<StorageConfigDialog.StorageExamples> examples = new ArrayList<>();
         examples.add(new StorageConfigDialog.StorageExamples("Duke Nukem 3D", "(DUKE3D.GRP):", StorageConfigDialog.PathLocation.BOTH, "/DUKE"));
+        examples.add(new StorageConfigDialog.StorageExamples("Ion Fury", "(fury.grp, fury.grpinfo):", StorageConfigDialog.PathLocation.BOTH, "/IONFURY"));
+        examples.add(new StorageConfigDialog.StorageExamples("A.W.O.L", "(awol.grp, awol.grpinfo, awol_customize.con, awol_mods.con):", StorageConfigDialog.PathLocation.BOTH, "/AWOL"));
         examples.add(new StorageConfigDialog.StorageExamples("BLOOD", "(BLOOD.RFF, tilesxxx.art, ...):", StorageConfigDialog.PathLocation.BOTH, "/BLOOD"));
         examples.add(new StorageConfigDialog.StorageExamples("Shadow Warrior", "(SW.GRP):", StorageConfigDialog.PathLocation.BOTH, "/SW"));
 
@@ -138,7 +140,7 @@ public class EntryActivity extends FragmentActivity
         examples.add(new StorageConfigDialog.StorageExamples("NAM", "(NAM.GRP, GAME.COM, NAM.RTS):", StorageConfigDialog.PathLocation.BOTH, "/NAM"));
         examples.add(new StorageConfigDialog.StorageExamples("Powerslave", "(STUFF.DAT):", StorageConfigDialog.PathLocation.BOTH, "/PS"));
 
-        examples.add(new StorageConfigDialog.StorageExamples("User files", "(config, saves etc):", StorageConfigDialog.PathLocation.PRIM, "/user_files"));
+        //examples.add(new StorageConfigDialog.StorageExamples("User files", "(config, saves etc):", StorageConfigDialog.PathLocation.PRIM, "/user_files"));
 
         AppInfo.storageExamples = examples;
 

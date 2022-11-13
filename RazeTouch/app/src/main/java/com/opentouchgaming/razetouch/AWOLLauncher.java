@@ -23,7 +23,7 @@ public class AWOLLauncher extends RazeBaseLauncher
         availableSubGames.clear();
 
         SubGame sg = SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR + ".", "", RAZE_GAME_AWOL, 4,
-                new String[]{"awol.grp", "awol.grpinfo", "awol_customize.con", "awol_mods.con"}, R.drawable.awol, "A.W.O.L", "Copy awol.grp, awol.grpinfo, awol_customize.con, awol_mods.con to:",
+                new String[]{"awol.grp", "awol.grpinfo", "awol_customize.con", "awol_mods.con"}, R.drawable.awol, "A.W.O.L", "Search on Steam to download A.W.O.L. Copy awol.grp, awol.grpinfo, awol_customize.con, awol_mods.con to:",
                 "Put your AWOL files here.txt");
 
         super.updateSubGames(engine, availableSubGames);

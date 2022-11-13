@@ -5,6 +5,9 @@ Android port of the 'Raze' and 'EDuke32' engines, with Ion Fury and A.W.O.L supp
 https://raze.zdoom.org
 Raze is a fork of Build engine games backed by GZDoom tech and combines Duke Nukem 3D, Blood, Redneck Rampage, Shadow Warrior and Exhumed/Powerslave in a single package. It is also capable of playing Nam and WW2 GI.
 
+A.W.O.L can be downloaded from Steam:
+https://store.steampowered.com/app/1740150/AWOL/
+
 The game modules are based on the following sources:
 
 Duke Nukem: JFDuke, EDuke 2.0, World Tour extensions from DukeGDX and some minor fixes from EDuke32.

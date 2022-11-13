@@ -18,9 +18,13 @@
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/drawable/imagebutton_selected.xml" value="0.33697916666666666" />
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/layout/audio_override.xml" value="0.2765625" />
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/layout/dialog_main_options.xml" value="0.27291666666666664" />
+        <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/layout/dialog_move_files.xml" value="0.2056434373663959" />
+        <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/layout/dialog_scoped_storage.xml" value="0.4514749893116717" />
+        <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/layout/dialog_select_files.xml" value="0.2056434373663959" />
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/layout/dialog_select_mods_wads.xml" value="0.3145833333333333" />
-        <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/layout/dialog_storage_config.xml" value="0.22756119673617406" />
+        <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/layout/dialog_storage_config.xml" value="0.1" />
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/layout/dialog_subgame_options.xml" value="0.3307291666666667" />
+        <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/layout/dialog_user_files_manager.xml" value="0.22857142857142856" />
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/layout/left_slide_panel.xml" value="0.3234375" />
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/layout/list_item_storage_example.xml" value="0.2552372808892689" />
         <entry key="..\:/ANDROID/AndroidStudioProjects/Raze_Touch/AndroidCore_OpenTouch/androidcore/src/main/res/layout/list_item_subgame.xml" value="0.1524822695035461" />
