@@ -1,6 +1,15 @@
+v3.1
+* Added Import/Export of user settings
+* Added Raze 1.7.1 as 'dev'
+* Updated EDuke32 dev to latest code
+* Fix console logs for Raze
+* Default keyboard to lowercase
+* Added Crouch Toggle option to double-tap touch screen and volume buttons
+
 v3.0
 * Added A.W.O.L engine
 * Added Detail and Glow option back to Eduke32 dev menu
+* Improve UI
 * Bug fixes
 
 v2.2.1

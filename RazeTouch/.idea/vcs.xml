@@ -9,7 +9,9 @@
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/MobileTouchControls" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/Raze" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/Raze - Copy" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/src/main/jni/Raze_1.5" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/Raze_dev" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/src/main/jni/Raze_dev - Copy" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/SDL2_OpenTouch" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/WORKS/Raze - Copy" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/WORKS/eduke32_mobile" vcs="Git" />

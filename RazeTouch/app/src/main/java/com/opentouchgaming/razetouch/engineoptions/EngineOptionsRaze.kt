@@ -75,11 +75,13 @@ class EngineOptionsRaze : EngineOptionsInterface
 
         binding.deleteCfgButton.setOnClickListener {
             val file = "/raze/config/raze.ini"
-            val file2 = "/raze_dev/config/raze.ini"
+            val file2 = "/raze_1.5/config/raze.ini"
+            val file3 = "/raze_dev/config/raze.ini"
 
             showAlert(activity, "Delete config file", "Delete Raze config file?\n(${file})") {
                 File(file).delete()
                 File(file2).delete()
+                File(file3).delete()
             }
         }
 

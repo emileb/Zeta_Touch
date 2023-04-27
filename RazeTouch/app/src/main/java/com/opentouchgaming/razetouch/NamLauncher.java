@@ -32,6 +32,10 @@ public class NamLauncher extends RazeBaseLauncher
                 new String[]{"WW2GI.grp"}, R.drawable.nam, "World War II GI", "Copy WW2GI.GRP to:", "Put your NAM files here.txt");
         sg.setExtraArgs(" -file " + sg.getRootPath() + "/WW2GI.GRP");
 
+        //sg = SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR + "platoon", ".", RAZE_GAME_NAM, WEAPON_WHEEL_NBR,
+        //        new String[]{"PLATOONL.DAT"}, R.drawable.nam, "Platoon Leader", "Copy Platoon Leader files to:", "Put your NAM files here.txt");
+        //sg.setExtraArgs(" -file " + sg.getRootPath() + "/PLATOONL.DAT " + " -file " + sg.getRootPath() + "/PLATOONL.DEF");
+
         addAddonsDir(engine, RAZE_GAME_NAM, availableSubGames, new String[]{""});
 
         super.updateSubGames(engine, availableSubGames);

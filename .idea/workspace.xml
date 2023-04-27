@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2677fef9-0146-48e1-afca-19408b7f3dc2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RazeTouch/app/src/main/res/drawable/ic_baseline_delete_forever_24.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidCore_OpenTouch/androidcore/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidCore_OpenTouch/androidcore/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidCore_OpenTouch/androidcore/src/main/java/com/opentouchgaming/androidcore/AppInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidCore_OpenTouch/androidcore/src/main/java/com/opentouchgaming/androidcore/AppInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidCore_OpenTouch/androidcore/src/main/java/com/opentouchgaming/androidcore/ui/StorageConfigDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidCore_OpenTouch/androidcore/src/main/java/com/opentouchgaming/androidcore/ui/StorageConfigDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidCore_OpenTouch/androidcore/src/main/java/com/opentouchgaming/androidcore/ui/UserFilesDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidCore_OpenTouch/androidcore/src/main/java/com/opentouchgaming/androidcore/ui/UserFilesDialog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidCore_OpenTouch/androidcore/src/main/res/layout/dialog_storage_config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidCore_OpenTouch/androidcore/src/main/res/layout/dialog_storage_config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidCore_OpenTouch/androidcore/src/main/res/layout/dialog_user_files_manager.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidCore_OpenTouch/androidcore/src/main/res/layout/dialog_user_files_manager.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidCore_OpenTouch/androidcore/src/main/res/layout/fragment_alpha.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidCore_OpenTouch/androidcore/src/main/res/layout/fragment_alpha.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidCore_OpenTouch/androidcore/src/main/res/layout/view_vertical_line.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidCore_OpenTouch/androidcore/src/main/res/layout/view_vertical_line.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AndroidCore_OpenTouch/androidcore/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AndroidCore_OpenTouch/androidcore/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RazeTouch/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RazeTouch/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RazeTouch/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RazeTouch/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RazeTouch/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/RazeTouch/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RazeTouch/app/src/main/generate.txt" beforeDir="false" afterPath="$PROJECT_DIR$/RazeTouch/app/src/main/generate.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RazeTouch/app/src/main/java/com/opentouchgaming/razetouch/EntryActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/RazeTouch/app/src/main/java/com/opentouchgaming/razetouch/EntryActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RazeTouch/app/src/main/java/com/opentouchgaming/razetouch/LauncherFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/RazeTouch/app/src/main/java/com/opentouchgaming/razetouch/LauncherFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RazeTouch/app/src/main/java/com/opentouchgaming/razetouch/NamLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/RazeTouch/app/src/main/java/com/opentouchgaming/razetouch/NamLauncher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RazeTouch/app/src/main/java/com/opentouchgaming/razetouch/engineoptions/EngineOptionsRaze.kt" beforeDir="false" afterPath="$PROJECT_DIR$/RazeTouch/app/src/main/java/com/opentouchgaming/razetouch/engineoptions/EngineOptionsRaze.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RazeTouch/app/src/main/jni/Android.mk" beforeDir="false" afterPath="$PROJECT_DIR$/RazeTouch/app/src/main/jni/Android.mk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RazeTouch/app/src/main/jni/Clibs_OpenTouch" beforeDir="false" afterPath="$PROJECT_DIR$/RazeTouch/app/src/main/jni/Clibs_OpenTouch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RazeTouch/app/src/main/jni/MobileTouchControls" beforeDir="false" afterPath="$PROJECT_DIR$/RazeTouch/app/src/main/jni/MobileTouchControls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RazeTouch/app/src/main/jni/Raze" beforeDir="false" afterPath="$PROJECT_DIR$/RazeTouch/app/src/main/jni/Raze" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RazeTouch/app/src/main/jni/Raze_dev" beforeDir="false" afterPath="$PROJECT_DIR$/RazeTouch/app/src/main/jni/Raze_dev" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RazeTouch/app/src/main/jni/eduke32_mobile_dev" beforeDir="false" afterPath="$PROJECT_DIR$/RazeTouch/app/src/main/jni/eduke32_mobile_dev" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RazeTouch/app/src/main/res/raw/changes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/RazeTouch/app/src/main/res/raw/changes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RazeTouch/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/RazeTouch/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RazeTouch/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/RazeTouch/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2JC4Q8Nyw6uESsMV4ANYMSkgUHe" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/RazeTouch" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2677fef9-0146-48e1-afca-19408b7f3dc2" name="Changes" comment="" />
+      <created>1671568711727</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1671568711727</updated>
+    </task>
+    <servers />
+  </component>
+</project>

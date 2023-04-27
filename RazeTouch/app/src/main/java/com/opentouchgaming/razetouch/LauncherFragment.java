@@ -225,6 +225,7 @@ public class LauncherFragment extends MainFragment
         }
 
         Utils.copyAsset(getActivity(), "raze.pk3", AppInfo.getResFiles());
+        Utils.copyAsset(getActivity(), "raze_1.5.pk3", AppInfo.getResFiles());
         Utils.copyAsset(getActivity(), "raze_dev.pk3", AppInfo.getResFiles());
 
         File sf2 = new File(AppInfo.getAppDirectory() + "/EDUKE32/soundfont.sf2");

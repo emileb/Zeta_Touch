@@ -23,6 +23,7 @@ import com.opentouchgaming.androidcore.ScopedStorage;
 import com.opentouchgaming.androidcore.controls.GamepadDefinitions;
 import com.opentouchgaming.androidcore.ui.ScopedStorageDialog;
 import com.opentouchgaming.androidcore.ui.StorageConfigDialog;
+import com.opentouchgaming.androidcore.ui.UserFilesDialog;
 import com.opentouchgaming.androidcore.ui.tutorial.Tutorial;
 import com.opentouchgaming.razetouch.engineoptions.EngineOptionsEDuke32_AWOL;
 import com.opentouchgaming.razetouch.engineoptions.EngineOptionsEDuke32_Duke;
@@ -85,6 +86,10 @@ public class EntryActivity extends FragmentActivity
         tut.addScreen(new Tutorial.Screen("Add new commands by pressing the add button", "", "http://opentouchgaming.com/tutorial/quad/quick_cmd_6.png"));
         AppInfo.tutorials.add(tut);
 
+        String[] razeVersions = {"1.3.1", "1.5.0", "1.7.1"};
+        String[][] razeLoad = {{"touchcontrols", "openal", "zmusic", "raze"}, {"touchcontrols", "openal", "zmusic", "raze_1.5"},
+                {"touchcontrols", "openal", "zmusic", "raze_dev"}};
+
         AppInfo.gameEngines = new GameEngine[]{new GameEngine(GameEngine.Engine.EDUKE32_AWOL, 0, "A.W.O.L", "duke3d", "", new String[]{"stable"},
                 new String[][]{{"touchcontrols", "GL4ES", "openal", "awol"}}, " ", GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.awol,
                 R.drawable.awol_background, 0x0077481d, R.drawable.eduke_button_bg_foucable, EngineOptionsEDuke32_IonFury.class),
@@ -99,40 +104,35 @@ public class EntryActivity extends FragmentActivity
                         GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.dn3d_eduke, 0, 0x002f7fad, R.drawable.eduke_button_bg_foucable,
                         EngineOptionsEDuke32_Duke.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_DUKE, 1, "Duke Nukem 3D", "duke3d", "", new String[]{"1.3.1", "dev (1.5.0)"},
-                        new String[][]{{"touchcontrols", "openal", "zmusic", "raze"}, {"touchcontrols", "openal", "zmusic", "raze_dev"}},
-                        " +set cl_syncinput 1 ", GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.dn3d, 0, 0x00d1bd10,
-                        R.drawable.raze_button_bg_foucable, EngineOptionsRaze.class),
+                new GameEngine(GameEngine.Engine.RAZE_DUKE, 1, "Duke Nukem 3D", "duke3d", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
+                        GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.dn3d, 0, 0x00d1bd10, R.drawable.raze_button_bg_foucable,
+                        EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_SW, 2, "Shadow Warrior", "shadow_warrior", "", new String[]{"1.3.1", "dev (1.5.0)"},
-                        new String[][]{{"touchcontrols", "openal", "zmusic", "raze"}, {"touchcontrols", "openal", "zmusic", "raze_dev"}},
-                        " +set cl_syncinput 1 ", GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.sw, 0, 0x00dad9d2,
-                        R.drawable.raze_button_bg_foucable, EngineOptionsRaze.class),
+                new GameEngine(GameEngine.Engine.RAZE_SW, 2, "Shadow Warrior", "shadow_warrior", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
+                        GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.sw, 0, 0x00dad9d2, R.drawable.raze_button_bg_foucable,
+                        EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_BLOOD, 3, "Blood", "blood", "", new String[]{"1.3.1", "dev (1.5.0)"},
-                        new String[][]{{"touchcontrols", "openal", "zmusic", "raze"}, {"touchcontrols", "openal", "zmusic", "raze_dev"}},
-                        " +set cl_syncinput 1 ", GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.blood, 0, 0x00d20829,
-                        R.drawable.raze_button_bg_foucable, EngineOptionsRaze.class),
+                new GameEngine(GameEngine.Engine.RAZE_BLOOD, 3, "Blood", "blood", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
+                        GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.blood, 0, 0x00d20829, R.drawable.raze_button_bg_foucable,
+                        EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_REDNECK, 4, "Redneck Rampage", "redneck", "", new String[]{"1.3.1", "dev (1.5.0)"},
-                        new String[][]{{"touchcontrols", "openal", "zmusic", "raze"}, {"touchcontrols", "openal", "zmusic", "raze_dev"}},
-                        " +set cl_syncinput 1 ", GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.redneck, 0, 0x008f6407,
-                        R.drawable.raze_button_bg_foucable, EngineOptionsRaze.class),
+                new GameEngine(GameEngine.Engine.RAZE_REDNECK, 4, "Redneck Rampage", "redneck", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
+                        GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.redneck, 0, 0x008f6407, R.drawable.raze_button_bg_foucable,
+                        EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_NAM, 5, "NAM", "nam", "", new String[]{"1.3.1", "dev (1.5.0)"},
-                        new String[][]{{"touchcontrols", "openal", "zmusic", "raze"}, {"touchcontrols", "openal", "zmusic", "raze_dev"}},
-                        " +set cl_syncinput 1 ", GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.nam, 0, 0x00428747,
-                        R.drawable.raze_button_bg_foucable, EngineOptionsRaze.class),
+                new GameEngine(GameEngine.Engine.RAZE_NAM, 5, "NAM", "nam", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
+                        GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.nam, 0, 0x00428747, R.drawable.raze_button_bg_foucable,
+                        EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_POWERSLAVE, 6, "Powerslave", "powerslave", "", new String[]{"1.3.1", "dev (1.5.0)"},
-                        new String[][]{{"touchcontrols", "openal", "zmusic", "raze"}, {"touchcontrols", "openal", "zmusic", "raze_dev"}},
-                        " +set cl_syncinput 1 ", GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.ps, 0, 0x0008dfdc,
-                        R.drawable.raze_button_bg_foucable, EngineOptionsRaze.class),};
+                new GameEngine(GameEngine.Engine.RAZE_POWERSLAVE, 6, "Powerslave", "powerslave", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
+                        GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.ps, 0, 0x0008dfdc, R.drawable.raze_button_bg_foucable,
+                        EngineOptionsRaze.class),};
 
         List<StorageConfigDialog.StorageExamples> examples = new ArrayList<>();
         examples.add(new StorageConfigDialog.StorageExamples("Duke Nukem 3D", "(DUKE3D.GRP):", StorageConfigDialog.PathLocation.BOTH, "/DUKE"));
         examples.add(new StorageConfigDialog.StorageExamples("Ion Fury", "(fury.grp, fury.grpinfo):", StorageConfigDialog.PathLocation.BOTH, "/IONFURY"));
-        examples.add(new StorageConfigDialog.StorageExamples("A.W.O.L", "(awol.grp, awol.grpinfo, awol_customize.con, awol_mods.con):", StorageConfigDialog.PathLocation.BOTH, "/AWOL"));
+        examples.add(new StorageConfigDialog.StorageExamples("A.W.O.L", "(awol.grp, awol.grpinfo, awol_customize.con, awol_mods.con):",
+                StorageConfigDialog.PathLocation.BOTH, "/AWOL"));
         examples.add(new StorageConfigDialog.StorageExamples("BLOOD", "(BLOOD.RFF, tilesxxx.art, ...):", StorageConfigDialog.PathLocation.BOTH, "/BLOOD"));
         examples.add(new StorageConfigDialog.StorageExamples("Shadow Warrior", "(SW.GRP):", StorageConfigDialog.PathLocation.BOTH, "/SW"));
 
@@ -154,6 +154,21 @@ public class EntryActivity extends FragmentActivity
         scopedTutorial.items.add(new Pair<>(R.drawable.ss_5, "Check the path is correct and press 'USE THIS FOLDER'"));
         */
         AppInfo.scopedTutorial = scopedTutorial;
+
+        AppInfo.userFilesEntries = new UserFilesDialog.UserFileEntryDescription[]{
+                new UserFilesDialog.UserFileEntryDescription("A.W.O.L", "v1.0", R.drawable.awol, "awol"),
+                new UserFilesDialog.UserFileEntryDescription("EDuke32", "stable", R.drawable.dn3d_eduke, "eduke32"),
+                new UserFilesDialog.UserFileEntryDescription("EDuke32", "dev", R.drawable.dn3d_eduke, "eduke32_dev"),
+                new UserFilesDialog.UserFileEntryDescription("ION Fury", "v1.0", R.drawable.ionfury, "ionfury"),
+                new UserFilesDialog.UserFileEntryDescription("ION Fury", "dev", R.drawable.ionfury, "ionfury_dev"),
+                new UserFilesDialog.UserFileEntryDescription("Raze", "1.3", R.drawable.raze, "raze"),
+                new UserFilesDialog.UserFileEntryDescription("Raze", "1.5", R.drawable.raze, "raze_1.5"),
+                new UserFilesDialog.UserFileEntryDescription("Raze", "dev", R.drawable.raze, "raze_dev"),
+                new UserFilesDialog.UserFileEntryDescription("Mod setups", "", R.drawable.ic_baseline_file_copy, "loadouts"),
+                new UserFilesDialog.UserFileEntryDescription("Gamepad setups", "", R.drawable.ic_baseline_file_copy, "gamepad"),
+                new UserFilesDialog.UserFileEntryDescription("Touch layouts", "", R.drawable.ic_baseline_file_copy, "touch_layouts"),
+                new UserFilesDialog.UserFileEntryDescription("Quick cmds", "", R.drawable.ic_baseline_file_copy, "QC"),
+        };
     }
 
     final String key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArVTuCs3MUfRpivh5ETTzfgq+pdSHPfvWKKOsqLdyugv37TPWGfjHADzI+Ryst8qdObT9qEfKQXbd5PLC6+Lspl3" +

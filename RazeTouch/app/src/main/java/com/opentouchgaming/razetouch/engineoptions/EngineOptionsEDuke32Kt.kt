@@ -70,7 +70,6 @@ open class EngineOptionsEDuke32Kt(prefix: String, val userFilesDir: String) : En
 
     override fun showDialog(activity: Activity, engine: GameEngine, version: Int, update: Function<Int, Void>?)
     {
-
         this.version = version
 
         binding = DialogOptionsEdukeNewBinding.inflate(activity.layoutInflater)

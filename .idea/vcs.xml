@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/AndroidCore_OpenTouch" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/RazeTouch/app/src/main/jni/AWOL" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/RazeTouch/app/src/main/jni/AudioLibs_OpenTouch" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/RazeTouch/app/src/main/jni/AudioLibs_OpenTouch/fluidsynth-lite" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/RazeTouch/app/src/main/jni/Clibs_OpenTouch" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/RazeTouch/app/src/main/jni/MobileTouchControls" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/RazeTouch/app/src/main/jni/Raze" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/RazeTouch/app/src/main/jni/Raze_1.5" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/RazeTouch/app/src/main/jni/Raze_dev" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/RazeTouch/app/src/main/jni/SDL2_OpenTouch" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/RazeTouch/app/src/main/jni/ZMusic" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/RazeTouch/app/src/main/jni/eduke32_mobile" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/RazeTouch/app/src/main/jni/eduke32_mobile_dev" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/RazeTouch/app/src/main/jni/gl4es" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/SAFFAL" vcs="Git" />
+  </component>
+</project>
