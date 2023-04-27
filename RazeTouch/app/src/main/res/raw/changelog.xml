@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog bulletedList="true">
 
+    <changelogversion versionName="3.1" changeDate="April 28, 2023">
+        <changelogtext>Added Import/Export of user settings</changelogtext>
+        <changelogtext>Added Raze 1.7.1 as 'dev'</changelogtext>
+        <changelogtext>Updated EDuke32 dev to latest code</changelogtext>
+        <changelogtext>Fix console logs for Raze</changelogtext>
+        <changelogtext>Default keyboard to lowercase</changelogtext>
+        <changelogtext>Added Crouch Toggle option to double-tap touch screen and volume buttons</changelogtext>
+    </changelogversion>
+
     <changelogversion versionName="3.0" changeDate="November 14, 2022">
         <changelogtext>Added A.W.O.L engine</changelogtext>
         <changelogtext>Added Detail and Glow option back to Eduke32 dev menu</changelogtext>
@@ -139,7 +148,7 @@
     </changelogversion>
 
     <changelogversion versionName="0.1" changeDate="May 31, 2021">
-        <changelogtext>Inital test release</changelogtext>
+        <changelogtext>Initial test release</changelogtext>
     </changelogversion>
 
 </changelog>
