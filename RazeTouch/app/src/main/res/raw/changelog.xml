@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog bulletedList="true">
 
-    <changelogversion versionName="3.1" changeDate="April 28, 2023">
+    <changelogversion versionName="3.1" changeDate="April 29, 2023">
         <changelogtext>Added Import/Export of user settings</changelogtext>
         <changelogtext>Added Raze 1.7.1 as 'dev'</changelogtext>
         <changelogtext>Updated EDuke32 dev to latest code</changelogtext>
