@@ -21,8 +21,15 @@
 [submodule "RazeTouch/app/src/main/jni/Raze"]
 	path = RazeTouch/app/src/main/jni/Raze
 	url = https://github.com/emileb/Raze.git
-	branch = master_mobile
 
+[submodule "RazeTouch/app/src/main/jni/Raze_1.5"]
+	path = RazeTouch/app/src/main/jni/Raze_1.5
+	url = https://github.com/emileb/Raze.git
+
+[submodule "RazeTouch/app/src/main/jni/Raze_dev"]
+	path = RazeTouch/app/src/main/jni/Raze_dev
+	url = https://github.com/emileb/Raze.git
+	
 [submodule "RazeTouch/app/src/main/jni/SDL2_OpenTouch"]
 	path = RazeTouch/app/src/main/jni/SDL2_OpenTouch
 	url = https://github.com/emileb/SDL2_OpenTouch.git
