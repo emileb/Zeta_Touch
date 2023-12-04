@@ -46,6 +46,7 @@ public class LauncherFragment extends MainFragment
     IonFuryLauncher ionfuryLauncher;
     EDuke32Launcher edukeLauncher;
     AWOLLauncher awolLauncher;
+    AMCLauncher amcLauncher;
 
     public LauncherFragment()
     {
@@ -69,6 +70,7 @@ public class LauncherFragment extends MainFragment
         ionfuryLauncher = new IonFuryLauncher();
         edukeLauncher = new EDuke32Launcher();
         awolLauncher = new AWOLLauncher();
+        amcLauncher = new AMCLauncher();
     }
 
     @Override
@@ -146,6 +148,9 @@ public class LauncherFragment extends MainFragment
                 break;
             case EDUKE32_AWOL:
                 launcher = awolLauncher;
+                break;
+            case EDUKE32_AMC:
+                launcher = amcLauncher;
                 break;
         }
     }
@@ -267,6 +272,7 @@ public class LauncherFragment extends MainFragment
         intent.putExtra("use_gl4es", useGL4ES);
         intent.putExtra("framebuffer_width", runInfo.frameBufferWidth);
         intent.putExtra("framebuffer_height", runInfo.frameBufferHeight);
+        intent.putExtra("framebuffer_maintain_aspect", runInfo.maintainAspect);
         intent.putExtra("wheel_nbr", wheelNbr);
         intent.putExtra("audio_freq", audioFreq);
         intent.putExtra("audio_samples", audiosamples);

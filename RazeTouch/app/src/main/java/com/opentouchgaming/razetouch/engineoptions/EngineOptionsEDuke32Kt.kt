@@ -76,7 +76,7 @@ open class EngineOptionsEDuke32Kt(prefix: String, val userFilesDir: String) : En
 
         dialog = Dialog(activity, R.style.MyDialog)
         dialog.window!!.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
-        dialog.setTitle("EDuke32 options")
+        dialog.setTitle("EDuke32 options - $userFilesDir")
         dialog.setContentView(binding.root)
         dialog.setCanceledOnTouchOutside(true)
         dialog.setCancelable(true)
@@ -156,23 +156,24 @@ open class EngineOptionsEDuke32Kt(prefix: String, val userFilesDir: String) : En
         info.useGL4ES = true
 
         val renderer = SpinnerWidget.fetchValue(AppInfo.getContext(), RENDERER_PREFIX, RENDERER_DEFAULT)
-        val optionGL = ResolutionOptionsWidget.getResOption(RESOLUTION_PREFIX_GL, RESOLUTION_DEFAULT_GL)
-        val optionSW = ResolutionOptionsWidget.getResOption(RESOLUTION_PREFIX_SW, RESOLUTION_DEFAULT_SW)
         val cacheSize = SpinnerWidget.fetchValue(AppInfo.getContext(), CACHE_SIZE_PREFIX, CACHE_SIZE_DEFAULT)
         val cacheSizeMB = cacheSizes[cacheSize].second
 
-
         if (renderer == RENDERER_SW)
         {
+            val optionSW = ResolutionOptionsWidget.getResOption(RESOLUTION_PREFIX_SW, RESOLUTION_DEFAULT_SW)
             info.args += " -screen_bpp 8 -screen_width " + optionSW.w + "  -screen_height " + optionSW.h + " "
             info.frameBufferWidth = optionSW.w
             info.frameBufferHeight = optionSW.h
+            info.maintainAspect = optionSW.maintainAspect
         }
         else if (renderer == RENDERER_GL2)
         {
+            val optionGL = ResolutionOptionsWidget.getResOption(RESOLUTION_PREFIX_GL, RESOLUTION_DEFAULT_GL)
             info.args += " -screen_bpp 32 -screen_width " + optionGL.w + "  -screen_height " + optionGL.h + " "
             info.frameBufferWidth = optionGL.w
             info.frameBufferHeight = optionGL.h
+            info.maintainAspect = optionGL.maintainAspect
         }
 
         if (cacheSize > 0) info.args += " -cachesize " + cacheSizeMB * 1024 + " " // -cachesize is in KB

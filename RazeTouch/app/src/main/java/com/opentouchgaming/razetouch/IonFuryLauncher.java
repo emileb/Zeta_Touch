@@ -1,5 +1,7 @@
 package com.opentouchgaming.razetouch;
 
+import android.app.Activity;
+
 import com.opentouchgaming.androidcore.AppInfo;
 import com.opentouchgaming.androidcore.DebugLog;
 import com.opentouchgaming.androidcore.GameEngine;
@@ -40,4 +42,15 @@ public class IonFuryLauncher extends RazeBaseLauncher
         super.updateSubGames(engine, availableSubGames);
     }
 
+    @Override
+    public boolean checkForDownloads(Activity activity, GameEngine engine, SubGame subGame)
+    {
+        File defFile = new File(getRunDirectory() + "/fury.def");
+        if(!defFile.exists())
+        {
+            Utils.copyAsset(activity,"fury.def", getRunDirectory());
+        }
+
+        return false;
+    }
 }

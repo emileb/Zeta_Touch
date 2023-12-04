@@ -1,0 +1,1 @@
+Raze Crashing CVAR on 32bit - fix autoseg.h 32bit func test

@@ -25,6 +25,7 @@ import com.opentouchgaming.androidcore.ui.ScopedStorageDialog;
 import com.opentouchgaming.androidcore.ui.StorageConfigDialog;
 import com.opentouchgaming.androidcore.ui.UserFilesDialog;
 import com.opentouchgaming.androidcore.ui.tutorial.Tutorial;
+import com.opentouchgaming.razetouch.engineoptions.EngineOptionsEDuke32_AMC;
 import com.opentouchgaming.razetouch.engineoptions.EngineOptionsEDuke32_AWOL;
 import com.opentouchgaming.razetouch.engineoptions.EngineOptionsEDuke32_Duke;
 import com.opentouchgaming.razetouch.engineoptions.EngineOptionsEDuke32_IonFury;
@@ -86,45 +87,50 @@ public class EntryActivity extends FragmentActivity
         tut.addScreen(new Tutorial.Screen("Add new commands by pressing the add button", "", "http://opentouchgaming.com/tutorial/quad/quick_cmd_6.png"));
         AppInfo.tutorials.add(tut);
 
-        String[] razeVersions = {"1.3.1", "1.5.0", "1.7.1"};
+        String[] razeVersions = {"1.3.1", "1.5.0", "1.8.1"};
         String[][] razeLoad = {{"touchcontrols", "openal", "zmusic", "raze"}, {"touchcontrols", "openal", "zmusic", "raze_1.5"},
                 {"touchcontrols", "openal", "zmusic", "raze_dev"}};
 
-        AppInfo.gameEngines = new GameEngine[]{new GameEngine(GameEngine.Engine.EDUKE32_AWOL, 0, "A.W.O.L", "duke3d", "", new String[]{"stable"},
-                new String[][]{{"touchcontrols", "GL4ES", "openal", "awol"}}, " ", GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.awol,
-                R.drawable.awol_background, 0x0077481d, R.drawable.eduke_button_bg_foucable, EngineOptionsEDuke32_IonFury.class),
+        AppInfo.gameEngines = new GameEngine[]{new GameEngine(GameEngine.Engine.EDUKE32_AMC, 0, "AMC", "amc", "", new String[]{"stable"},
+                new String[][]{{"touchcontrols", "GL4ES", "openal", "amc_dev"}}, " ", GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH),
+                R.drawable.amctc, R.drawable.amctc, 0x00061cad, R.drawable.eduke_button_bg_foucable, EngineOptionsEDuke32_AMC.class),
 
-                new GameEngine(GameEngine.Engine.EDUKE32_IONFURY, 0, "Ion fury", "duke3d", "", new String[]{"stable", "dev"},
-                        new String[][]{{"touchcontrols", "GL4ES", "openal", "eduke32"}, {"touchcontrols", "GL4ES", "openal", "eduke32_dev"}}, " ",
-                        GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.ionfury, 0, 0x002006e0, R.drawable.eduke_button_bg_foucable,
-                        EngineOptionsEDuke32_AWOL.class),
+                new GameEngine(GameEngine.Engine.EDUKE32_AWOL, 0, "A.W.O.L", "awol", "", new String[]{"stable"},
+                        new String[][]{{"touchcontrols", "GL4ES", "openal", "awol"}}, " ", GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH),
+                        R.drawable.awol, R.drawable.awol_background, 0x0077481d, R.drawable.eduke_button_bg_foucable, EngineOptionsEDuke32_AWOL.class),
+
 
                 new GameEngine(GameEngine.Engine.EDUKE32, 1, "Eduke32", "duke3d", "", new String[]{"stable", "dev"},
                         new String[][]{{"touchcontrols", "GL4ES", "openal", "eduke32"}, {"touchcontrols", "GL4ES", "openal", "eduke32_dev"}}, " ",
                         GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.dn3d_eduke, 0, 0x002f7fad, R.drawable.eduke_button_bg_foucable,
                         EngineOptionsEDuke32_Duke.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_DUKE, 1, "Duke Nukem 3D", "duke3d", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
+                new GameEngine(GameEngine.Engine.EDUKE32_IONFURY, 1, "Ion fury", "ionfury", "", new String[]{"dev"},
+                        new String[][]{{"touchcontrols", "GL4ES", "openal", "eduke32_dev"}}, " ",
+                        GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.ionfury, 0, 0x002006e0, R.drawable.eduke_button_bg_foucable,
+                        EngineOptionsEDuke32_IonFury.class),
+
+                new GameEngine(GameEngine.Engine.RAZE_DUKE, 2, "Duke Nukem 3D", "duke3d_raze", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
                         GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.dn3d, 0, 0x00d1bd10, R.drawable.raze_button_bg_foucable,
                         EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_SW, 2, "Shadow Warrior", "shadow_warrior", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
+                new GameEngine(GameEngine.Engine.RAZE_SW, 3, "Shadow Warrior", "shadow_warrior", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
                         GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.sw, 0, 0x00dad9d2, R.drawable.raze_button_bg_foucable,
                         EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_BLOOD, 3, "Blood", "blood", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
+                new GameEngine(GameEngine.Engine.RAZE_BLOOD, 4, "Blood", "blood", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
                         GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.blood, 0, 0x00d20829, R.drawable.raze_button_bg_foucable,
                         EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_REDNECK, 4, "Redneck Rampage", "redneck", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
+                new GameEngine(GameEngine.Engine.RAZE_REDNECK, 5, "Redneck Rampage", "redneck", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
                         GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.redneck, 0, 0x008f6407, R.drawable.raze_button_bg_foucable,
                         EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_NAM, 5, "NAM", "nam", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
+                new GameEngine(GameEngine.Engine.RAZE_NAM, 6, "NAM", "nam", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
                         GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.nam, 0, 0x00428747, R.drawable.raze_button_bg_foucable,
                         EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_POWERSLAVE, 6, "Powerslave", "powerslave", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
+                new GameEngine(GameEngine.Engine.RAZE_POWERSLAVE, 7, "Powerslave", "powerslave", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
                         GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.ps, 0, 0x0008dfdc, R.drawable.raze_button_bg_foucable,
                         EngineOptionsRaze.class),};
 
@@ -167,8 +173,7 @@ public class EntryActivity extends FragmentActivity
                 new UserFilesDialog.UserFileEntryDescription("Mod setups", "", R.drawable.ic_baseline_file_copy, "loadouts"),
                 new UserFilesDialog.UserFileEntryDescription("Gamepad setups", "", R.drawable.ic_baseline_file_copy, "gamepad"),
                 new UserFilesDialog.UserFileEntryDescription("Touch layouts", "", R.drawable.ic_baseline_file_copy, "touch_layouts"),
-                new UserFilesDialog.UserFileEntryDescription("Quick cmds", "", R.drawable.ic_baseline_file_copy, "QC"),
-        };
+                new UserFilesDialog.UserFileEntryDescription("Quick cmds", "", R.drawable.ic_baseline_file_copy, "QC"),};
     }
 
     final String key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArVTuCs3MUfRpivh5ETTzfgq+pdSHPfvWKKOsqLdyugv37TPWGfjHADzI+Ryst8qdObT9qEfKQXbd5PLC6+Lspl3" +
@@ -198,6 +203,7 @@ public class EntryActivity extends FragmentActivity
         AppInfo.setAppInfo(getApplicationContext(), AppInfo.Apps.RAZE_TOUCH, "Zeta Touch", "Zeta", BuildConfig.APPLICATION_ID, "razelogs@opentouchgaming.com",
                 false, R.drawable.raze, false);
         AppInfo.showRateButton = false;
+        AppInfo.groupSimilarEngines = true; // Force group engines
         AppInfo.sidePanelImage = R.drawable.side_panel;
 
         AppInfo.website = "http://opentouchgaming.com/zeta-touch/";

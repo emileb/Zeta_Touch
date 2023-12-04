@@ -33,4 +33,7 @@ include $(TOP_DIR)/eduke32_mobile/Android.mk
 include $(TOP_DIR)/AWOL/Android.mk
 include $(TOP_DIR)/Clibs_OpenTouch/libvpx/Android.mk
 
+include $(TOP_DIR)/amcduke32/Android.mk
+include $(TOP_DIR)/amcduke32/Android_xmp.mk
+
 #include $(TOP_DIR)/eduke32_mobile/Android_xmp.mk

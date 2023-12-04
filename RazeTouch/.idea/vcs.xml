@@ -17,6 +17,7 @@
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/WORKS/eduke32_mobile" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/WORKS/gl4es" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/ZMusic" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/src/main/jni/amcduke32" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/eduk32_mobile" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/eduke32_base" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/eduke32_mobile" vcs="Git" />

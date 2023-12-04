@@ -13,6 +13,7 @@
     <mapping directory="$PROJECT_DIR$/RazeTouch/app/src/main/jni/Raze_dev" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/RazeTouch/app/src/main/jni/SDL2_OpenTouch" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/RazeTouch/app/src/main/jni/ZMusic" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/RazeTouch/app/src/main/jni/amcduke32" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/RazeTouch/app/src/main/jni/eduke32_mobile" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/RazeTouch/app/src/main/jni/eduke32_mobile_dev" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/RazeTouch/app/src/main/jni/gl4es" vcs="Git" />

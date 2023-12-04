@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog bulletedList="true">
 
+    <changelogversion versionName="3.2.1" changeDate="December 04, 2023">
+        <changelogtext>Fixed Raze 1.8.1 on 32bit devices</changelogtext>
+        <changelogtext>Fix AMC crashing on new game for some devices</changelogtext>
+        <changelogtext>Fix overlapping engine icons on old Android versions</changelogtext>
+    </changelogversion>
+
+    <changelogversion versionName="3.2" changeDate="December 01, 2023">
+        <changelogtext>Added AMC EDuke32 engine</changelogtext>
+        <changelogtext>Updated Eduke32/Ion Fury dev to play Ion Fury Aftershock</changelogtext>
+        <changelogtext>Updated Raze to 1.8.1</changelogtext>
+        <changelogtext>Added maintain aspect ratio option for EDuke32</changelogtext>
+        <changelogtext>Can see game controls when editing custom button positions</changelogtext>
+        <changelogtext>Fixed Gyro Toggle button for gamepad</changelogtext>
+    </changelogversion>
+
     <changelogversion versionName="3.1" changeDate="April 29, 2023">
         <changelogtext>Added Import/Export of user settings</changelogtext>
         <changelogtext>Added Raze 1.7.1 as 'dev'</changelogtext>

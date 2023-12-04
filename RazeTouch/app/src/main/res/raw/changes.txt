@@ -1,3 +1,15 @@
+* Fixed Raze 1.8.1 on 32bit devices
+* Fix overlapping engine icons on old Android versions
+* Fix AMC crashing on new game for some devices
+
+v3.2
+* Added AMC EDuke32 engine
+* Updated Eduke32/Ion Fury dev to play Ion Fury Aftershock
+* Updated Raze to 1.8.1
+* Added maintain aspect ratio option for EDuke32
+* Can see game controls when editing custom button positions
+* Fixed Gyro Toggle button for gamepad
+
 v3.1
 * Added Import/Export of user settings
 * Added Raze 1.7.1 as 'dev'
