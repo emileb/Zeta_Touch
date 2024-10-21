@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2677fef9-0146-48e1-afca-19408b7f3dc2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RazeTouch/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RazeTouch/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RazeTouch/app/src/main/jni/Application.mk" beforeDir="false" afterPath="$PROJECT_DIR$/RazeTouch/app/src/main/jni/Application.mk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RazeTouch/app/src/main/jni/eduke32_mobile_dev" beforeDir="false" afterPath="$PROJECT_DIR$/RazeTouch/app/src/main/jni/eduke32_mobile_dev" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RazeTouch/app/src/main/res/raw/changes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/RazeTouch/app/src/main/res/raw/changes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RazeTouch/.idea/deploymentTargetDropDown.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +15,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2JC4Q8Nyw6uESsMV4ANYMSkgUHe" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
