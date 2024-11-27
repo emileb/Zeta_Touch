@@ -2,37 +2,23 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../AndroidCore_OpenTouch" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/AWOL" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/AudioLibs_OpenTouch" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/AudioLibs_OpenTouch/fluidsynth-lite" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/Clibs_OpenTouch" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/MobileTouchControls" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/src/main/jni/NBlood" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/Raze" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/app/src/main/jni/Raze - Copy" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/Raze_1.5" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/Raze_dev" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/app/src/main/jni/Raze_dev - Copy" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/SDL2_OpenTouch" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/app/src/main/jni/WORKS/Raze - Copy" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/app/src/main/jni/WORKS/eduke32_mobile" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/app/src/main/jni/WORKS/gl4es" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/ZMusic" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/amcduke32" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/app/src/main/jni/eduk32_mobile" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/app/src/main/jni/eduke32_base" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/eduke32_mobile" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/app/src/main/jni/eduke32_mobile - Copy" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/app/src/main/jni/eduke32_mobile - Copy (2)" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/app/src/main/jni/eduke32_mobile - Fury works - sky borken less than width 1220" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/app/src/main/jni/eduke32_mobile - works" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/app/src/main/jni/eduke32_mobile- works" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/app/src/main/jni/eduke32_mobile-new_slow" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/eduke32_mobile_dev" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/eduke32_mobile_dev - Copy" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/app/src/main/jni/eduke32_mobile_dev - Copy (2)" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/app/src/main/jni/eduke32_mobile_fury_2.0" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/app/src/main/jni/gl4es" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/app/src/main/jni/gl4es_" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/app/src/main/jni/gl4es_new" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../SAFFAL" vcs="Git" />
   </component>
 </project>
