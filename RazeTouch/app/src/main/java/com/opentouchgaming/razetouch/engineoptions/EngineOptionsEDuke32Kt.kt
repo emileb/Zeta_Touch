@@ -17,6 +17,7 @@ import com.opentouchgaming.androidcore.ui.widgets.SpinnerWidget
 import com.opentouchgaming.androidcore.ui.widgets.SwitchWidget
 import com.opentouchgaming.razetouch.R
 import com.opentouchgaming.razetouch.databinding.DialogOptionsEdukeNewBinding
+import com.opentouchgaming.saffal.FileSAF
 import java.io.File
 
 open class EngineOptionsEDuke32Kt(prefix: String, val userFilesDir: String) : EngineOptionsInterface
@@ -88,8 +89,8 @@ open class EngineOptionsEDuke32Kt(prefix: String, val userFilesDir: String) : En
             showAlert(activity, "Delete config file", "Delete EDuke32 config files?\n") {
                 val cfgRoot = AppInfo.getUserFiles() + "/" + userFilesDir
                 val files = ArrayList<String>()
-                Utils.findFiles(File(cfgRoot), "eduke32.cfg", files)
-                Utils.findFiles(File(cfgRoot), "settings.cfg", files)
+                Utils.findFiles(FileSAF(cfgRoot), "eduke32.cfg", files)
+                Utils.findFiles(FileSAF(cfgRoot), "settings.cfg", files)
                 for (f in files)
                 {
                     File(f).delete()

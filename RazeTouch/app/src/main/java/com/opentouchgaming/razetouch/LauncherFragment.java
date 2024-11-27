@@ -47,6 +47,7 @@ public class LauncherFragment extends MainFragment
     EDuke32Launcher edukeLauncher;
     AWOLLauncher awolLauncher;
     AMCLauncher amcLauncher;
+    NBloodLauncher nbloodLauncher;
 
     public LauncherFragment()
     {
@@ -71,6 +72,7 @@ public class LauncherFragment extends MainFragment
         edukeLauncher = new EDuke32Launcher();
         awolLauncher = new AWOLLauncher();
         amcLauncher = new AMCLauncher();
+        nbloodLauncher = new NBloodLauncher();
     }
 
     @Override
@@ -151,6 +153,9 @@ public class LauncherFragment extends MainFragment
                 break;
             case EDUKE32_AMC:
                 launcher = amcLauncher;
+                break;
+            case EDUKE32_NBLOOD:
+                launcher = nbloodLauncher;
                 break;
         }
     }

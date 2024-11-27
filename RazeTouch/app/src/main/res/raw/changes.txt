@@ -1,3 +1,9 @@
+* Updated Raze to 1.10.2
+* Updated AMC to 4.5
+* Updated EDuke32 dev to latest code
+
+
+
 * Fixed Raze 1.8.1 on 32bit devices
 * Fix overlapping engine icons on old Android versions
 * Fix AMC crashing on new game for some devices

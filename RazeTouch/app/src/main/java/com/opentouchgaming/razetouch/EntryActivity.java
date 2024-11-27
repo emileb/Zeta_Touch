@@ -29,6 +29,7 @@ import com.opentouchgaming.razetouch.engineoptions.EngineOptionsEDuke32_AMC;
 import com.opentouchgaming.razetouch.engineoptions.EngineOptionsEDuke32_AWOL;
 import com.opentouchgaming.razetouch.engineoptions.EngineOptionsEDuke32_Duke;
 import com.opentouchgaming.razetouch.engineoptions.EngineOptionsEDuke32_IonFury;
+import com.opentouchgaming.razetouch.engineoptions.EngineOptionsEDuke32_NBlood;
 import com.opentouchgaming.razetouch.engineoptions.EngineOptionsRaze;
 
 import java.util.ArrayList;
@@ -87,11 +88,11 @@ public class EntryActivity extends FragmentActivity
         tut.addScreen(new Tutorial.Screen("Add new commands by pressing the add button", "", "http://opentouchgaming.com/tutorial/quad/quick_cmd_6.png"));
         AppInfo.tutorials.add(tut);
 
-        String[] razeVersions = {"1.3.1", "1.5.0", "1.8.1"};
+        String[] razeVersions = {"1.3.1", "1.5.0", "1.10.2"};
         String[][] razeLoad = {{"touchcontrols", "openal", "zmusic", "raze"}, {"touchcontrols", "openal", "zmusic", "raze_1.5"},
                 {"touchcontrols", "openal", "zmusic", "raze_dev"}};
 
-        AppInfo.gameEngines = new GameEngine[]{new GameEngine(GameEngine.Engine.EDUKE32_AMC, 0, "AMC", "amc", "", new String[]{"stable"},
+        AppInfo.gameEngines = new GameEngine[]{new GameEngine(GameEngine.Engine.EDUKE32_AMC, 0, "AMC", "amc", "", new String[]{"4.5"},
                 new String[][]{{"touchcontrols", "GL4ES", "openal", "amc_dev"}}, " ", GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH),
                 R.drawable.amctc, R.drawable.amctc, 0x00061cad, R.drawable.eduke_button_bg_foucable, EngineOptionsEDuke32_AMC.class),
 
@@ -109,6 +110,12 @@ public class EntryActivity extends FragmentActivity
                         new String[][]{{"touchcontrols", "GL4ES", "openal", "eduke32_dev"}}, " ",
                         GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.ionfury, 0, 0x002006e0, R.drawable.eduke_button_bg_foucable,
                         EngineOptionsEDuke32_IonFury.class),
+
+                new GameEngine(GameEngine.Engine.EDUKE32_NBLOOD, 1, "NBlood", "nblood", "", new String[]{"dev"},
+                        new String[][]{{"touchcontrols", "GL4ES", "openal", "nblood_dev"}}, " ",
+                        GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.ionfury, 0, 0x002006e0, R.drawable.eduke_button_bg_foucable,
+                        EngineOptionsEDuke32_NBlood.class),
+
 
                 new GameEngine(GameEngine.Engine.RAZE_DUKE, 2, "Duke Nukem 3D", "duke3d_raze", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
                         GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.dn3d, 0, 0x00d1bd10, R.drawable.raze_button_bg_foucable,
