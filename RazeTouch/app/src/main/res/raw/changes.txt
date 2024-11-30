@@ -1,7 +1,12 @@
+3.3
+* Added NBLOOD engine
 * Updated Raze to 1.10.2
 * Updated AMC to 4.5
 * Updated EDuke32 dev to latest code
-
+* Added Copy to Clipboard from log view
+* Fixed 'View last log' text for EDuke engines
+* Fixed AMC buttons
+* Fixed saving for mod folder for EDuke32
 
 
 * Fixed Raze 1.8.1 on 32bit devices

@@ -101,31 +101,31 @@ public class EntryActivity extends FragmentActivity
                         R.drawable.awol, R.drawable.awol_background, 0x0077481d, R.drawable.eduke_button_bg_foucable, EngineOptionsEDuke32_AWOL.class),
 
 
-                new GameEngine(GameEngine.Engine.EDUKE32, 1, "Eduke32", "duke3d", "", new String[]{"stable", "dev"},
+                new GameEngine(GameEngine.Engine.EDUKE32, 2, "Eduke32", "duke3d", "", new String[]{"stable", "dev"},
                         new String[][]{{"touchcontrols", "GL4ES", "openal", "eduke32"}, {"touchcontrols", "GL4ES", "openal", "eduke32_dev"}}, " ",
                         GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.dn3d_eduke, 0, 0x002f7fad, R.drawable.eduke_button_bg_foucable,
                         EngineOptionsEDuke32_Duke.class),
 
-                new GameEngine(GameEngine.Engine.EDUKE32_IONFURY, 1, "Ion fury", "ionfury", "", new String[]{"dev"},
+                new GameEngine(GameEngine.Engine.EDUKE32_IONFURY, 2, "Ion fury", "ionfury", "", new String[]{"dev"},
                         new String[][]{{"touchcontrols", "GL4ES", "openal", "eduke32_dev"}}, " ",
                         GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.ionfury, 0, 0x002006e0, R.drawable.eduke_button_bg_foucable,
                         EngineOptionsEDuke32_IonFury.class),
 
-                new GameEngine(GameEngine.Engine.EDUKE32_NBLOOD, 1, "NBlood", "nblood", "", new String[]{"dev"},
+                new GameEngine(GameEngine.Engine.EDUKE32_NBLOOD, 3, "NBLOOD", "nblood", "", new String[]{"dev"},
                         new String[][]{{"touchcontrols", "GL4ES", "openal", "nblood_dev"}}, " ",
-                        GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.ionfury, 0, 0x002006e0, R.drawable.eduke_button_bg_foucable,
+                        GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.nblood, 0, 0x00d20829, R.drawable.eduke_button_bg_foucable,
                         EngineOptionsEDuke32_NBlood.class),
 
 
-                new GameEngine(GameEngine.Engine.RAZE_DUKE, 2, "Duke Nukem 3D", "duke3d_raze", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
+                new GameEngine(GameEngine.Engine.RAZE_DUKE, 4, "Duke Nukem 3D", "duke3d_raze", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
                         GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.dn3d, 0, 0x00d1bd10, R.drawable.raze_button_bg_foucable,
                         EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_SW, 3, "Shadow Warrior", "shadow_warrior", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
+                new GameEngine(GameEngine.Engine.RAZE_SW, 4, "Shadow Warrior", "shadow_warrior", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
                         GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.sw, 0, 0x00dad9d2, R.drawable.raze_button_bg_foucable,
                         EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_BLOOD, 4, "Blood", "blood", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
+                new GameEngine(GameEngine.Engine.RAZE_BLOOD, 5, "Blood", "blood", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
                         GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.blood, 0, 0x00d20829, R.drawable.raze_button_bg_foucable,
                         EngineOptionsRaze.class),
 
@@ -137,7 +137,7 @@ public class EntryActivity extends FragmentActivity
                         GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.nam, 0, 0x00428747, R.drawable.raze_button_bg_foucable,
                         EngineOptionsRaze.class),
 
-                new GameEngine(GameEngine.Engine.RAZE_POWERSLAVE, 7, "Powerslave", "powerslave", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
+                new GameEngine(GameEngine.Engine.RAZE_POWERSLAVE, 6, "Powerslave", "powerslave", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
                         GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.ps, 0, 0x0008dfdc, R.drawable.raze_button_bg_foucable,
                         EngineOptionsRaze.class),};
 
@@ -169,7 +169,8 @@ public class EntryActivity extends FragmentActivity
         AppInfo.scopedTutorial = scopedTutorial;
 
         AppInfo.userFilesEntries = new UserFilesDialog.UserFileEntryDescription[]{
-                new UserFilesDialog.UserFileEntryDescription("A.W.O.L", "v1.0", R.drawable.awol, "awol"),
+                new UserFilesDialog.UserFileEntryDescription("AMC", "dev", R.drawable.awol, "amc"),
+                new UserFilesDialog.UserFileEntryDescription("A.W.O.L", "dev", R.drawable.awol, "awol"),
                 new UserFilesDialog.UserFileEntryDescription("EDuke32", "stable", R.drawable.dn3d_eduke, "eduke32"),
                 new UserFilesDialog.UserFileEntryDescription("EDuke32", "dev", R.drawable.dn3d_eduke, "eduke32_dev"),
                 new UserFilesDialog.UserFileEntryDescription("ION Fury", "v1.0", R.drawable.ionfury, "ionfury"),

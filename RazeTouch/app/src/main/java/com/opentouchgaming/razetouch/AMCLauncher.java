@@ -22,7 +22,7 @@ public class AMCLauncher extends RazeBaseLauncher
 
         availableSubGames.clear();
 
-        SubGame sg = SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR + ".", "", RAZE_GAME_AWOL, 4,
+        SubGame sg = SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR + ".", "", RAZE_GAME_AMC, 4,
                 new String[]{"amcart.grp"}, R.drawable.amctc, "AMC", "Go to www.opentouchgaming.com to download the AMC data files",
                 "Put your AMC files here.txt");
 

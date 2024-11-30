@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog bulletedList="true">
 
+    <changelogversion versionName="3.2" changeDate="November 30, 2024">
+        <changelogtext>Added NBLOOD engine</changelogtext>
+        <changelogtext>Updated Raze to 1.10.2</changelogtext>
+        <changelogtext>Updated AMC to 4.5</changelogtext>
+        <changelogtext>Updated EDuke32 dev to latest code</changelogtext>
+        <changelogtext>Added Copy to Clipboard from log view</changelogtext>
+        <changelogtext>Fixed 'View last log' text for EDuke engines</changelogtext>
+        <changelogtext>Fixed AMC buttons</changelogtext>
+        <changelogtext>Fixed saving for mod folder for EDuke32</changelogtext>
+    </changelogversion>
+
     <changelogversion versionName="3.2.1" changeDate="December 04, 2023">
         <changelogtext>Fixed Raze 1.8.1 on 32bit devices</changelogtext>
         <changelogtext>Fix AMC crashing on new game for some devices</changelogtext>

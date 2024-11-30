@@ -39,6 +39,7 @@ public class RazeBaseLauncher implements GameLauncherInterface
     final int RAZE_GAME_IONFURY = 106;
     final int RAZE_GAME_EDUKE32 = 107;
     final int RAZE_GAME_AWOL = 108;
+    final int RAZE_GAME_AMC = 109;
     String SUB_DIR = null;
 
     @Override
