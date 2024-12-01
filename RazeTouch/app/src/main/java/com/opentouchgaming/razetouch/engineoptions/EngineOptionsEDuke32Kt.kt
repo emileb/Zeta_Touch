@@ -49,13 +49,17 @@ open class EngineOptionsEDuke32Kt(prefix: String, val userFilesDir: String) : En
     val CACHE_SIZE_DEFAULT = 0
 
 
-    val cacheSizes = arrayOf(Pair("Default", 0),
-            Pair("128 MB", 128),
-            Pair("256 MB", 256),
-            Pair("384 MB", 384),
-            Pair("512 MB", 512),
-            Pair("768 MB", 768),
-            Pair("1024 MB", 1024))
+    val cacheSizes = arrayOf(
+        Pair("Default", 0),
+        Pair("128 MB", 128),
+        Pair("256 MB", 256),
+        Pair("384 MB", 384),
+        Pair("512 MB", 512),
+        Pair("768 MB", 768),
+        Pair("1024 MB", 1024),
+        Pair("1.5 GB", 1536),
+        Pair("2.0 GB", 1024 * 2)
+    )
 
     fun showAlert(activity: Activity, title: String, message: String, function: () -> (Unit))
     {
@@ -113,39 +117,45 @@ open class EngineOptionsEDuke32Kt(prefix: String, val userFilesDir: String) : En
         val items = arrayOf<Pair<String, View?>>(Pair("GLES 2.0", binding.gl2Options), Pair("Software", binding.swOptions))
 
         // Create and Setup the renderer spinner options
-        SpinnerWidget(activity,
-                binding.rendererSpinner.root,
-                "Rendering backend",
-                "Select rendering backend used. Will affect performance and features",
-                items,
-                RENDERER_PREFIX,
-                RENDERER_DEFAULT,
-                R.drawable.setting_gpu)
+        SpinnerWidget(
+            activity,
+            binding.rendererSpinner.root,
+            "Rendering backend",
+            "Select rendering backend used. Will affect performance and features",
+            items,
+            RENDERER_PREFIX,
+            RENDERER_DEFAULT,
+            R.drawable.setting_gpu
+        )
 
         val cacheItems = Array<Pair<String, View?>>(cacheSizes.size) { index ->
             Pair(cacheSizes[index].first, null)
         }
 
         // Create and setup the cache spinner
-        SpinnerWidget(activity,
-                binding.cacheSpinner.root,
-                "Cache memory",
-                "Size of Cache memory to allocate",
-                cacheItems,
-                CACHE_SIZE_PREFIX,
-                CACHE_SIZE_DEFAULT,
-                R.drawable.settings_ram)
+        SpinnerWidget(
+            activity,
+            binding.cacheSpinner.root,
+            "Cache memory",
+            "Size of Cache memory to allocate",
+            cacheItems,
+            CACHE_SIZE_PREFIX,
+            CACHE_SIZE_DEFAULT,
+            R.drawable.settings_ram
+        )
 
         ResolutionOptionsWidget(activity, binding.resolutionSelectGl.root, RESOLUTION_PREFIX_GL, RESOLUTION_DEFAULT_GL)
         ResolutionOptionsWidget(activity, binding.resolutionSelectSw.root, RESOLUTION_PREFIX_SW, RESOLUTION_DEFAULT_SW)
 
-        SwitchWidget(activity,
-                binding.loadAutoloadSwitch.root,
-                "Load 'autoload' folder",
-                "Automatically load files in the 'autoload' folder",
-                AUTOLOAD_PREFIX,
-                AUTOLOAD_DEFAULT,
-                0)
+        SwitchWidget(
+            activity,
+            binding.loadAutoloadSwitch.root,
+            "Load 'autoload' folder",
+            "Automatically load files in the 'autoload' folder",
+            AUTOLOAD_PREFIX,
+            AUTOLOAD_DEFAULT,
+            0
+        )
     }
 
     override fun getRunInfo(version: Int): EngineOptionsInterface.RunInfo
@@ -167,8 +177,7 @@ open class EngineOptionsEDuke32Kt(prefix: String, val userFilesDir: String) : En
             info.frameBufferWidth = optionSW.w
             info.frameBufferHeight = optionSW.h
             info.maintainAspect = optionSW.maintainAspect
-        }
-        else if (renderer == RENDERER_GL2)
+        } else if (renderer == RENDERER_GL2)
         {
             val optionGL = ResolutionOptionsWidget.getResOption(RESOLUTION_PREFIX_GL, RESOLUTION_DEFAULT_GL)
             info.args += " -screen_bpp 32 -screen_width " + optionGL.w + "  -screen_height " + optionGL.h + " "
@@ -192,11 +201,9 @@ open class EngineOptionsEDuke32Kt(prefix: String, val userFilesDir: String) : En
         return false
     }
 
-    override fun launchMultiplayer(activity: Activity?,
-                                   engine: GameEngine?,
-                                   version: Int,
-                                   mainArgs: String?,
-                                   callback: EngineOptionsInterface.MultiplayerCallback?)
+    override fun launchMultiplayer(
+        activity: Activity?, engine: GameEngine?, version: Int, mainArgs: String?, callback: EngineOptionsInterface.MultiplayerCallback?
+    )
     {
 
     }
