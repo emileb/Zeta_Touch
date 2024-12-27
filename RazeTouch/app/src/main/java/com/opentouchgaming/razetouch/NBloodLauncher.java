@@ -43,7 +43,7 @@ public class NBloodLauncher extends RazeBaseLauncher
 
         availableSubGames.clear();
 
-        SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR + ".", "", RAZE_GAME_EDUKE32, WEAPON_WHEEL_NBR,
+        SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR + ".", "", RAZE_GAME_NBLOOD, WEAPON_WHEEL_NBR,
                 new String[]{"BLOOD.RFF"}, R.drawable.nblood, "BLOOD", "Copy BLOOD files to:", "Put your BLOOD files here.txt");
 
         addAddonsDir(engine, "", RAZE_GAME_EDUKE32, availableSubGames, new String[]{"mods", "autoload"});

@@ -1,13 +1,23 @@
+
+3.3.1
+* Added Alt-fire toggle to all
+* Fixed NBlood touch controls settings filename
+* Fixed Weapon Wheel transparency to match main controls
+* Fixed NBlood to use Fluidsynth by default
+* Fixed NBlood delete settings button
+* Fixed NBlood Inventory Use button
+
 3.3
 * Added NBLOOD engine
 * Updated Raze to 1.10.2
 * Updated AMC to 4.5
 * Updated EDuke32 dev to latest code
 * Added Copy to Clipboard from log view
+* Added Alt-fire toggle to all
 * Fixed 'View last log' text for EDuke engines
 * Fixed AMC buttons
 * Fixed saving for mod folder for EDuke32
-
+* Fixed Weapon Wheel transparency to match main controls
 
 * Fixed Raze 1.8.1 on 32bit devices
 * Fix overlapping engine icons on old Android versions

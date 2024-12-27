@@ -238,11 +238,12 @@ public class LauncherFragment extends MainFragment
         Utils.copyAsset(getActivity(), "raze_1.5.pk3", AppInfo.getResFiles());
         Utils.copyAsset(getActivity(), "raze_dev.pk3", AppInfo.getResFiles());
 
-        File sf2 = new File(AppInfo.getAppDirectory() + "/EDUKE32/soundfont.sf2");
+        File sf2 = new File(AppInfo.getAppDirectory() + "/NBLOOD/soundfont.sf2");
         if (!sf2.exists())
         {
             Utils.copyAsset(getActivity(), "raze.sf2", AppInfo.getResFiles());
             Utils.copyAsset(getActivity(), "raze.sf2", AppInfo.getAppDirectory() + "/EDUKE32", "soundfont.sf2");
+            Utils.copyAsset(getActivity(), "raze.sf2", AppInfo.getAppDirectory() + "/NBLOOD", "soundfont.sf2");
         }
 
         if (selectedSubGame.isRunFromHere())
@@ -269,6 +270,8 @@ public class LauncherFragment extends MainFragment
 
         int wheelNbr = selectedSubGame.getWheelNbr();
 
+        int SDLMidiPlayer = engine.engineOptions.SDLMidiBackend();
+
         Pair<String, String> quickCommandPaths = launcher.getQuickCommandsDirectory(selectedSubGame);
 
         intent.putExtra("app", AppInfo.app.name());
@@ -282,6 +285,7 @@ public class LauncherFragment extends MainFragment
         intent.putExtra("audio_freq", audioFreq);
         intent.putExtra("audio_samples", audiosamples);
         intent.putExtra("audio_backend", audioEngine);
+        intent.putExtra("sdl_midi_player", SDLMidiPlayer);
         intent.putExtra("res_div", res_div);
         intent.putExtra("load_libs", engine.loadLibs[selectedVersion]);
         intent.putExtra("log_filename", AppInfo.currentEngine.getLogFilename());

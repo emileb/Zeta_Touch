@@ -58,7 +58,7 @@ open class EngineOptionsEDuke32Kt(prefix: String, val userFilesDir: String) : En
         Pair("768 MB", 768),
         Pair("1024 MB", 1024),
         Pair("1.5 GB", 1536),
-        Pair("2.0 GB", 1024 * 2)
+        Pair("1.75 GB", 1536 + 256)
     )
 
     fun showAlert(activity: Activity, title: String, message: String, function: () -> (Unit))
@@ -95,6 +95,8 @@ open class EngineOptionsEDuke32Kt(prefix: String, val userFilesDir: String) : En
                 val files = ArrayList<String>()
                 Utils.findFiles(FileSAF(cfgRoot), "eduke32.cfg", files)
                 Utils.findFiles(FileSAF(cfgRoot), "settings.cfg", files)
+                Utils.findFiles(FileSAF(cfgRoot), "nblood.cfg", files)
+                Utils.findFiles(FileSAF(cfgRoot), "nblood_cvars.cfg", files)
                 for (f in files)
                 {
                     File(f).delete()
