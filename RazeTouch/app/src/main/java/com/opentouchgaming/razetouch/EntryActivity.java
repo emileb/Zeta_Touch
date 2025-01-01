@@ -253,8 +253,6 @@ public class EntryActivity extends FragmentActivity
             // Permission has already been granted
             log.log(DebugLog.Level.D, "Permission already granted");
         }
-
-
     }
 
 
