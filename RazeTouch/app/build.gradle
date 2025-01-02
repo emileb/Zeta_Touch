@@ -8,8 +8,8 @@ android {
         applicationId "com.opentouchgaming.razetouch"
         minSdkVersion 21
         targetSdkVersion 27 // WARNING upping this will break HTTP access needed for version checking
-        versionCode 29
-        versionName "3.3.2"
+        versionCode 30
+        versionName "3.3.3"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
