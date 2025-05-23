@@ -1,3 +1,7 @@
+* Fix screen resolution divider
+* New look Settings menu
+
+
 asdasd
 3.3.1
 * Added Alt-fire toggle to all
