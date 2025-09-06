@@ -23,6 +23,7 @@ import com.opentouchgaming.androidcore.ServerAPI;
 import com.opentouchgaming.androidcore.SimpleServerAccess;
 import com.opentouchgaming.androidcore.Utils;
 import com.opentouchgaming.androidcore.common.MainFragment;
+import com.opentouchgaming.androidcore.ui.OptionsDialogKt;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -266,7 +267,7 @@ public class LauncherFragment extends MainFragment
         intent.setAction(Intent.ACTION_MAIN);
         intent.addCategory(Intent.CATEGORY_LAUNCHER);
 
-        int res_div = AppSettings.getIntOption(getActivity(), "res_div", 1);
+        float res_div = OptionsDialogKt.Companion.GetResolutionScale(getActivity());
 
         int wheelNbr = selectedSubGame.getWheelNbr();
 
@@ -286,7 +287,7 @@ public class LauncherFragment extends MainFragment
         intent.putExtra("audio_samples", audiosamples);
         intent.putExtra("audio_backend", audioEngine);
         intent.putExtra("sdl_midi_player", SDLMidiPlayer);
-        intent.putExtra("res_div", res_div);
+        intent.putExtra("res_div_float", res_div);
         intent.putExtra("load_libs", engine.loadLibs[selectedVersion]);
         intent.putExtra("log_filename", AppInfo.currentEngine.getLogFilename());
         intent.putExtra("game_path", rootPath);
