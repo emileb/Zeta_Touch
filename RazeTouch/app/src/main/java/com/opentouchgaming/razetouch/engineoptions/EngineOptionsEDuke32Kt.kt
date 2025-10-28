@@ -79,7 +79,7 @@ open class EngineOptionsEDuke32Kt(prefix: String, val userFilesDir: String) : En
 
         binding = DialogOptionsEdukeNewBinding.inflate(activity.layoutInflater)
 
-        dialog = Dialog(activity, R.style.MyDialog)
+        dialog = Dialog(activity, R.style.DialogEngineSettings)
         dialog.window!!.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
         dialog.setTitle("EDuke32 options - $userFilesDir")
         dialog.setContentView(binding.root)

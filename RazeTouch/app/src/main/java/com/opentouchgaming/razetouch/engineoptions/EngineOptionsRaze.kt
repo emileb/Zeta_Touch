@@ -65,7 +65,7 @@ class EngineOptionsRaze : EngineOptionsInterface
 
         binding = DialogOptionsRazeBinding.inflate(activity.layoutInflater)
 
-        dialog = Dialog(activity, R.style.MyDialog)
+        dialog = Dialog(activity, R.style.DialogEngineSettings)
         dialog.window!!.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
         dialog.setTitle("Raze options")
         dialog.setContentView(binding.root)
@@ -79,9 +79,9 @@ class EngineOptionsRaze : EngineOptionsInterface
             val file3 = "/raze_dev/config/raze.ini"
 
             showAlert(activity, "Delete config file", "Delete Raze config file?\n(${file})") {
-                File(file).delete()
-                File(file2).delete()
-                File(file3).delete()
+                File(AppInfo.getUserFiles() + file).delete()
+                File(AppInfo.getUserFiles() + file2).delete()
+                File(AppInfo.getUserFiles() + file3).delete()
             }
         }
 

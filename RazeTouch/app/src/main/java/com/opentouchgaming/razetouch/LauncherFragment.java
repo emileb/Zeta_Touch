@@ -82,10 +82,10 @@ public class LauncherFragment extends MainFragment
         View view = super.onCreateView(inflater, container, savedInstanceState);
 
         downloadNewVersion.setOnClickListener(v ->
-        {
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://opentouchgaming.com/raze-touch/"));
-            startActivity(browserIntent);
-        });
+                                              {
+                                                  Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://opentouchgaming.com/zeta-touch/"));
+                                                  startActivity(browserIntent);
+                                              });
 
         SimpleServerAccess.AccessInfo versionAccess = new SimpleServerAccess.AccessInfo();
         versionAccess.url = "http://opentouchgaming.com/api/version_raze.txt";
@@ -99,7 +99,7 @@ public class LauncherFragment extends MainFragment
                 {
                     version = Integer.decode(byteArrayOutputStream.toString());
                 }
-                catch (Exception e)
+                catch (Exception ignored)
                 {
 
                 }
@@ -180,8 +180,12 @@ public class LauncherFragment extends MainFragment
                 }
             };
 
-            Utils.showDownloadDialog(getActivity(), "Download " + selectedSubGame.getDownloadFilename() + "?", selectedSubGame.getDownloadPath(),
-                    selectedSubGame.getDownloadFilename(), 80 * 1024 * 1024, cb);
+            Utils.showDownloadDialog(getActivity(),
+                                     "Download " + selectedSubGame.getDownloadFilename() + "?",
+                                     selectedSubGame.getDownloadPath(),
+                                     selectedSubGame.getDownloadFilename(),
+                                     80 * 1024 * 1024,
+                                     cb);
             return;
         }
 

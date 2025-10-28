@@ -20,7 +20,9 @@ import com.opentouchgaming.androidcore.DebugLog;
 import com.opentouchgaming.androidcore.GD;
 import com.opentouchgaming.androidcore.GameEngine;
 import com.opentouchgaming.androidcore.ScopedStorage;
+import com.opentouchgaming.androidcore.Utils;
 import com.opentouchgaming.androidcore.controls.GamepadDefinitions;
+import com.opentouchgaming.androidcore.ui.OptionsDialogKt;
 import com.opentouchgaming.androidcore.ui.ScopedStorageDialog;
 import com.opentouchgaming.androidcore.ui.StorageConfigDialog;
 import com.opentouchgaming.androidcore.ui.UserFilesDialog;
@@ -88,11 +90,11 @@ public class EntryActivity extends FragmentActivity
         tut.addScreen(new Tutorial.Screen("Add new commands by pressing the add button", "", "http://opentouchgaming.com/tutorial/quad/quick_cmd_6.png"));
         AppInfo.tutorials.add(tut);
 
-        String[] razeVersions = {"1.3.1", "1.5.0", "1.10.2"};
+        String[] razeVersions = {"1.3.1", "1.5.0", "1.11.0"};
         String[][] razeLoad = {{"touchcontrols", "openal", "zmusic", "raze"}, {"touchcontrols", "openal", "zmusic", "raze_1.5"},
                 {"touchcontrols", "openal", "zmusic", "raze_dev"}};
 
-        AppInfo.gameEngines = new GameEngine[]{new GameEngine(GameEngine.Engine.EDUKE32_AMC, 0, "AMC", "amc", "", new String[]{"4.5"},
+        AppInfo.gameEngines = new GameEngine[]{new GameEngine(GameEngine.Engine.EDUKE32_AMC, 0, "AMC", "amc", "", new String[]{"5.2"},
                 new String[][]{{"touchcontrols", "GL4ES", "openal", "amc_dev"}}, " ", GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH),
                 R.drawable.amctc, R.drawable.amctc, 0x00061cad, R.drawable.eduke_button_bg_foucable, EngineOptionsEDuke32_AMC.class),
 
@@ -199,6 +201,9 @@ public class EntryActivity extends FragmentActivity
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        Utils.setImmersionMode(this, getWindow(), OptionsDialogKt.LAUNCHER_HIDE_NAV_BAR);
+        Utils.expandToCutout(this, getWindow(), OptionsDialogKt.LAUNCHER_EXPAND_INTO_NOTCH);
+
         setContentView(R.layout.activity_entry);
 
         AboutDialog.aboutRes = R.raw.about;
@@ -209,7 +214,7 @@ public class EntryActivity extends FragmentActivity
         AppSettings.reloadSettings(getApplication());
 
         AppInfo.setAppInfo(getApplicationContext(), AppInfo.Apps.RAZE_TOUCH, "Zeta Touch", "Zeta", BuildConfig.APPLICATION_ID, "razelogs@opentouchgaming.com",
-                false, R.drawable.raze, false);
+                false, R.drawable.raze, false, true);
         AppInfo.showRateButton = false;
         AppInfo.groupSimilarEngines = true; // Force group engines
         AppInfo.sidePanelImage = R.drawable.side_panel;

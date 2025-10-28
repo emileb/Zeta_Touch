@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog bulletedList="true">
 
+    <changelogversion versionName="3.4" changeDate="October 28, 2025">
+        <changelogtext>Updated Raze dev to 1.11.0</changelogtext>
+        <changelogtext>Updated EDuke32 dev to latest</changelogtext>
+        <changelogtext>Updated AMC to 5.2</changelogtext>
+        <changelogtext>Updated NBLOOD dev to latest</changelogtext>
+        <changelogtext>New look Settings menu</changelogtext>
+        <changelogtext>Added options for full-screen launcher</changelogtext>
+        <changelogtext>Added auto-run button</changelogtext>
+        <changelogtext>Fix screen resolution divider</changelogtext>
+    </changelogversion>
+
     <changelogversion versionName="3.3.3" changeDate="January 02, 2025">
         <changelogtext>Touch control fix (64bit and 32bit code)</changelogtext>
     </changelogversion>

@@ -1,8 +1,14 @@
-* Fix screen resolution divider
+v3.4
+* Updated Raze dev to 1.11.0
+* Updated EDuke32 dev to latest
+* Updated AMC to 5.2
+* Updated NBLOOD dev to latest
 * New look Settings menu
+* Added options for full-screen launcher
+* Added auto-run button
+* Fix screen resolution divider
 
 
-asdasd
 3.3.1
 * Added Alt-fire toggle to all
 * Fixed NBlood touch controls settings filename
