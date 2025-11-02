@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog bulletedList="true">
 
-    <changelogversion versionName="3.4" changeDate="October 28, 2025">
+    <changelogversion versionName="3.4" changeDate="November 02, 2025">
         <changelogtext>Updated Raze dev to 1.11.0</changelogtext>
         <changelogtext>Updated EDuke32 dev to latest</changelogtext>
         <changelogtext>Updated AMC to 5.2</changelogtext>
