@@ -27,6 +27,7 @@ import com.opentouchgaming.androidcore.ui.OptionsDialogKt;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.util.Collections;
 
 
 public class LauncherFragment extends MainFragment
@@ -76,50 +77,6 @@ public class LauncherFragment extends MainFragment
         nbloodLauncher = new NBloodLauncher();
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-    {
-        View view = super.onCreateView(inflater, container, savedInstanceState);
-
-        downloadNewVersion.setOnClickListener(v ->
-                                              {
-                                                  Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://opentouchgaming.com/zeta-touch/"));
-                                                  startActivity(browserIntent);
-                                              });
-
-        SimpleServerAccess.AccessInfo versionAccess = new SimpleServerAccess.AccessInfo();
-        versionAccess.url = "http://opentouchgaming.com/api/version_raze.txt";
-        versionAccess.callback = new Consumer<ByteArrayOutputStream>()
-        {
-            @Override
-            public void accept(ByteArrayOutputStream byteArrayOutputStream)
-            {
-                int version = 0;
-                try
-                {
-                    version = Integer.decode(byteArrayOutputStream.toString());
-                }
-                catch (Exception ignored)
-                {
-
-                }
-
-                if (version != 0)
-                {
-                    log.log(DebugLog.Level.D, "FOUND VERSION: " + version);
-                    if (version > GD.version)
-                    {
-                        Toast.makeText(getActivity(), "New version available", Toast.LENGTH_LONG).show();
-                        downloadNewVersion.setVisibility(View.VISIBLE);
-                    }
-                }
-            }
-        };
-
-        new SimpleServerAccess(getContext(), versionAccess);
-
-        return view;
-    }
 
     public void setLauncher()
     {

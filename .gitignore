@@ -1,1 +1,10 @@
-.idea/workspace.xml
+# IDE state. Must be ".idea/*", not ".idea/" -- git cannot re-include a file
+# inside an excluded directory, so the negations below are dead with a bare dir.
+.idea/*
+
+# Shared project config that is checked in
+!.idea/modules.xml
+!.idea/vcs.xml
+!.idea/Raze_Touch.iml
+
+.DS_Store

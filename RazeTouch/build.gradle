@@ -1,29 +1,43 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+
 buildscript {
-
-    ext.kotlin_version = '1.8.0'
-
-
+    ext.versions = [
+            min_sdk : 19,
+            target_sdk : 35,
+            ndk_version : '24.0.8215888',
+            build_tools_version : '36.1.0',
+            native_android_platform_version : 19,
+            cmake_version : "4.1.2"
+    ]
+    ext.build_flags = [
+            compiling_arguments : "-j${Runtime.getRuntime().availableProcessors()}",
+            common_c_flags : ["-O2","-flto=full", "-fno-omit-frame-pointer", "-g"],
+            common_cpp_flags : ["-O2" ,"-flto=full", "-fno-omit-frame-pointer", "-g", "-std=c++20"],
+            ndk_build_flags : "APP_LDFLAGS=-fuse-ld=lld -flto=full -Wl,--build-id",
+            ndk_build_android_stl : "APP_STL=c++_static",
+            CMAKE_CFLAGS : "-O2 -flto=full -fno-omit-frame-pointer -g",
+            CMAKE_CXXFLAGS : "-O2 -flto=full -fno-omit-frame-pointer -g -std=c++20",
+            CMAKE_ANDROID_STL : "-DANDROID_STL=c++_static",
+            CMAKE_SHADERLINKER_FLAGS :"-flto=full -fuse-ld=lld -Wl,--build-id -Wl,-z,max-page-size=16384",
+            ndk_build_platform : "APP_PLATFORM=android-${versions.native_android_platform_version}"
+    ]
+    // Defaults to both shipping ABIs. Override for faster local iteration with
+    // e.g. -PabiOverride=arm64-v8a (comma-separated for multiple).
+    ext.abi_filters = project.hasProperty('abiOverride') ?
+            project.property('abiOverride').split(',').collect { it.trim() } :
+            ['armeabi-v7a','arm64-v8a']
+    ext.rootDir = rootProject.rootDir
     repositories {
         google()
-        jcenter()
     }
+
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.3.1'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath(libs.kotlin.gradle.plugin)
     }
 }
 
-allprojects {
-    repositories {
-        google()
-        jcenter()
-    }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
+plugins {
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.kotlin.android) apply false
+    alias(libs.plugins.android.library) apply false
 }

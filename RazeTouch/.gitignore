@@ -1,12 +1,24 @@
+# IDE state. Must be ".idea/*", not ".idea/" -- git cannot re-include a file
+# inside an excluded directory, so the negations below are dead with a bare dir.
+/.idea/*
+
+# Shared project config that is checked in
+!/.idea/.name
+!/.idea/appInsightsSettings.xml
+!/.idea/codeStyles/
+!/.idea/compiler.xml
+!/.idea/gradle.xml
+!/.idea/inspectionProfiles/
+!/.idea/jarRepositories.xml
+!/.idea/kotlinc.xml
+!/.idea/migrations.xml
+!/.idea/misc.xml
+!/.idea/runConfigurations.xml
+!/.idea/vcs.xml
+
 *.iml
 .gradle
 /local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
 .DS_Store
 /build
 /captures

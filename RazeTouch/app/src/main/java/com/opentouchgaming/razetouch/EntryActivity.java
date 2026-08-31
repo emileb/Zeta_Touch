@@ -220,6 +220,7 @@ public class EntryActivity extends FragmentActivity
         AppInfo.sidePanelImage = R.drawable.side_panel;
 
         AppInfo.website = "http://opentouchgaming.com/zeta-touch/";
+        AppInfo.versionCheckKey = "zeta"; // non-null enables the online version check
         // Check that the activity is using the layout version with
         // the fragment_container FrameLayout
         if (findViewById(R.id.fragment_container) != null)

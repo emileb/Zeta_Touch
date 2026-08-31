@@ -58,4 +58,13 @@
 	path = RazeTouch/app/src/main/jni/AWOL
 	url = https://github.com/emileb/eduke32_mobile.git
 	branch = awol
-	
+
+[submodule "RazeTouch/app/src/main/jni/NBlood"]
+	path = RazeTouch/app/src/main/jni/NBlood
+	url = https://github.com/emileb/NBlood.git
+	branch = master_mobile
+
+[submodule "RazeTouch/app/src/main/jni/amcduke32"]
+	path = RazeTouch/app/src/main/jni/amcduke32
+	url = https://github.com/emileb/amcduke32.git
+	branch = 5.2x_mobile
