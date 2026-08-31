@@ -12,7 +12,7 @@ android {
     defaultConfig {
         applicationId "com.opentouchgaming.razetouch"
         minSdkVersion 21
-        targetSdkVersion 27 // WARNING upping this will break HTTP access needed for version checking
+        targetSdkVersion 35 // Needs 'All files access' (MANAGE_EXTERNAL_STORAGE) for full native filesystem access on Android 11+
         versionCode 33
         versionName "3.4.1"
         vectorDrawables.useSupportLibrary = true

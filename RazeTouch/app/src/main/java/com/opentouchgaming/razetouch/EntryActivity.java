@@ -1,9 +1,14 @@
 package com.opentouchgaming.razetouch;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.Settings;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.Window;
@@ -41,6 +46,9 @@ import java.util.List;
 public class EntryActivity extends FragmentActivity
 {
     static DebugLog log;
+
+    // Shown until the user grants 'All files access' (Android 11+)
+    private AlertDialog allFilesAccessDialog = null;
 
     static
     {
@@ -213,6 +221,10 @@ public class EntryActivity extends FragmentActivity
 
         AppSettings.reloadSettings(getApplication());
 
+        // Non-Play app: use 'All files access' instead of scoped storage so the engines keep
+        // full native filesystem access (chdir/fopen). Must be set before setAppInfo().
+        AppInfo.useAllFilesAccess = true;
+
         AppInfo.setAppInfo(getApplicationContext(), AppInfo.Apps.RAZE_TOUCH, "Zeta Touch", "Zeta", BuildConfig.APPLICATION_ID, "razelogs@opentouchgaming.com",
                 false, R.drawable.raze, false, true);
         AppInfo.showRateButton = false;
@@ -245,20 +257,60 @@ public class EntryActivity extends FragmentActivity
             getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, mainFragment).commit();
         }
 
-        // Here, thisActivity is the current activity
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
+        // Android 10 and below use the old runtime storage permission. On Android 11+ it is
+        // useless (auto-denied at target API 30+); 'All files access' is checked in onResume instead.
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R)
         {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
+            {
 
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, MY_PERMISSIONS_REQUEST_SD_WRITE);
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, MY_PERMISSIONS_REQUEST_SD_WRITE);
 
-            log.log(DebugLog.Level.D, "Sending request");
+                log.log(DebugLog.Level.D, "Sending request");
 
+            }
+            else
+            {
+                // Permission has already been granted
+                log.log(DebugLog.Level.D, "Permission already granted");
+            }
         }
-        else
+    }
+
+    // Android 11+: the engines need 'All files access' for full native filesystem access.
+    // It is a settings toggle rather than a runtime permission dialog, so send the user
+    // to the settings screen and re-check every onResume until it is granted.
+    private void checkAllFilesAccess()
+    {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R || Environment.isExternalStorageManager())
         {
-            // Permission has already been granted
-            log.log(DebugLog.Level.D, "Permission already granted");
+            if (allFilesAccessDialog != null)
+            {
+                allFilesAccessDialog.dismiss();
+                allFilesAccessDialog = null;
+            }
+            return;
         }
+
+        if (allFilesAccessDialog != null && allFilesAccessDialog.isShowing())
+            return;
+
+        allFilesAccessDialog = new AlertDialog.Builder(this).setTitle("Storage access needed")
+                .setMessage("Zeta Touch needs 'All files access' so the game engines can access your game data.\n\n" +
+                            "Please enable it for Zeta Touch on the next screen.")
+                .setCancelable(false)
+                .setPositiveButton("Open settings", (dialog, which) ->
+                {
+                    try
+                    {
+                        startActivity(new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION, Uri.parse("package:" + getPackageName())));
+                    }
+                    catch (Exception e)
+                    {
+                        // Some devices do not implement the per-app screen, fall back to the global list
+                        startActivity(new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION));
+                    }
+                }).show();
     }
 
 
@@ -334,6 +386,7 @@ public class EntryActivity extends FragmentActivity
     public void onResume()
     {
         super.onResume();
+        checkAllFilesAccess();
     }
 
 
