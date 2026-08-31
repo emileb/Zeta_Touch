@@ -214,6 +214,8 @@ public class EntryActivity extends FragmentActivity
 
         setContentView(R.layout.activity_entry);
 
+        Utils.setInsets(this, findViewById(R.id.activity_entry_top), false);
+
         AboutDialog.aboutRes = R.raw.about;
         AppInfo.key = key;
 
