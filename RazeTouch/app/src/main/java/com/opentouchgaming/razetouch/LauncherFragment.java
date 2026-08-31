@@ -3,31 +3,23 @@ package com.opentouchgaming.razetouch;
 import static com.opentouchgaming.androidcore.DebugLog.Level.D;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-import androidx.core.util.Consumer;
 import androidx.core.util.Pair;
 
 import com.opentouchgaming.androidcore.AppInfo;
-import com.opentouchgaming.androidcore.AppSettings;
 import com.opentouchgaming.androidcore.DebugLog;
 import com.opentouchgaming.androidcore.EngineOptionsInterface;
-import com.opentouchgaming.androidcore.GD;
 import com.opentouchgaming.androidcore.GameEngine;
 import com.opentouchgaming.androidcore.ServerAPI;
-import com.opentouchgaming.androidcore.SimpleServerAccess;
 import com.opentouchgaming.androidcore.Utils;
+import com.opentouchgaming.androidcore.common.LaunchIntent;
 import com.opentouchgaming.androidcore.common.MainFragment;
-import com.opentouchgaming.androidcore.ui.OptionsDialogKt;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.util.Collections;
 
 
 public class LauncherFragment extends MainFragment
@@ -160,41 +152,10 @@ public class LauncherFragment extends MainFragment
         }
 
         // Build args
+        EngineOptionsInterface.RunInfo runInfo = engine.engineOptions.getRunInfo(selectedVersion);
+
         String args = engine.args + " ";
-
-        int gles_version = 1;
-        boolean useGL4ES = false;
-        int audioFreq = 0;
-        int audiosamples = 0;
-        int audioEngine = 0;
-
-        EngineOptionsInterface.RunInfo runInfo = null;
-
-        if (engine.engineOptions != null)
-        {
-            runInfo = engine.engineOptions.getRunInfo(selectedVersion);
-
-            args += runInfo.args + " ";
-
-            // Use gles2 touch controls if anything other than gles 1
-            gles_version = runInfo.glesVersion;
-            useGL4ES = runInfo.useGL4ES;
-
-            audioFreq = engine.engineOptions.audioOverrideFreq();
-            audiosamples = engine.engineOptions.audioOverrideSamples();
-
-            int audioDefault = AppSettings.getIntOption(getActivity(), "sdl_audio_backend", 0);
-            int audioBackendOverride = engine.engineOptions.audioOverrideBackend();
-
-            if (audioBackendOverride == -1)
-            {
-                audioEngine = audioDefault;
-            }
-            else
-            {
-                audioEngine = audioBackendOverride;
-            }
-        }
+        args += runInfo.args + " ";
 
         Utils.copyAsset(getActivity(), "raze.pk3", AppInfo.getResFiles());
         Utils.copyAsset(getActivity(), "raze_1.5.pk3", AppInfo.getResFiles());
@@ -223,40 +184,29 @@ public class LauncherFragment extends MainFragment
         // Save history
         engineData.addArgsHistory();
 
-        Intent intent = new Intent(getActivity(), org.libsdl.app2012.SDLActivity.class);
+        // Create Intent. All the Raze/EDuke32-family engines are SDL2 (app2012).
+        Intent intent;
+
+        if (runInfo.sdlVersion == 3)
+        {
+            intent = new Intent(getActivity(), org.libsdl.app3000.SDLActivity.class);
+        }
+        else
+        {
+            intent = new Intent(getActivity(), org.libsdl.app2012.SDLActivity.class);
+        }
 
         intent.setAction(Intent.ACTION_MAIN);
         intent.addCategory(Intent.CATEGORY_LAUNCHER);
 
-        float res_div = OptionsDialogKt.Companion.GetResolutionScale(getActivity());
-
-        int wheelNbr = selectedSubGame.getWheelNbr();
-
-        int SDLMidiPlayer = engine.engineOptions.SDLMidiBackend();
+        intent.putExtra("load_libs", engine.loadLibs[selectedVersion]);
+        intent.putExtra("log_filename", engine.getLogFilename());
+        intent.putExtra("game_path", rootPath);
+        intent.putExtra("args", args);
 
         Pair<String, String> quickCommandPaths = launcher.getQuickCommandsDirectory(selectedSubGame);
-
-        intent.putExtra("app", AppInfo.app.name());
-        intent.putExtra("game_type", selectedSubGame.getGameType());
-        intent.putExtra("gles_version", gles_version);
-        intent.putExtra("use_gl4es", useGL4ES);
-        intent.putExtra("framebuffer_width", runInfo.frameBufferWidth);
-        intent.putExtra("framebuffer_height", runInfo.frameBufferHeight);
-        intent.putExtra("framebuffer_maintain_aspect", runInfo.maintainAspect);
-        intent.putExtra("wheel_nbr", wheelNbr);
-        intent.putExtra("audio_freq", audioFreq);
-        intent.putExtra("audio_samples", audiosamples);
-        intent.putExtra("audio_backend", audioEngine);
-        intent.putExtra("sdl_midi_player", SDLMidiPlayer);
-        intent.putExtra("res_div_float", res_div);
-        intent.putExtra("load_libs", engine.loadLibs[selectedVersion]);
-        intent.putExtra("log_filename", AppInfo.currentEngine.getLogFilename());
-        intent.putExtra("game_path", rootPath);
-        intent.putExtra("user_files", AppInfo.getUserFiles());
-        intent.putExtra("res_files", AppInfo.getResFiles());
-        intent.putExtra("args", args);
-        intent.putExtra("quick_command_main_path", quickCommandPaths.first);
-        intent.putExtra("quick_command_mod_path", quickCommandPaths.second);
+        int wheelNbr = selectedSubGame.getWheelNbr();
+        LaunchIntent.populateIntent(getActivity(), intent, engine.engineOptions, runInfo, selectedSubGame.getGameType(), wheelNbr, quickCommandPaths);
 
         log.log(D, "Intent = " + intent);
 
