@@ -204,6 +204,11 @@ public class EntryActivity extends FragmentActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        // Before super.onCreate: a restored LauncherFragment is built there, and its tool buttons pick "Other apps" from website.
+        AppInfo.website = "http://opentouchgaming.com/zeta-touch/";
+        AppInfo.showRateButton = false;
+        AppInfo.versionCheckKey = "zeta"; // non-null enables the online version check
+
         super.onCreate(savedInstanceState);
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -229,12 +234,9 @@ public class EntryActivity extends FragmentActivity
 
         AppInfo.setAppInfo(getApplicationContext(), AppInfo.Apps.RAZE_TOUCH, "Zeta Touch", "Zeta", BuildConfig.APPLICATION_ID, "razelogs@opentouchgaming.com",
                 false, R.drawable.raze, false, true);
-        AppInfo.showRateButton = false;
         AppInfo.groupSimilarEngines = true; // Force group engines
         AppInfo.sidePanelImage = R.drawable.side_panel;
 
-        AppInfo.website = "http://opentouchgaming.com/zeta-touch/";
-        AppInfo.versionCheckKey = "zeta"; // non-null enables the online version check
         // Check that the activity is using the layout version with
         // the fragment_container FrameLayout
         if (findViewById(R.id.fragment_container) != null)
