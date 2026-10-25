@@ -131,7 +131,7 @@ public class RazeBaseLauncher implements GameLauncherInterface
                     String pathInfo = f.getAbsolutePath();
                     String fileInfo = Utils.filesInfoString(pathInfo, null, 3);
 
-                    SubGame subgame = new SubGame(SUB_DIR + dirName, dirName, dirName, pathName, gameType, R.drawable.raze, pathInfo, fileInfo,
+                    SubGame subgame = new SubGame(SUB_DIR + dirName, dirName, dirName, pathName, gameType, engine.iconRes, pathInfo, fileInfo,
                             WEAPON_WHEEL_NBR);
 
                     if (gameType == RAZE_GAME_EDUKE32 || gameType == RAZE_GAME_IONFURY)

@@ -48,6 +48,16 @@ open class EngineOptionsEDuke32Kt(prefix: String, val userFilesDir: String) : En
     val CACHE_SIZE_PREFIX = "eduke32_cache_size_$prefix"
     val CACHE_SIZE_DEFAULT = 0
 
+    // Texture memory options, passed with -set so they override the engine's config files and autoexec.cfg
+    val TEXTURE_DOWNSIZE_PREFIX = "eduke32_texture_downsize_$prefix"
+    val TEXTURE_MAXSIZE_PREFIX = "eduke32_texture_maxsize_$prefix"
+
+    // r_downsize for each choice, null leaves the game's own setting
+    val textureDownsizes = arrayOf<Pair<String, Int?>>(Pair("Default", null), Pair("Full", 0), Pair("Half", 1), Pair("Quarter", 2))
+
+    // r_texturemaxsize is a power of two (11 = 2048)
+    val textureMaxSizes = arrayOf<Pair<String, Int?>>(Pair("Default", null), Pair("2048", 11), Pair("1024", 10))
+
 
     val cacheSizes = arrayOf(
         Pair("Default", 0),
@@ -147,6 +157,28 @@ open class EngineOptionsEDuke32Kt(prefix: String, val userFilesDir: String) : En
         )
 
         ResolutionOptionsWidget(activity, binding.resolutionSelectGl.root, RESOLUTION_PREFIX_GL, RESOLUTION_DEFAULT_GL)
+
+        SpinnerWidget(
+            activity,
+            binding.textureDownsizeSpinner.root,
+            "Hi-res texture size",
+            "Lower uses much less GPU memory. Use Half or Quarter if a texture pack crashes",
+            Array<Pair<String, View?>>(textureDownsizes.size) { Pair(textureDownsizes[it].first, null) },
+            TEXTURE_DOWNSIZE_PREFIX,
+            0,
+            R.drawable.settings_ram
+        )
+
+        SpinnerWidget(
+            activity,
+            binding.textureMaxsizeSpinner.root,
+            "Max texture size",
+            "Shrinks only the largest textures to save GPU memory",
+            Array<Pair<String, View?>>(textureMaxSizes.size) { Pair(textureMaxSizes[it].first, null) },
+            TEXTURE_MAXSIZE_PREFIX,
+            0,
+            R.drawable.settings_ram
+        )
         ResolutionOptionsWidget(activity, binding.resolutionSelectSw.root, RESOLUTION_PREFIX_SW, RESOLUTION_DEFAULT_SW)
 
         SwitchWidget(
@@ -193,6 +225,15 @@ open class EngineOptionsEDuke32Kt(prefix: String, val userFilesDir: String) : En
         if (!SwitchWidget.fetchValue(AppInfo.getContext(), AUTOLOAD_PREFIX, AUTOLOAD_DEFAULT))
         {
             info.args += " -noautoload "
+        }
+
+        if (renderer == RENDERER_GL2)
+        {
+            val downsize = SpinnerWidget.fetchValue(AppInfo.getContext(), TEXTURE_DOWNSIZE_PREFIX, 0).coerceIn(0, textureDownsizes.size - 1)
+            textureDownsizes[downsize].second?.let { info.args += " -set r_downsize $it " }
+
+            val maxSize = SpinnerWidget.fetchValue(AppInfo.getContext(), TEXTURE_MAXSIZE_PREFIX, 0).coerceIn(0, textureMaxSizes.size - 1)
+            textureMaxSizes[maxSize].second?.let { info.args += " -set r_texturemaxsize $it " }
         }
 
         return info

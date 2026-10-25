@@ -30,6 +30,14 @@
             <include
                 android:id="@+id/resolution_select_gl"
                 layout="@layout/widget_view_resolution_select" />
+
+            <include
+                android:id="@+id/texture_downsize_spinner"
+                layout="@layout/widget_view_spinner" />
+
+            <include
+                android:id="@+id/texture_maxsize_spinner"
+                layout="@layout/widget_view_spinner" />
         </LinearLayout>
 
         <LinearLayout

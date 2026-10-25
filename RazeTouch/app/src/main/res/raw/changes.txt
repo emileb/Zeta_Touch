@@ -3,12 +3,15 @@
 * Updated Raze dev with the latest 1.11 fixes
 * Game data can be in a folder you pick instead of needing 'All files access'
 * Added 'Faster loading from storage folder' setting (experimental, much faster for mods with many files)
-* NBlood: Added Cryptic Passage (copy its files to NBLOOD/cryptic)
+* NBlood: Added Cryptic Passage (copy its original or Blood: Fresh Supply files to NBLOOD/cryptic)
+* EDuke32, NBlood, AMC, AWOL: Added hi-res texture size options to save GPU memory
 * NBlood: The movie folder is no longer listed as a game
 * NBlood: Fixed corrupted graphics on the startup screens
 * EDuke32: Fixed music missing for mods using 'Run from this directory'
 * EDuke32, NBlood, AMC: Faster startup for large mods in a picked folder
+* Extra game folders now show their engine's icon
 * Updated to NDK 27
+* Supports Android 15+ devices with 16 KB memory pages
 
 v3.4.1
 * Updated NBlood to latest (r14326)
