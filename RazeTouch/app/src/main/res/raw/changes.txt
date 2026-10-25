@@ -5,13 +5,26 @@
 * Added 'Faster loading from storage folder' setting (experimental, much faster for mods with many files)
 * NBlood: Added Cryptic Passage (copy its original or Blood: Fresh Supply files to NBLOOD/cryptic)
 * EDuke32, NBlood, AMC, AWOL: Added hi-res texture size options to save GPU memory
+* Added gamepad Shift buttons: hold one and press another button for extra bindings
+* Added OpenAL audio backend option
+* Added mouse swap and invert options
+* Added touch pad multi-touch option
+* The app's own game data folder can be opened in the Files app from the storage settings
+* Shows when a new version is available
+* Added an 'Other apps' screen
+* Touch mouse controls can be hidden and shown from the button list
 * NBlood: The movie folder is no longer listed as a game
 * NBlood: Fixed corrupted graphics on the startup screens
 * EDuke32: Fixed music missing for mods using 'Run from this directory'
 * EDuke32, NBlood, AMC: Faster startup for large mods in a picked folder
+* EDuke32: Official addons (Nuclear Winter, Duke it out in D.C., Caribbean) in their own folder now use their own game scripts
 * Extra game folders now show their engine's icon
+* Fixed the per-game audio backend setting being ignored
+* Fixed corrupted sound with AAudio on Android 15
+* Analog sensitivity can go up to 3x again
+* Fixed the gamepad settings sometimes not loading when opened from a game
+* Fixed touch control menus flickering when closed
 * Updated to NDK 27
-* Supports Android 15+ devices with 16 KB memory pages
 
 v3.4.1
 * Updated NBlood to latest (r14326)
