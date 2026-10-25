@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog bulletedList="true">
 
+    <changelogversion versionName="3.5" changeDate="October 25, 2026">
+        <changelogtext>Added World War II GI and Platoon Leader as their own game (copy their files to WW2GI)</changelogtext>
+        <changelogtext>Updated NBlood to latest (r14388)</changelogtext>
+        <changelogtext>Updated EDuke32 dev to latest</changelogtext>
+        <changelogtext>Updated Raze dev with the latest 1.11 fixes</changelogtext>
+        <changelogtext>Game data can be in a folder you pick instead of needing 'All files access'</changelogtext>
+        <changelogtext>Added 'Faster loading from storage folder' setting (experimental, much faster for mods with many files)</changelogtext>
+        <changelogtext>NBlood: Added Cryptic Passage (copy its original or Blood: Fresh Supply files to NBLOOD/cryptic)</changelogtext>
+        <changelogtext>EDuke32, NBlood, AMC, AWOL: Added hi-res texture size options to save GPU memory</changelogtext>
+        <changelogtext>Added gamepad Shift buttons: hold one and press another button for extra bindings</changelogtext>
+        <changelogtext>Added OpenAL audio backend option</changelogtext>
+        <changelogtext>Added mouse swap and invert options</changelogtext>
+        <changelogtext>Added touch pad multi-touch option</changelogtext>
+        <changelogtext>The app's own game data folder can be opened in the Files app from the storage settings</changelogtext>
+        <changelogtext>Shows when a new version is available</changelogtext>
+        <changelogtext>Added an 'Other apps' screen</changelogtext>
+        <changelogtext>NBlood: The movie folder is no longer listed as a game</changelogtext>
+        <changelogtext>NBlood: Fixed corrupted graphics on the startup screens</changelogtext>
+        <changelogtext>EDuke32: Fixed music missing for mods using 'Run from this directory'</changelogtext>
+        <changelogtext>EDuke32, NBlood, AMC: Faster startup for large mods in a picked folder</changelogtext>
+        <changelogtext>EDuke32: Official addons (Nuclear Winter, Duke it out in D.C., Caribbean) in their own folder now use their own game scripts</changelogtext>
+        <changelogtext>Extra game folders now show their engine's icon</changelogtext>
+        <changelogtext>EDuke32, NBlood, AMC: Fixed the Color Correction menu options doing nothing</changelogtext>
+        <changelogtext>NBlood: Fixed mods in their own folder not loading their maps, art and episodes from a picked folder</changelogtext>
+        <changelogtext>Fixed the per-game audio backend setting being ignored</changelogtext>
+        <changelogtext>Fixed corrupted sound with AAudio on Android 15</changelogtext>
+        <changelogtext>Analog sensitivity can go up to 3x again</changelogtext>
+        <changelogtext>Fixed the gamepad settings sometimes not loading when opened from a game</changelogtext>
+        <changelogtext>Fixed touch control menus flickering when closed</changelogtext>
+        <changelogtext>Updated to NDK 27</changelogtext>
+    </changelogversion>
+
     <changelogversion versionName="3.4.1" changeDate="December 03, 2025">
         <changelogtext>Updated NBlood to latest (r14326)</changelogtext>
         <changelogtext>Fixed NBlood joystick mode</changelogtext>

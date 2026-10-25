@@ -36,6 +36,7 @@ public class LauncherFragment extends MainFragment
     BloodLauncher bloodLauncher;
     RedneckLauncher redneckLauncher;
     NamLauncher namLauncher;
+    Ww2giLauncher ww2giLauncher;
     PowerslaveLauncher powerslaveLauncher;
     IonFuryLauncher ionfuryLauncher;
     EDuke32Launcher edukeLauncher;
@@ -61,6 +62,7 @@ public class LauncherFragment extends MainFragment
         bloodLauncher = new BloodLauncher();
         redneckLauncher = new RedneckLauncher();
         namLauncher = new NamLauncher();
+        ww2giLauncher = new Ww2giLauncher();
         powerslaveLauncher = new PowerslaveLauncher();
         ionfuryLauncher = new IonFuryLauncher();
         edukeLauncher = new EDuke32Launcher();
@@ -88,6 +90,9 @@ public class LauncherFragment extends MainFragment
                 break;
             case RAZE_NAM:
                 launcher = namLauncher;
+                break;
+            case RAZE_WW2GI:
+                launcher = ww2giLauncher;
                 break;
             case RAZE_POWERSLAVE:
                 launcher = powerslaveLauncher;
@@ -180,7 +185,7 @@ public class LauncherFragment extends MainFragment
         }
 
         // Data folder for the engine to use instead of the CWD, which can't be a SAF folder
-        if (engine.engine == GameEngine.Engine.EDUKE32)
+        if (engine.engine == GameEngine.Engine.EDUKE32 || engine.engine == GameEngine.Engine.EDUKE32_NBLOOD)
             args += " -game_path " + (selectedSubGame.isRunFromHere() ? selectedSubGame.getFullPath() : selectedSubGame.getRootPath());
 
         args += argsFinal;

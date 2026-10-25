@@ -1,3 +1,12 @@
+RC3
+
+RC2
+* Added World War II GI and Platoon Leader as their own game (copy their files to WW2GI)
+* EDuke32, NBlood, AMC: Fixed the Color Correction menu options doing nothing
+* NBlood: Fixed mods in their own folder not loading their maps, art and episodes from a picked folder
+
+
+RC1
 * Updated NBlood to latest (r14388)
 * Updated EDuke32 dev to latest
 * Updated Raze dev with the latest 1.11 fixes
@@ -12,7 +21,6 @@
 * The app's own game data folder can be opened in the Files app from the storage settings
 * Shows when a new version is available
 * Added an 'Other apps' screen
-* Touch mouse controls can be hidden and shown from the button list
 * NBlood: The movie folder is no longer listed as a game
 * NBlood: Fixed corrupted graphics on the startup screens
 * EDuke32: Fixed music missing for mods using 'Run from this directory'

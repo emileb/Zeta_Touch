@@ -25,16 +25,9 @@ public class NamLauncher extends RazeBaseLauncher
 
         availableSubGames.clear();
 
-        SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR, ".", RAZE_GAME_NAM, WEAPON_WHEEL_NBR,
+        SubGame sg = SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR, ".", RAZE_GAME_NAM, WEAPON_WHEEL_NBR,
                 new String[]{"NAM.grp", "GAME.CON"}, R.drawable.nam, "NAM", "Copy NAM.GRP and GAME.CON to:", "Put your NAM files here.txt");
-
-        SubGame sg = SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR + "ww2gi", ".", RAZE_GAME_NAM, WEAPON_WHEEL_NBR,
-                new String[]{"WW2GI.grp"}, R.drawable.nam, "World War II GI", "Copy WW2GI.GRP to:", "Put your NAM files here.txt");
-        sg.setExtraArgs(" -file " + sg.getRootPath() + "/WW2GI.GRP");
-
-        //sg = SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR + "platoon", ".", RAZE_GAME_NAM, WEAPON_WHEEL_NBR,
-        //        new String[]{"PLATOONL.DAT"}, R.drawable.nam, "Platoon Leader", "Copy Platoon Leader files to:", "Put your NAM files here.txt");
-        //sg.setExtraArgs(" -file " + sg.getRootPath() + "/PLATOONL.DAT " + " -file " + sg.getRootPath() + "/PLATOONL.DEF");
+        sg.setExtraArgs("-gamegrp NAM.GRP"); // WW2GI has its own engine entry, pick NAM if both GRPs are here
 
         addAddonsDir(engine, RAZE_GAME_NAM, availableSubGames, new String[]{""});
 

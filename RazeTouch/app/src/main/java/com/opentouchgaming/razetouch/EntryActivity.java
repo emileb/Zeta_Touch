@@ -149,6 +149,10 @@ public class EntryActivity extends FragmentActivity
 
                 new GameEngine(GameEngine.Engine.RAZE_POWERSLAVE, 6, "Powerslave", "powerslave", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
                         GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.ps, 0, 0x0008dfdc, R.drawable.raze_button_bg_foucable,
+                        EngineOptionsRaze.class),
+
+                new GameEngine(GameEngine.Engine.RAZE_WW2GI, 7, "World War II GI", "ww2gi", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
+                        GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.ww2gi, 0, 0x00d6731c, R.drawable.raze_button_bg_foucable,
                         EngineOptionsRaze.class),};
 
         List<StorageConfigDialog.StorageExamples> examples = new ArrayList<>();
@@ -161,6 +165,7 @@ public class EntryActivity extends FragmentActivity
 
         examples.add(new StorageConfigDialog.StorageExamples("Redneck Rampage", "(All files):", StorageConfigDialog.PathLocation.BOTH, "/REDNECK"));
         examples.add(new StorageConfigDialog.StorageExamples("NAM", "(NAM.GRP, GAME.COM, NAM.RTS):", StorageConfigDialog.PathLocation.BOTH, "/NAM"));
+        examples.add(new StorageConfigDialog.StorageExamples("World War II GI", "(WW2GI.GRP, PLATOONL.DAT, PLATOONL.DEF):", StorageConfigDialog.PathLocation.BOTH, "/WW2GI"));
         examples.add(new StorageConfigDialog.StorageExamples("Powerslave", "(STUFF.DAT):", StorageConfigDialog.PathLocation.BOTH, "/PS"));
 
         //examples.add(new StorageConfigDialog.StorageExamples("User files", "(config, saves etc):", StorageConfigDialog.PathLocation.PRIM, "/user_files"));
