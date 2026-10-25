@@ -228,9 +228,9 @@ public class EntryActivity extends FragmentActivity
 
         AppSettings.reloadSettings(getApplication());
 
-        // Non-Play app: use 'All files access' instead of scoped storage so the engines keep
-        // full native filesystem access (chdir/fopen). Must be set before setAppInfo().
-        AppInfo.useAllFilesAccess = true;
+        // Off: scoped storage with SAF for secondary storage. On: 'All files access' for engines that still chdir into their data.
+        // Must be set before setAppInfo().
+        AppInfo.useAllFilesAccess = false;
 
         AppInfo.setAppInfo(getApplicationContext(), AppInfo.Apps.RAZE_TOUCH, "Zeta Touch", "Zeta", BuildConfig.APPLICATION_ID, "razelogs@opentouchgaming.com",
                 false, R.drawable.raze, false, true);
@@ -286,7 +286,7 @@ public class EntryActivity extends FragmentActivity
     // to the settings screen and re-check every onResume until it is granted.
     private void checkAllFilesAccess()
     {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R || Environment.isExternalStorageManager())
+        if (!AppInfo.useAllFilesAccess || Build.VERSION.SDK_INT < Build.VERSION_CODES.R || Environment.isExternalStorageManager())
         {
             if (allFilesAccessDialog != null)
             {

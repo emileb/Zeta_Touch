@@ -1,6 +1,12 @@
 * Updated NBlood to latest (r14388)
 * Updated EDuke32 dev to latest
 * Updated Raze dev with the latest 1.11 fixes
+* Game data can be in a folder you pick instead of needing 'All files access'
+* NBlood: Added Cryptic Passage (copy its files to NBLOOD/cryptic)
+* NBlood: The movie folder is no longer listed as a game
+* NBlood: Fixed corrupted graphics on the startup screens
+* EDuke32: Fixed music missing for mods using 'Run from this directory'
+* EDuke32, NBlood, AMC: Faster startup for large mods in a picked folder
 * Updated to NDK 27
 
 v3.4.1

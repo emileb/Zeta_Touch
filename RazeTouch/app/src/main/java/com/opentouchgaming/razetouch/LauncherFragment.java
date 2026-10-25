@@ -179,6 +179,10 @@ public class LauncherFragment extends MainFragment
                 args += " -secondary_path " + launcher.getSecondaryDirectory();
         }
 
+        // Data folder for the engine to use instead of the CWD, which can't be a SAF folder
+        if (engine.engine == GameEngine.Engine.EDUKE32)
+            args += " -game_path " + (selectedSubGame.isRunFromHere() ? selectedSubGame.getFullPath() : selectedSubGame.getRootPath());
+
         args += argsFinal;
 
         // Save history

@@ -46,9 +46,15 @@ public class NBloodLauncher extends RazeBaseLauncher
         SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR + ".", "", RAZE_GAME_NBLOOD, WEAPON_WHEEL_NBR,
                 new String[]{"BLOOD.RFF"}, R.drawable.nblood, "BLOOD", "Copy BLOOD files to:", "Put your BLOOD files here.txt");
 
-        addAddonsDir(engine, "", RAZE_GAME_EDUKE32, availableSubGames, new String[]{"mods", "autoload"});
+        // Cryptic Passage is an episode INI, not a mod: NBlood needs -ini to switch to its episodes
+        SubGame cryptic = SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR + ".cryptic_passage", "cryptic",
+                RAZE_GAME_NBLOOD, WEAPON_WHEEL_NBR, new String[]{"cryptic/CP01.MAP", "cryptic/CRYPTIC.INI"}, R.drawable.nblood, "Cryptic Passage",
+                "Copy your Cryptic Passage files to:", "Put your Cryptic Passage files here.txt");
+        cryptic.setExtraArgs("-ini CRYPTIC.INI -game_dir cryptic");
+
+        // movie holds cutscene videos, not an addon
+        addAddonsDir(engine, "", RAZE_GAME_EDUKE32, availableSubGames, new String[]{"mods", "autoload", "movie", "cryptic"});
 
         super.updateSubGames(engine, availableSubGames);
     }
-
 }
