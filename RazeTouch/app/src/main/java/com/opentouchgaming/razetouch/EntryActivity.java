@@ -121,7 +121,7 @@ public class EntryActivity extends FragmentActivity
                         GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.ionfury, 0, 0x002006e0, R.drawable.eduke_button_bg_foucable,
                         EngineOptionsEDuke32_IonFury.class),
 
-                new GameEngine(GameEngine.Engine.EDUKE32_NBLOOD, 3, "NBLOOD", "nblood", "", new String[]{"r14326"},
+                new GameEngine(GameEngine.Engine.EDUKE32_NBLOOD, 3, "NBLOOD", "nblood", "", new String[]{"r14388"},
                         new String[][]{{"touchcontrols", "GL4ES", "openal", "nblood_dev"}}, " ",
                         GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.nblood, 0, 0x00d20829, R.drawable.eduke_button_bg_foucable,
                         EngineOptionsEDuke32_NBlood.class),
