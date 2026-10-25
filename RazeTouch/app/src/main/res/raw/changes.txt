@@ -2,6 +2,7 @@
 * Updated EDuke32 dev to latest
 * Updated Raze dev with the latest 1.11 fixes
 * Game data can be in a folder you pick instead of needing 'All files access'
+* Added 'Faster loading from storage folder' setting (experimental, much faster for mods with many files)
 * NBlood: Added Cryptic Passage (copy its files to NBLOOD/cryptic)
 * NBlood: The movie folder is no longer listed as a game
 * NBlood: Fixed corrupted graphics on the startup screens
