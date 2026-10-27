@@ -23,6 +23,10 @@
             android:id="@+id/use_polymost_switch"
             layout="@layout/widget_view_switch" />
 
+        <include
+            android:id="@+id/resolution"
+            layout="@layout/widget_view_resolution_select" />
+
         <LinearLayout
             android:id="@+id/modern_gl2_options_layout"
             android:layout_width="wrap_content"

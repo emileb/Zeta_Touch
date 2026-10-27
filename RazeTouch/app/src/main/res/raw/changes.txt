@@ -1,7 +1,9 @@
 RC3
+* Added World War II GI and Platoon Leader as their own game
+* Raze: Added Resolution option to render at a lower resolution for more speed
+* NBlood: Finer Gamma steps, and holding a menu arrow keeps moving sliders
 
 RC2
-* Added World War II GI and Platoon Leader as their own game (copy their files to WW2GI)
 * EDuke32, NBlood, AMC: Fixed the Color Correction menu options doing nothing
 * NBlood: Fixed mods in their own folder not loading their maps, art and episodes from a picked folder
 

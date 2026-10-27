@@ -10,6 +10,8 @@ import androidx.arch.core.util.Function
 import com.opentouchgaming.androidcore.AppInfo
 import com.opentouchgaming.androidcore.EngineOptionsInterface
 import com.opentouchgaming.androidcore.GameEngine
+import com.opentouchgaming.androidcore.ui.widgets.ResolutionOptionsWidget
+import com.opentouchgaming.androidcore.ui.widgets.ResolutionOptionsWidget.ResolutionOptions
 import com.opentouchgaming.androidcore.ui.widgets.SpinnerWidget
 import com.opentouchgaming.androidcore.ui.widgets.SwitchWidget
 import com.opentouchgaming.razetouch.R
@@ -45,6 +47,26 @@ class EngineOptionsRaze : EngineOptionsInterface
 
     val USE_POLYMOST_PREFIX = "raze_use_polymost"
     val USE_POLYMOST_DEFAULT = true
+
+    companion object
+    {
+        // Raze clamps the custom scale size to 640x400 minimum, so no smaller options here
+        var resolutionList: ArrayList<ResolutionOptions> = ArrayList()
+
+        init
+        {
+            resolutionList.add(ResolutionOptions("Set in-game", ResolutionOptionsWidget.ResolutionType.FULL, "-", "-"))
+            resolutionList.add(ResolutionOptions("Screen (100%)", ResolutionOptionsWidget.ResolutionType.FULL, "\$W", "\$H"))
+            resolutionList.add(ResolutionOptions("Screen / 2 (50%)", ResolutionOptionsWidget.ResolutionType.FULL_0_5, "\$W2", "\$H2"))
+            resolutionList.add(ResolutionOptions("711 x 400 (16:9)", ResolutionOptionsWidget.ResolutionType.SET, "711", "400"))
+            resolutionList.add(ResolutionOptions("854 x 480 (16:9)", ResolutionOptionsWidget.ResolutionType.SET, "854", "480"))
+            resolutionList.add(ResolutionOptions("1280 x 720 (16:9)", ResolutionOptionsWidget.ResolutionType.SET, "1280", "720"))
+            resolutionList.add(ResolutionOptions("Custom", ResolutionOptionsWidget.ResolutionType.CUSTOM, "0", "0"))
+        }
+    }
+
+    val RESOLUTION_PREFIX = "raze_gl_resolution"
+    val RESOLUTION_DEFAULT = 0 // Set in-game
 
     fun showAlert(activity: Activity, title: String, message: String, function: () -> (Unit))
     {
@@ -119,6 +141,8 @@ class EngineOptionsRaze : EngineOptionsInterface
                 USE_POLYMOST_PREFIX,
                 USE_POLYMOST_DEFAULT)
 
+        ResolutionOptionsWidget(activity, binding.resolution.root, RESOLUTION_PREFIX, resolutionList, RESOLUTION_DEFAULT).disableMaintainAspect()
+
         // GLES 2.0
         SwitchWidget(activity,
                 binding.modernUseMappedBuffersSwitch.root,
@@ -171,6 +195,12 @@ class EngineOptionsRaze : EngineOptionsInterface
         if (SwitchWidget.fetchValue(AppInfo.getContext(), MODERN_MAP_BUFFER_PREFIX, MODERN_MAP_BUFFER_DEFAULT)) args += " +set gles_use_mapped_buffer 1 "
 
         if (SwitchWidget.fetchValue(AppInfo.getContext(), MODERN_FORCE_V100_PREFIX, MODERN_FORCE_V100_DEFAULT)) args += " +set gles_force_glsl_v100 1 "
+
+        val resOption = ResolutionOptionsWidget.getResOption(RESOLUTION_PREFIX, resolutionList, RESOLUTION_DEFAULT)
+        if (resOption.position != 0) // Position 0 is don't override here
+        {
+            args += " +set vid_scalemode 5 +set vid_scale_customwidth ${resOption.w} +set vid_scale_customheight ${resOption.h} "
+        }
 
         // Acts strange, disable for now
         args += " +set showendoom 0 "
