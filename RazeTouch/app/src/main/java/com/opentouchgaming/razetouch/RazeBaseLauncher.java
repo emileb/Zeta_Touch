@@ -41,6 +41,8 @@ public class RazeBaseLauncher implements GameLauncherInterface
     final int RAZE_GAME_AWOL = 108;
     final int RAZE_GAME_AMC = 109;
     final int RAZE_GAME_NBLOOD = 110;
+    final int RAZE_GAME_REDNUKEM = 111;
+    final int RAZE_GAME_DUKE64 = 112;
     String SUB_DIR = null;
 
     @Override
@@ -134,7 +136,7 @@ public class RazeBaseLauncher implements GameLauncherInterface
                     SubGame subgame = new SubGame(SUB_DIR + dirName, dirName, dirName, pathName, gameType, engine.iconRes, pathInfo, fileInfo,
                             WEAPON_WHEEL_NBR);
 
-                    if (gameType == RAZE_GAME_EDUKE32 || gameType == RAZE_GAME_IONFURY)
+                    if (gameType == RAZE_GAME_EDUKE32 || gameType == RAZE_GAME_IONFURY || engine.engine == GameEngine.Engine.EDUKE32_REDNUKEM)
                         subgame.setExtraArgs("-game_dir " + quote(dirName));
                     else
                         subgame.setExtraArgs("-game_dir " + quote(pathInfo));

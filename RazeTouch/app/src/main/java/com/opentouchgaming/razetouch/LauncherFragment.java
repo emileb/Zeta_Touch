@@ -43,6 +43,7 @@ public class LauncherFragment extends MainFragment
     AWOLLauncher awolLauncher;
     AMCLauncher amcLauncher;
     NBloodLauncher nbloodLauncher;
+    RedNukemLauncher rednukemLauncher;
 
     public LauncherFragment()
     {
@@ -69,6 +70,7 @@ public class LauncherFragment extends MainFragment
         awolLauncher = new AWOLLauncher();
         amcLauncher = new AMCLauncher();
         nbloodLauncher = new NBloodLauncher();
+        rednukemLauncher = new RedNukemLauncher();
     }
 
 
@@ -111,6 +113,9 @@ public class LauncherFragment extends MainFragment
                 break;
             case EDUKE32_NBLOOD:
                 launcher = nbloodLauncher;
+                break;
+            case EDUKE32_REDNUKEM:
+                launcher = rednukemLauncher;
                 break;
         }
     }
@@ -174,6 +179,10 @@ public class LauncherFragment extends MainFragment
             Utils.copyAsset(getActivity(), "raze.sf2", AppInfo.getAppDirectory() + "/NBLOOD", "soundfont.sf2");
         }
 
+        // Duke 64's widescreen HUD, found by the engine in its user folder
+        if (engine.engine == GameEngine.Engine.EDUKE32_REDNUKEM)
+            Utils.copyAsset(getActivity(), "dn64widescreen.pk3", AppInfo.getUserFiles() + "/rednukem/duke64");
+
         if (selectedSubGame.isRunFromHere())
         {
             args += " -secondary_path " + selectedSubGame.getFullPath();
@@ -185,7 +194,8 @@ public class LauncherFragment extends MainFragment
         }
 
         // Data folder for the engine to use instead of the CWD, which can't be a SAF folder
-        if (engine.engine == GameEngine.Engine.EDUKE32 || engine.engine == GameEngine.Engine.EDUKE32_NBLOOD)
+        if (engine.engine == GameEngine.Engine.EDUKE32 || engine.engine == GameEngine.Engine.EDUKE32_NBLOOD ||
+            engine.engine == GameEngine.Engine.EDUKE32_REDNUKEM)
             args += " -game_path " + (selectedSubGame.isRunFromHere() ? selectedSubGame.getFullPath() : selectedSubGame.getRootPath());
 
         args += argsFinal;

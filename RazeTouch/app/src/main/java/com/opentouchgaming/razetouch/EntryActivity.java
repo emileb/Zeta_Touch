@@ -37,6 +37,7 @@ import com.opentouchgaming.razetouch.engineoptions.EngineOptionsEDuke32_AWOL;
 import com.opentouchgaming.razetouch.engineoptions.EngineOptionsEDuke32_Duke;
 import com.opentouchgaming.razetouch.engineoptions.EngineOptionsEDuke32_IonFury;
 import com.opentouchgaming.razetouch.engineoptions.EngineOptionsEDuke32_NBlood;
+import com.opentouchgaming.razetouch.engineoptions.EngineOptionsEDuke32_RedNukem;
 import com.opentouchgaming.razetouch.engineoptions.EngineOptionsRaze;
 
 import java.util.ArrayList;
@@ -126,6 +127,11 @@ public class EntryActivity extends FragmentActivity
                         GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.nblood, 0, 0x00d20829, R.drawable.eduke_button_bg_foucable,
                         EngineOptionsEDuke32_NBlood.class),
 
+                new GameEngine(GameEngine.Engine.EDUKE32_REDNUKEM, 3, "RedNukem", "rednukem", "", new String[]{"r14388"},
+                        new String[][]{{"touchcontrols", "GL4ES", "openal", "rednukem"}}, " ",
+                        GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.redneck, 0, 0x008f6407, R.drawable.eduke_button_bg_foucable,
+                        EngineOptionsEDuke32_RedNukem.class),
+
 
                 new GameEngine(GameEngine.Engine.RAZE_DUKE, 4, "Duke Nukem 3D", "duke3d_raze", "", razeVersions, razeLoad, " +set cl_syncinput 1 ",
                         GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.dn3d, 0, 0x00d1bd10, R.drawable.raze_button_bg_foucable,
@@ -190,6 +196,8 @@ public class EntryActivity extends FragmentActivity
                 new UserFilesDialog.UserFileEntryDescription("EDuke32", "dev", R.drawable.dn3d_eduke, "eduke32_dev"),
                 new UserFilesDialog.UserFileEntryDescription("ION Fury", "v1.0", R.drawable.ionfury, "ionfury"),
                 new UserFilesDialog.UserFileEntryDescription("ION Fury", "dev", R.drawable.ionfury, "ionfury_dev"),
+                new UserFilesDialog.UserFileEntryDescription("NBlood", "", R.drawable.nblood, "nblood"),
+                new UserFilesDialog.UserFileEntryDescription("RedNukem", "", R.drawable.redneck, "rednukem"),
                 new UserFilesDialog.UserFileEntryDescription("Raze", "1.3", R.drawable.raze, "raze"),
                 new UserFilesDialog.UserFileEntryDescription("Raze", "1.5", R.drawable.raze, "raze_1.5"),
                 new UserFilesDialog.UserFileEntryDescription("Raze", "dev", R.drawable.raze, "raze_dev"),

@@ -107,6 +107,8 @@ open class EngineOptionsEDuke32Kt(prefix: String, val userFilesDir: String) : En
                 Utils.findFiles(FileSAF(cfgRoot), "settings.cfg", files)
                 Utils.findFiles(FileSAF(cfgRoot), "nblood.cfg", files)
                 Utils.findFiles(FileSAF(cfgRoot), "nblood_cvars.cfg", files)
+                Utils.findFiles(FileSAF(cfgRoot), "rednukem.cfg", files)
+                Utils.findFiles(FileSAF(cfgRoot), "rednukem_settings.cfg", files)
                 for (f in files)
                 {
                     File(f).delete()
