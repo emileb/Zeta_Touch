@@ -249,6 +249,14 @@ public class EntryActivity extends FragmentActivity
         AppInfo.setAppInfo(getApplicationContext(), AppInfo.Apps.RAZE_TOUCH, "Zeta Touch", "Zeta", BuildConfig.APPLICATION_ID, "razelogs@opentouchgaming.com",
                 false, R.drawable.raze, false, true);
         AppInfo.groupSimilarEngines = true; // Force group engines
+        // Upgrade from the old legacy storage version on Android 11+: switch to scoped storage and ask for the folder again
+        if (AppInfo.isScopedAllowed() && !AppInfo.isScopedEnabled())
+        {
+            log.log(DebugLog.Level.D, "Legacy storage on upgrade, forcing scoped storage. Old app_dir = " + AppSettings.getStringOption(getApplication(), "app_dir", null));
+            AppInfo.setScoped(true);
+            AppSettings.setBoolOption(getApplication(), "scoped_storage_permanent", true);
+            AppSettings.setBoolOption(getApplication(), "scoped_first_show_done", false);
+        }
         AppInfo.sidePanelImage = R.drawable.side_panel;
 
         // Check that the activity is using the layout version with

@@ -1,6 +1,9 @@
 RC2
+* Faster game startup when the game files are in the picked storage folder
 * Fixed the app's game data folder not opening in the Files app
 * Fixed empty mod folders and settings files appearing in the app's data folder when user files are in the picked folder
+* Raze: Fixed very slow startup with lots of mods or addons installed, their folders are no longer scanned
+* Updating from an older version now switches to the new storage and asks for your OpenTouch folder
 
 v4.0
 * Added RedNukem engine for Redneck Rampage, Rides Again and Duke Nukem 64
