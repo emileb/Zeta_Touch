@@ -13,7 +13,7 @@ android {
         applicationId "com.opentouchgaming.razetouch"
         minSdkVersion 21
         targetSdkVersion 35 // Needs 'All files access' (MANAGE_EXTERNAL_STORAGE) for full native filesystem access on Android 11+
-        versionCode 36
+        versionCode 37
         versionName "4.0"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
