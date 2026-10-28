@@ -29,6 +29,7 @@ import com.opentouchgaming.androidcore.Utils;
 import com.opentouchgaming.androidcore.controls.GamepadDefinitions;
 import com.opentouchgaming.androidcore.ui.OptionsDialogKt;
 import com.opentouchgaming.androidcore.ui.ScopedStorageDialog;
+import com.opentouchgaming.androidcore.ui.ScopedStorageFirstTimeDialog;
 import com.opentouchgaming.androidcore.ui.StorageConfigDialog;
 import com.opentouchgaming.androidcore.ui.UserFilesDialog;
 import com.opentouchgaming.androidcore.ui.tutorial.Tutorial;
@@ -129,7 +130,7 @@ public class EntryActivity extends FragmentActivity
 
                 new GameEngine(GameEngine.Engine.EDUKE32_REDNUKEM, 3, "RedNukem", "rednukem", "", new String[]{"r14388"},
                         new String[][]{{"touchcontrols", "GL4ES", "openal", "rednukem"}}, " ",
-                        GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.redneck, 0, 0x008f6407, R.drawable.eduke_button_bg_foucable,
+                        GamepadDefinitions.getDefinition(AppInfo.Apps.RAZE_TOUCH), R.drawable.rednukem, 0, 0x008f6407, R.drawable.eduke_button_bg_foucable,
                         EngineOptionsEDuke32_RedNukem.class),
 
 
@@ -197,7 +198,7 @@ public class EntryActivity extends FragmentActivity
                 new UserFilesDialog.UserFileEntryDescription("ION Fury", "v1.0", R.drawable.ionfury, "ionfury"),
                 new UserFilesDialog.UserFileEntryDescription("ION Fury", "dev", R.drawable.ionfury, "ionfury_dev"),
                 new UserFilesDialog.UserFileEntryDescription("NBlood", "", R.drawable.nblood, "nblood"),
-                new UserFilesDialog.UserFileEntryDescription("RedNukem", "", R.drawable.redneck, "rednukem"),
+                new UserFilesDialog.UserFileEntryDescription("RedNukem", "", R.drawable.rednukem, "rednukem"),
                 new UserFilesDialog.UserFileEntryDescription("Raze", "1.3", R.drawable.raze, "raze"),
                 new UserFilesDialog.UserFileEntryDescription("Raze", "1.5", R.drawable.raze, "raze_1.5"),
                 new UserFilesDialog.UserFileEntryDescription("Raze", "dev", R.drawable.raze, "raze_dev"),
@@ -290,6 +291,14 @@ public class EntryActivity extends FragmentActivity
             {
                 // Permission has already been granted
                 log.log(DebugLog.Level.D, "Permission already granted");
+            }
+        }
+        else if (!AppInfo.useAllFilesAccess) // Ask once for the secondary storage folder, like the other apps
+        {
+            if (AppInfo.getAppSecDirectory() == null && !AppSettings.getBoolOption(getApplication(), "scoped_first_show_done", false))
+            {
+                new ScopedStorageFirstTimeDialog(this);
+                AppSettings.setBoolOption(getApplication(), "scoped_first_show_done", true);
             }
         }
     }

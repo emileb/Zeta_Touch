@@ -1,3 +1,7 @@
+RC2
+* Fixed the app's game data folder not opening in the Files app
+* Fixed empty mod folders and settings files appearing in the app's data folder when user files are in the picked folder
+
 v4.0
 * Added RedNukem engine for Redneck Rampage, Rides Again and Duke Nukem 64
 * Added World War II GI and Platoon Leader as their own game (copy their files to WW2GI)

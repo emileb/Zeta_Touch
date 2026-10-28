@@ -53,7 +53,7 @@ public class RedNukemLauncher extends RazeBaseLauncher
         }
 
         sg = SubGame.addGame(availableSubGames, getRunDirectory(), getSecondaryDirectory(), SUB_DIR + ".duke64", "duke64", RAZE_GAME_DUKE64, WEAPON_WHEEL_NBR,
-                new String[]{rom}, R.drawable.dn3d, "Duke Nukem 64", "Copy your Duke Nukem 64 ROM (.z64, .n64 or .v64) to:", "Put your Duke 64 ROM here.txt");
+                new String[]{rom}, R.drawable.rednukem, "Duke Nukem 64", "Copy your Duke Nukem 64 ROM (.z64, .n64 or .v64) to:", "Put your Duke 64 ROM here.txt");
         sg.setRunFromHere(true);
         sg.setExtraArgs("-user_subdir duke64");
 

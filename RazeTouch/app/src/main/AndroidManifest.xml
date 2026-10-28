@@ -23,6 +23,17 @@
         android:theme="@style/AppTheme"
         tools:replace="android:label,android:supportsRtl,android:allowBackup">
 
+        <provider
+            android:name="com.opentouchgaming.androidcore.OpenTouchDocumentProvider"
+            android:authorities="${applicationId}.user"
+            android:grantUriPermissions="true"
+            android:exported="true"
+            android:permission="android.permission.MANAGE_DOCUMENTS">
+            <intent-filter>
+                <action android:name="android.content.action.DOCUMENTS_PROVIDER" />
+            </intent-filter>
+        </provider>
+
         <!-- android:process=":game" -->
         <activity
             android:name="org.libsdl.app2012.SDLActivity"
