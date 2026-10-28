@@ -1,12 +1,12 @@
 RC2
-* Faster game startup when the game files are in the picked storage folder
-* Fixed the app's game data folder not opening in the Files app
-* Fixed empty mod folders and settings files appearing in the app's data folder when user files are in the picked folder
-* Raze: Fixed very slow startup with lots of mods or addons installed, their folders are no longer scanned
-* Updating from an older version now switches to the new storage and asks for your OpenTouch folder
-* AMC Squad: Works with the unpacked 5.2 release, which keeps its files loose next to the GRP
-* AMC Squad: Much faster startup, the sound file checks no longer list every folder
-* Duke 3D, Ion Fury, RedNukem: Loose files next to the game data in the picked folder are now found
+* AMC: Supports the unpacked 5.2 release
+* AMC: Much faster startup
+* Faster startup from the picked storage folder
+* Updating from an older version now asks for your OpenTouch folder
+* EDuke32, Ion Fury, RedNukem: Loose files in the game folder are now found
+* Raze: Fixed slow startup with many mods or addons installed
+* Fixed the app's data folder not opening in the Files app
+* Fixed empty mod folders appearing in the app's data folder
 
 v4.0
 * Added RedNukem engine for Redneck Rampage, Rides Again and Duke Nukem 64
